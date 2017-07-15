@@ -1,0 +1,32 @@
+GET hotel/_search
+{
+  "size": 50,
+  "_source": [
+    "created",
+    "created2"
+  ],
+  "script_fields": {
+    "today": {
+      "script": {
+        "lang": "painless",
+        "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date())"
+      }
+    },
+        "diff": {
+      "script": {
+        "lang": "painless",
+        "inline": "def today = new SimpleDateFormat('yyyy-MM-dd').format(new Date()); def date1 = new SimpleDateFormat('yyyy-MM-dd').format(new Date(doc['created'].value)); def kyou = LocalDate.parse(today); def asu = LocalDate.parse(date1).minusDays(9); def diff = ChronoUnit.DAYS.between(kyou, asu); diff"
+      }
+    }
+  },
+  "sort": {
+    "_script": {
+      "type": "number",
+      "order": "desc",
+      "script": {
+        "lang": "painless",
+        "inline": "def today = new SimpleDateFormat('yyyy-MM-dd').format(new Date()); def date1 = new SimpleDateFormat('yyyy-MM-dd').format(new Date(doc['created'].value)); def kyou = LocalDate.parse(today); def asu = LocalDate.parse(date1).minusDays(9); def diff = ChronoUnit.DAYS.between(kyou, asu);   (diff >= -6 && diff <= 6  ) ? diff : Integer.MAX_VALUE"
+      }
+    }
+  }
+}
