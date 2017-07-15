@@ -1,0 +1,56 @@
+GET hotel/_search
+{
+  "size": 40,
+  "_source": [
+    "created",
+    "created2"
+  ],
+  "script_fields": {
+    "original_date": {
+      "script": {
+        "lang": "painless",
+        "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date(doc['created'].value))"
+      }
+    },
+    "yesterday": {
+      "script": {
+        "lang": "painless",
+        "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date(doc['created2'].value - 24*60*60*1000))"
+      }
+    },
+    "today": {
+      "script": {
+        "lang": "painless",
+        "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date())"
+      }
+    },
+    "test": {
+      "script": {
+        "lang": "painless",
+        "inline": "DayOfWeek.MONDAY.plus(4)"
+      }
+    },
+    "diff": {
+      "script": {
+        "lang": "painless",
+        "inline": "def today = new SimpleDateFormat('yyyy-MM-dd').format(new Date()); def date1 = new SimpleDateFormat('yyyy-MM-dd').format(new Date(doc['created'].value - 24*60*60*1000)); def kyou = LocalDate.parse(today); def asu = LocalDate.parse(date1).plusDays(5); ChronoUnit.DAYS.between(kyou, asu); "
+      }
+    },
+    "today2": {
+      "script": {
+        "lang": "painless",
+        "inline": "doc['country.keyword'].value"
+      }
+    }
+  }
+  ,"sort": {
+      "_script": {
+        "type": "string",
+        "script": {
+          
+           "lang": "painless",
+           "inline": "def today = new SimpleDateFormat('yyyy-MM-dd').format(new Date()); def date1 = new SimpleDateFormat('yyyy-MM-dd').format(new Date(doc['created'].value)); def kyou = LocalDate.parse(today); def asu = LocalDate.parse(date1); ChronoUnit.DAYS.between(kyou, asu); "
+        }
+      }
+    }
+}
