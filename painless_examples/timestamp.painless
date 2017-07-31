@@ -1,4 +1,125 @@
-GET hotel/_search
+PUT my_index
+{
+  "mappings": {
+    "my_type": {
+      "properties": {
+        "ip_addr": {
+          "type": "ip"
+        }
+      }
+    }
+  }
+}
+
+PUT my_index/my_type/3
+{
+  "ip_addr": "1.2.3.9"
+}
+
+GET my_index/_search
+{
+  "query": {
+    "term": {
+      "ip_addr": "0:0:0:0:0:ffff:1.2.3.4"
+    }
+  }
+}
+
+GET my_index/_search
+{
+  "query": {
+    "term": {
+      "ip_addr": "0:0:0:0:0:ffff:192.168.1.1"
+    }
+  }
+}
+
+DELETE farequote
+GET /_cat/indices
+
+GET /farequote/_search
+
+GET farequote/_mapping
+
+GET my_index/_search
+{
+  "query": {
+    "term": {
+      "ip_addr": "::ffff:0.0.0.0/0"
+    }
+  }
+}
+
+
+GET chart/_search
+{
+  "script_fields": {
+    "original_date": {
+      "script": {
+        "lang": "painless",
+        "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date(doc['created'].value))"
+      }
+    }
+}
+}
+
+
+GET /chart/_search
+
+GET _cat/indices
+
+GET /.ml-anomalies-custom-user/_search
+{
+  "query": {
+    "term": {
+      "result_type": {
+        "value": "record"
+      }
+    }
+  },
+  "sort": [
+    {
+      "initial_record_score": {
+        "order": "desc"
+      }
+    }
+  ]
+}
+
+GET /.ml-anomalies-user/_search
+{
+}
+
+GET chart/_search
+
+
+POST _xpack/security/role/packetbeat_writer
+{
+  "cluster": ["manage_index_templates", "monitor"],
+  "indices": [
+    {
+      "names": [ "packetbeat-*" ], 
+      "privileges": ["read","write","create_index"]
+    }
+  ]
+}
+
+
+
+POST /_xpack/security/user/packetbeat_internal
+{
+  "password" : "changeme",
+  "roles" : [ "packetbeat_writer"],
+  "full_name" : "Internal Packetbeat User"
+}
+
+
+GET /_cat/indices
+
+GET filebeat-2017.07.25/_search
+
+
+GET hotel_1/_search
 {
   "size": 40,
   "_source": [
@@ -15,13 +136,19 @@ GET hotel/_search
     "yesterday": {
       "script": {
         "lang": "painless",
-        "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date(doc['created2'].value - 24*60*60*1000))"
+        "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date(doc['created'].value - 24*60*60*1000))"
       }
     },
     "today": {
       "script": {
         "lang": "painless",
         "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date())"
+      }
+    },
+    "month": {
+      "script": {
+        "lang": "painless",
+        "inline": "new SimpleDateFormat('MMM').format(new Date(doc['created'].value))"
       }
     },
     "test": {
@@ -54,3 +181,8 @@ GET hotel/_search
       }
     }
 }
+
+
+
+
+
