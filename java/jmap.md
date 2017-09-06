@@ -1,16 +1,16 @@
 手順の概要
 
-1. logstash の jvm.options に以下を追加します。
+1 logstash の jvm.options に以下を追加します。
 -XX:NativeMemoryTracking=summary
 
-2. logstash を起動します。
+2 logstash を起動します。
 
 以下のコマンドにて、logstash が起動した事を確認します。
 
 `$ jps -m | grep logstash`
 
 
-3. 下記にて、JVM の stats を確認します。
+3 下記にて、JVM の stats を確認します。
  
 `$ jcmd $(jps -m | grep logstash | awk '{print $1}') VM.native_memory`
 
