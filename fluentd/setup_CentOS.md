@@ -18,7 +18,8 @@ check `/etc/td-agent/td-agent.conf` to find which port fluend is listening on. B
 
 create logstash configuration according to this [page](https://www.elastic.co/guide/en/logstash/current/plugins-codecs-fluent.html)
 
-
+start logshash first to avoid port conflict.
+then start fluentd
 
 create ruby sample script to emit document to fluentd
 
