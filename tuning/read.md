@@ -1,6 +1,6 @@
 [Sizing Elasticsearch](https://www.elastic.co/blog/found-sizing-elasticsearch)
 
-[Performance Troubleshooting Guide](Performance Troubleshooting Guide)
+[Logstash - Performance Troubleshooting Guide](https://www.elastic.co/guide/en/logstash/5.5/performance-troubleshooting.html)
 
 [logstash](https://www.elastic.co/guide/en/logstash/5.5/performance-tuning.html)
 
