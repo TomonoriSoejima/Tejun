@@ -1,67 +1,44 @@
-GET hotel_1/_search
+GET hotel/_search
 {
-  "size": 40,
+  "size": 50,
   "_source": [
     "created",
     "created2"
   ],
   "script_fields": {
-    "original_date": {
-      "script": {
-        "lang": "painless",
-        "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date(doc['created'].value))"
-      }
-    },
-    "yesterday": {
-      "script": {
-        "lang": "painless",
-        "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date(doc['created'].value - 24*60*60*1000))"
-      }
-    },
     "today": {
       "script": {
         "lang": "painless",
         "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date())"
       }
     },
-    "month": {
+    "hour_extracted1": {
       "script": {
         "lang": "painless",
-        "inline": "new SimpleDateFormat('MMM').format(new Date(doc['created'].value))"
+        "inline": "def hour = new SimpleDateFormat('h').format(new Date(doc['created'].value));hour"
       }
     },
-    "test": {
+    "hour_extracted2": {
       "script": {
         "lang": "painless",
-        "inline": "DayOfWeek.MONDAY.plus(4)"
+        "inline": "doc['created'].date.hourOfDay"
       }
     },
     "diff": {
       "script": {
         "lang": "painless",
-        "inline": "def today = new SimpleDateFormat('yyyy-MM-dd').format(new Date()); def date1 = new SimpleDateFormat('yyyy-MM-dd').format(new Date(doc['created'].value - 24*60*60*1000)); def kyou = LocalDate.parse(today); def asu = LocalDate.parse(date1).plusDays(5); ChronoUnit.DAYS.between(kyou, asu); "
+        "inline": "def today = new SimpleDateFormat('yyyy-MM-dd').format(new Date()); def date1 = new SimpleDateFormat('yyyy-MM-dd').format(new Date(doc['created'].value)); def kyou = LocalDate.parse(today); def asu = LocalDate.parse(date1).minusDays(9); def diff = ChronoUnit.DAYS.between(kyou, asu); diff"
       }
-    },
-    "today2": {
+    }
+  },
+  "sort": {
+    "_script": {
+      "type": "number",
+      "order": "desc",
       "script": {
         "lang": "painless",
-        "inline": "doc['country.keyword'].value"
+        "inline": "def today = new SimpleDateFormat('yyyy-MM-dd').format(new Date()); def date1 = new SimpleDateFormat('yyyy-MM-dd').format(new Date(doc['created'].value)); def kyou = LocalDate.parse(today); def asu = LocalDate.parse(date1).minusDays(9); def diff = ChronoUnit.DAYS.between(kyou, asu);   (diff >= -6 && diff <= 6  ) ? diff : Integer.MAX_VALUE"
       }
     }
   }
-  ,"sort": {
-      "_script": {
-        "type": "string",
-        "script": {
-          
-           "lang": "painless",
-           "inline": "def today = new SimpleDateFormat('yyyy-MM-dd').format(new Date()); def date1 = new SimpleDateFormat('yyyy-MM-dd').format(new Date(doc['created'].value)); def kyou = LocalDate.parse(today); def asu = LocalDate.parse(date1); ChronoUnit.DAYS.between(kyou, asu); "
-        }
-      }
-    }
 }
-
-
-
-
-
