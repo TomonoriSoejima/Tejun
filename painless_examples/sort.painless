@@ -12,7 +12,13 @@ GET hotel/_search
         "inline": "new SimpleDateFormat('yyyy/MM/dd').format(new Date())"
       }
     },
-        "diff": {
+    "hour_extracted": {
+      "script": {
+        "lang": "painless",
+        "inline": "def hour = new SimpleDateFormat('h').format(new Date());hour"
+      }
+    },
+    "diff": {
       "script": {
         "lang": "painless",
         "inline": "def today = new SimpleDateFormat('yyyy-MM-dd').format(new Date()); def date1 = new SimpleDateFormat('yyyy-MM-dd').format(new Date(doc['created'].value)); def kyou = LocalDate.parse(today); def asu = LocalDate.parse(date1).minusDays(9); def diff = ChronoUnit.DAYS.between(kyou, asu); diff"
