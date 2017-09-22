@@ -2,3 +2,5 @@
 
 
 [Elastic Product End of Life Dates](https://www.elastic.co/support/eol)
+
+[Maintenance Policy](https://www.elastic.co/support/eol)
