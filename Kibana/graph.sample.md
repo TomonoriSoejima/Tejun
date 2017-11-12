@@ -1,4 +1,4 @@
-
+![sample1](https://github.com/TomonoriSoejima/Tejun/blob/master/Kibana/graph.sample.png)
 
 
 ```
