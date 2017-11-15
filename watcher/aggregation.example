@@ -1,0 +1,62 @@
+PUT _xpack/watcher/watch/mwatch
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          ".ml-anomalies-*"
+        ],
+        "body": {
+          "query": {
+            "bool": {
+              "filter": [
+                {
+                  "term": {
+                    "result_type": "bucket"
+                  }
+                },
+                {
+                  "range": {
+                    "anomaly_score": {
+                      "gte": "89"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "aggs": {
+            "job_id": {
+              "terms": {
+                "field": "job_id",
+                "size": 10
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "script": {
+      "source": "def bucket_size = ctx.payload.aggregations.job_id.buckets.size(); if ( bucket_size > 2) {return true} else { return false}"
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": """
+Anomalies:
+{{#ctx.payload.hits.hits}}score={{_source.anomaly_score}} at time={{_source.timestamp}}
+{{/ctx.payload.hits.hits}}
+{{ctx.payload.aggregations.job_id.buckets}}
+"""
+      }
+    }
+  }
+}
