@@ -1,4 +1,3 @@
-```
 PUT _xpack/watcher/watch/mwatch
 {
   "trigger": {
@@ -66,7 +65,7 @@ PUT _xpack/watcher/watch/mwatch
   },
   "condition": {
     "script": {
-      "source": "return ctx.payload.hits.total > 0"
+      "source": "def list = []; def total =  ctx.payload.hits.hits.size(); for (int i = 0; i < total; ++i) { list.add(ctx.payload.hits.hits[i]._source.job_id); } if (list[3] == 'user3') {return true } else {return false} "
     }
   },
   "actions": {
@@ -76,9 +75,12 @@ PUT _xpack/watcher/watch/mwatch
 Anomalies:
 {{#ctx.payload.hits.hits}}score={{_source.anomaly_score}} at score={{_source.job_id}} at time={{_source.timestamp}}
 {{/ctx.payload.hits.hits}}
+crazy  = {{ctx.payload.hits.hits.0}}
+total = {{ctx.payload.hits.total}}
+job_id = {{ctx.payload.hits.hits2._source.job_id}}
+job_id2 = {{ctx.payload.hits.hits.2._source.job_id}}
 """
       }
     }
   }
 }
-```
