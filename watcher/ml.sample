@@ -75,10 +75,6 @@ PUT _xpack/watcher/watch/mwatch
 Anomalies:
 {{#ctx.payload.hits.hits}}score={{_source.anomaly_score}} at score={{_source.job_id}} at time={{_source.timestamp}}
 {{/ctx.payload.hits.hits}}
-crazy  = {{ctx.payload.hits.hits.0}}
-total = {{ctx.payload.hits.total}}
-job_id = {{ctx.payload.hits.hits2._source.job_id}}
-job_id2 = {{ctx.payload.hits.hits.2._source.job_id}}
 """
       }
     }
