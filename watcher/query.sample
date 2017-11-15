@@ -1,0 +1,56 @@
+A sample request for watcher's body.
+
+GET .ml-anomalies-*/_search
+{
+  "_source": [
+    "job_id",
+    "anomaly_score"
+  ],
+  "sort": [
+    {
+      "anomaly_score": {
+        "order": "desc"
+      }
+    }
+  ],
+  "script_fields": {
+    "check_jobs_for_hits": {
+      "script": "doc['job_id']"
+    }
+  }, 
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "anomaly_score": {
+              "gte": "75"
+            }
+          }
+        }
+      ],
+      "should": [
+        {
+          "term": {
+            "job_id": "user"
+          }
+        },
+        {
+          "term": {
+            "job_id": "user2"
+          }
+        },
+        {
+          "term": {
+            "job_id": "user3"
+          }
+        },
+        {
+          "term": {
+            "job_id": "user4"
+          }
+        }
+      ]
+    }
+  }
+}
