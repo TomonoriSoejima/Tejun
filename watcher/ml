@@ -1,0 +1,65 @@
+PUT _xpack/watcher/watch/mwatch
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          ".ml-anomalies-*"
+        ],
+        "body": {
+          "query": {
+            "bool": {
+              "filter": [
+                {
+                  "range": {
+                    "timestamp": {
+                      "gte": "now-2y"
+                    }
+                  }
+                },
+                {
+                  "term": {
+                    "result_type": "bucket"
+                  }
+                },
+                {
+                  "term": {
+                    "job_id": "user"
+                  }
+                },
+                {
+                  "range": {
+                    "anomaly_score": {
+                      "gte": "75"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "compare": {
+      "ctx.payload.hits.total": {
+        "gt": 0
+      }
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": "Anomalies:\n{{#ctx.payload.hits.hits}}score={{_source.anomaly_score}} at time={{_source.timestamp}}\n{{/ctx.payload.hits.hits}}"
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/mwatch/_execute
