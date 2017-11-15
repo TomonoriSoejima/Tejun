@@ -1,3 +1,4 @@
+```
 PUT _xpack/watcher/watch/mwatch
 {
   "trigger": {
@@ -28,15 +29,32 @@ PUT _xpack/watcher/watch/mwatch
                   }
                 },
                 {
+                  "range": {
+                    "anomaly_score": {
+                      "gte": "75"
+                    }
+                  }
+                }
+              ],
+              "should": [
+                {
                   "term": {
                     "job_id": "user"
                   }
                 },
                 {
-                  "range": {
-                    "anomaly_score": {
-                      "gte": "75"
-                    }
+                  "term": {
+                    "job_id": "user2"
+                  }
+                },
+                {
+                  "term": {
+                    "job_id": "user3"
+                  }
+                },
+                {
+                  "term": {
+                    "job_id": "user4"
                   }
                 }
               ]
@@ -47,19 +65,20 @@ PUT _xpack/watcher/watch/mwatch
     }
   },
   "condition": {
-    "compare": {
-      "ctx.payload.hits.total": {
-        "gt": 0
-      }
+    "script": {
+      "source": "return ctx.payload.hits.total > 0"
     }
   },
   "actions": {
     "log": {
       "logging": {
-        "text": "Anomalies:\n{{#ctx.payload.hits.hits}}score={{_source.anomaly_score}} at time={{_source.timestamp}}\n{{/ctx.payload.hits.hits}}"
+        "text": """
+Anomalies:
+{{#ctx.payload.hits.hits}}score={{_source.anomaly_score}} at score={{_source.job_id}} at time={{_source.timestamp}}
+{{/ctx.payload.hits.hits}}
+"""
       }
     }
   }
 }
-
-POST _xpack/watcher/watch/mwatch/_execute
+```
