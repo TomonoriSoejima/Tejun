@@ -1,3 +1,4 @@
+```
 PUT my_index
 {
   "mappings": {
@@ -43,8 +44,10 @@ GET my_index/_search
     }
   }
 }
+```
 
 response
+```
 {
   "took": 0,
   "timed_out": false,
@@ -99,3 +102,4 @@ response
     }
   }
 }
+```
