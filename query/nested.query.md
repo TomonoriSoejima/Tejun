@@ -1,10 +1,11 @@
 ```
-PUT my_index
+delete mail_info
+PUT mail_info
 {
   "mappings": {
-    "my_type": {
+    "t": {
       "properties": {
-        "user": {
+        "mail": {
           "type": "nested" 
         }
       }
@@ -12,32 +13,32 @@ PUT my_index
   }
 }
 
-PUT my_index/my_type/2
+PUT mail_info/t/1
 {
-  "group" : "fans",
-  "user" : [
+  "mail": [
     {
-      "first" : "John",
-      "last" :  "Smith"
+      "address": "user1@mail.com"
     },
     {
-      "first" : "Alice",
-      "last" :  "White"
+      "address": "user2@mail.com"
+    },
+    {
+      "address": "user3@mail.com"
     }
   ]
 }
 
-GET my_index/_search
+GET mail_info/_search
 {
   "aggs": {
     "aaa": {
       "nested": {
-        "path": "user"
+        "path": "mail"
       },
       "aggs": {
-        "group_by_user": {
+        "group_by_mail": {
           "terms": {
-            "field" : "user.first.keyword"
+            "field" : "mail.address.keyword"
           }
         }
       }
@@ -49,7 +50,7 @@ GET my_index/_search
 response
 ```
 {
-  "took": 0,
+  "took": 1,
   "timed_out": false,
   "_shards": {
     "total": 5,
@@ -62,20 +63,20 @@ response
     "max_score": 1,
     "hits": [
       {
-        "_index": "my_index",
-        "_type": "my_type",
-        "_id": "2",
+        "_index": "mail_info",
+        "_type": "t",
+        "_id": "1",
         "_score": 1,
         "_source": {
-          "group": "fans",
-          "user": [
+          "mail": [
             {
-              "first": "John",
-              "last": "Smith"
+              "address": "user1@mail.com"
             },
             {
-              "first": "Alice",
-              "last": "White"
+              "address": "user2@mail.com"
+            },
+            {
+              "address": "user3@mail.com"
             }
           ]
         }
@@ -84,17 +85,21 @@ response
   },
   "aggregations": {
     "aaa": {
-      "doc_count": 2,
-      "group_by_user": {
+      "doc_count": 3,
+      "group_by_mail": {
         "doc_count_error_upper_bound": 0,
         "sum_other_doc_count": 0,
         "buckets": [
           {
-            "key": "Alice",
+            "key": "user1@mail.com",
             "doc_count": 1
           },
           {
-            "key": "John",
+            "key": "user2@mail.com",
+            "doc_count": 1
+          },
+          {
+            "key": "user3@mail.com",
             "doc_count": 1
           }
         ]
