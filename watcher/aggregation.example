@@ -44,7 +44,7 @@ PUT _xpack/watcher/watch/mwatch
   },
   "condition": {
     "script": {
-      "source": "def bucket_size = ctx.payload.aggregations.job_id.buckets.size(); if ( bucket_size > 2) {return true} else { return false}"
+      "source": "def bucket_size = ctx.payload.aggregations.job_id.buckets.size(); if ( bucket_size > 1) {return true} else { return false}"
     }
   },
   "actions": {
