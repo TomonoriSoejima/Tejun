@@ -16,6 +16,7 @@
 `$ cat data.txt | jq -M`
 
 結果をファイルに保存する場合は、こちら
+
 `$ cat data.txt | jq . > data.json`
 
 
