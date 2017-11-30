@@ -3,7 +3,8 @@ $ cat shards.counter.checker.sh
 
 file=$1
 for i in kb mb gb; do
-    echo number of shards whose size is in $i : $(grep -c $i $file)
+    count=$(cat $file | awk -v unit="$i" -F" " '$6 ~ unit  {print}' | wc -l)
+    echo number of shards whose size is in $i : $count
 done
 
 
