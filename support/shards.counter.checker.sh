@@ -10,7 +10,7 @@ done
 example
 
 
-[mbp:scripts]$ sh shards.counter.checker.sh !$
+[mbp:scripts]$ sh shards.counter.checker.sh !$ | cat -n
 sh shards.counter.checker.sh /Users/surfer/Downloads/nokia/diagnostics-20171129-143143/cat_shards.txt
 snumber of shards whose size is in kb : 3375
 snumber of shards whose size is in mb : 5421
