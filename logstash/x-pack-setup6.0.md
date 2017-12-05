@@ -42,3 +42,25 @@ Got response code '401' contacting Elasticsearch at URL 'http://localhost:9200/_
 [2017-12-05T20:39:14,140][FATAL][logstash.runner          ] An unexpected error occurred! {:error=>#<LogStash::LicenseChecker::LicenseError: Configuration Management is not available: License information is currently unavailable. Please make sure you have added your production elasticsearch connection info in the xpack.management.elasticsearch settings.>, :backtrace=>["/Users/surfer/elastic/labs/logstash/x-pack-ls-6.0.0/logstash-6.0.0/vendor/bundle/jruby/2.3.0/gems/x-pack-6.0.0-java/lib/license_checker/licensed.rb:78:in `with_license_check'", "/Users/surfer/elastic/labs/logstash/x-pack-ls-6.0.0/logstash-6.0.0/vendor/bundle/jruby/2.3.0/gems/x-pack-6.0.0-java/lib/config_management/elasticsearch_source.rb:48:in `initialize'", "/Users/surfer/elastic/labs/logstash/x-pack-ls-6.0.0/logstash-6.0.0/vendor/bundle/jruby/2.3.0/gems/x-pack-6.0.0-java/lib/config_management/hooks.rb:52:in `after_bootstrap_checks'", "/Users/surfer/elastic/labs/logstash/x-pack-ls-6.0.0/logstash-6.0.0/logstash-core/lib/logstash/event_dispatcher.rb:34:in `block in fire'", "/Users/surfer/elastic/labs/logstash/x-pack-ls-6.0.0/logstash-6.0.0/logstash-core/lib/logstash/event_dispatcher.rb:32:in `fire'", "/Users/surfer/elastic/labs/logstash/x-pack-ls-6.0.0/logstash-6.0.0/logstash-core/lib/logstash/runner.rb:295:in `execute'", "/Users/surfer/elastic/labs/logstash/x-pack-ls-6.0.0/logstash-6.0.0/vendor/bundle/jruby/2.3.0/gems/clamp-0.6.5/lib/clamp/command.rb:67:in `run'", "/Users/surfer/elastic/labs/logstash/x-pack-ls-6.0.0/logstash-6.0.0/logstash-core/lib/logstash/runner.rb:232:in `run'", "/Users/surfer/elastic/labs/logstash/x-pack-ls-6.0.0/logstash-6.0.0/vendor/bundle/jruby/2.3.0/gems/clamp-0.6.5/lib/clamp/command.rb:132:in `run'", "/Users/surfer/elastic/labs/logstash/x-pack-ls-6.0.0/logstash-6.0.0/lib/bootstrap/environment.rb:71:in `<main>'"]}
 [mbp:logstash-6.0.0]$ 
 ```
+
+To integrate with pipeline management, make sure to use a user with these roles or use elastic user.
+
+`GET /_xpack/security/user/logstash_user`
+
+```
+{
+  "logstash_user": {
+    "username": "logstash_user",
+    "roles": [
+      "logstash_reader",
+      "logstash_admin",
+      "logstash_system",
+      "logstash_writer"
+    ],
+    "full_name": "Kibana User for Logstash",
+    "email": "ha@ca.com",
+    "metadata": {},
+    "enabled": true
+  }
+}
+```
