@@ -1,3 +1,4 @@
+```
 POST hotel/_shrink/hotel2
 {
   "settings": {
@@ -17,3 +18,4 @@ POST /_aliases
         { "remove_index": { "index": "hotel" } }  
     ]
 }
+```
