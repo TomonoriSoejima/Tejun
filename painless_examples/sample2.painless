@@ -4,12 +4,43 @@ GET haru/_search
         "match_all": {}
     },
     "script_fields" : {
-        "cheap_or_not" : {
+        "starttmpValue" : {
             "script" : {
                 "lang": "painless",
-                "source": "doc['name.keyword'].value +'bbb'"
+                               "source": "def orgValue = doc['name.keyword'].value; def strValue = orgValue.toString(); def starttmpValue = strValue.indexOf('aaa');   def startValue = starttmpValue + 3;return startValue;" 
+            }
+        } 
+       ,
+         "endValue" : {
+            "script" : {
+                "lang": "painless",
+                               "source": "def orgValue = doc['name.keyword'].value; def strValue = orgValue.toString(); def starttmpValue = strValue.indexOf('aaa');   def startValue = starttmpValue + 3; def endValue = strValue.indexOf('h'); return endValue" 
+            }
+        } 
+       ,
+              
+         "tstValue" : {
+            "script" : {
+                "lang": "painless",
+                               "source": "def orgValue = doc['name.keyword'].value; def strValue = orgValue.toString(); def starttmpValue = strValue.indexOf('aaa');   def startValue = starttmpValue + 3; def endValue = strValue.indexOf('h');def tstValue = strValue.substring(startValue, endValue); return tstValue + ' start:' + startValue + ' end:' + endValue;" 
+            }
+        } 
+       ,
+       "2" : {
+            "script" : {
+                "lang": "painless",
+                               "source": "def orgValue = doc['name.keyword'].value; def strValue = orgValue.toString(); def starttmpValue = strValue.indexOf('aaa');   " 
             }
         } 
        
     }
+}
+
+
+
+
+
+PUT haru/t/2
+{
+  "name" : "i am aaa and he is bbb"
 }
