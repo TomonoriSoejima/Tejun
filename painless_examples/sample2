@@ -1,0 +1,15 @@
+GET haru/_search
+{
+    "query" : {
+        "match_all": {}
+    },
+    "script_fields" : {
+        "cheap_or_not" : {
+            "script" : {
+                "lang": "painless",
+                "source": "doc['name.keyword'].value +'bbb'"
+            }
+        } 
+       
+    }
+}
