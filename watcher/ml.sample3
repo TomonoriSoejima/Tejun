@@ -1,0 +1,68 @@
+POST .ml-anomalies-*/_search?size=0
+{
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "query_string": {
+            "query": "result_type:influencer AND influencer_field_name:username.keyword",
+            "analyze_wildcard": false
+          }
+        },
+        {
+          "bool": {
+            "must": [
+              {
+                "range": {
+                  "timestamp": {
+                    "gte": 1492376818963,
+                    "lte": 1494176818963,
+                    "format": "epoch_millis"
+                  }
+                }
+              },
+              {
+                "query_string": {
+                  "analyze_wildcard": false,
+                  "query": "job_id:unusual-user"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "influencerFieldValues": {
+      "terms": {
+        "field": "influencer_field_value",
+        "size": 10,
+        "order": {
+          "maxAnomalyScore": "desc"
+        }
+      },
+      "aggs": {
+        "maxAnomalyScore": {
+          "max": {
+            "field": "influencer_score"
+          }
+        },
+        "byTime": {
+          "date_histogram": {
+            "field": "timestamp",
+            "interval": "43200s",
+            "min_doc_count": 1
+          },
+          "aggs": {
+            "maxAnomalyScore": {
+              "max": {
+                "field": "influencer_score"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
