@@ -1,0 +1,75 @@
+
+PUT _xpack/watcher/watch/mwatch2
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          ".ml-anomalies-*"
+        ],
+        "body": {
+          "query": {
+            "bool": {
+              "filter": [
+                {
+                  "query_string": {
+                    "query": "_type:result AND result_type:record",
+                    "analyze_wildcard": false
+                  }
+                },
+                {
+                  "bool": {
+                    "must": [
+                      {
+                        "range": {
+                          "timestamp": {
+                            "gte": 1492992000000,
+                            "lte": 1498175999999,
+                            "format": "epoch_millis"
+                          }
+                        }
+                      },
+                      {
+                        "range": {
+                          "record_score": {
+                            "gte": 0
+                          }
+                        }
+                      },
+                      {
+                        "query_string": {
+                          "analyze_wildcard": false,
+                          "query": "job_id:user2"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "script": "return true"
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": """
+{{#ctx.payload.hits.hits}}actaul={{_source.actual}} 
+{{/ctx.payload.hits.hits}}
+"""
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/mwatch2/_execute
