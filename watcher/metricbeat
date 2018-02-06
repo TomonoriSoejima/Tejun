@@ -1,0 +1,39 @@
+PUT _xpack/watcher/watch/mwatch
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          "metricbeat-2018.02.06"
+        ],
+        "body": {
+          "query": {
+            "match": {
+              "metricset.name": "socket"
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "script": "return true"
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": """
+{{#ctx.payload.hits.hits}}ip={{_source.system.socket.local.ip}} 
+{{/ctx.payload.hits.hits}}
+"""
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/mwatch/_execute
