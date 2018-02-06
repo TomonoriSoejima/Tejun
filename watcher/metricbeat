@@ -28,7 +28,7 @@ PUT _xpack/watcher/watch/mwatch
     "log": {
       "logging": {
         "text": """
-{{#ctx.payload.hits.hits}}ip={{_source.system.socket.local.ip}} 
+{{#ctx.payload.hits.hits}}url=https://{{_source.system.socket.local.ip}}/api/v1/webhooks/elasticsearch_memoryleak_ope
 {{/ctx.payload.hits.hits}}
 """
       }
