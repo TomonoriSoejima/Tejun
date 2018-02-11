@@ -1,1 +1,88 @@
-a
+PUT _xpack/watcher/watch/mywatch
+{
+  "trigger": {
+    "schedule": {
+      "interval": "10m"
+    }
+  },
+  "input": {
+    "chain": {
+      "inputs": [
+        {
+          "first": {
+            "search": {
+              "request": {
+                "indices": [
+                  "country"
+                ],
+                "body": {
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "japan"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+		},
+		{
+          "second": {
+            "search": {
+              "request": {
+                "search_type": "query_then_fetch",
+                "indices": [
+                  "application_logs-*"
+                ],
+                "types": [],
+                "body": {
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+							  "query": "\"statusCode\\\":approved\""
+                          }
+                        },
+                        {
+                          "range": {
+                            "@timestamp": {
+                              "gte": "now-10m"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "_source": [
+                    "message"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "condition": {
+    "script": {
+      "source": "return true"
+    }
+  },
+  "actions": {
+  "log": {
+      "logging": {
+        "text": "{{#ctx.payload.first.hits.hits}}actaul={{_source}} \n{{/ctx.payload.first.hits.hits}}"
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/mywatch/_execute
