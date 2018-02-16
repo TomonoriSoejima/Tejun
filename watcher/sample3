@@ -33,7 +33,13 @@ PUT /_watcher/watch/mustache-test
       "request": {
         "host": "localhost",
         "port": 9200,
-        "path": "/foo/_search"
+        "path": "/foo/_search",
+             "auth" : {
+        "basic" : {
+          "username" : "elastic",
+          "password" : "changeme"
+        }
+      }
       }
     }
   },
