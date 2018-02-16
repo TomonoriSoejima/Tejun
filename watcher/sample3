@@ -1,0 +1,49 @@
+PUT foo/bar/1
+{
+  "name": {
+    "first": "Kobe",
+    "last": "Bryant"
+  }
+} 
+PUT foo/bar/2
+{
+  "name": {
+    "first": "Stephen",
+    "last": "Curry"
+  }
+} 
+
+PUT foo/bar/3
+{
+  "name": {
+    "first": "Dirk",
+    "last": "Nowitzki"
+  }
+} 
+
+PUT /_watcher/watch/mustache-test
+{
+  "trigger": {
+    "schedule": {
+      "interval": "1h"
+    }
+  },
+  "input": {
+    "http": {
+      "request": {
+        "host": "localhost",
+        "port": 9200,
+        "path": "/foo/_search"
+      }
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": "{{ctx.payload.hits.hits.0._source.name.first}}"
+      }
+    }
+  }
+} 
+
+POST _xpack/watcher/watch/mustache-test/_execute
