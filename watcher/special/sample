@@ -1,0 +1,193 @@
+PUT first/doc/1
+{
+  "elastic": {
+    "@timestamp": "2018-02-21T00:00:09.026Z",
+    "beat": {
+      "hostname": "dev1node.novalocal",
+      "name": "dev1node.novalocal",
+      "version": "5.6.5"
+    },
+    "metricset": {
+      "module": "system",
+      "name": "memory",
+      "rtt": 210
+    },
+    "system": {
+      "memory": {
+        "actual": {
+          "free": 1016287232,
+          "used": {
+            "bytes": 2960322560,
+            "pct": 1.7444
+          }
+        },
+        "free": 134094848,
+        "swap": {
+          "free": 1908056064,
+          "total": 2164256768,
+          "used": {
+            "bytes": 256200704,
+            "pct": 0.1184
+          }
+        },
+        "total": 3976609792,
+        "used": {
+          "bytes": 3842514944,
+          "pct": 0.9663
+        }
+      }
+    },
+    "type": "metricsets"
+  }
+}
+
+
+
+PUT second/t/1
+{
+    "thread_pool_search_threads": "4",
+    "gc_young_collection_time_in_millis": "12890351",
+    "thread_pool_index_rejected": "0",
+    "nodes_os_mem_total": 3976609792,
+    "nodes_fs_available": 8067969024,
+    "nodes_os_names_name": "Linux",
+    "indices_query_cache_memory_size": 1008968,
+    "nodes_plugins_name": "x-pack",
+    "nodes_jvm_mem_heap_max": 2130051072,
+    "thread_pool_bulk_queue": "0",
+    "nodes_jvm_mem_heap_used": 1365853896,
+    "mem_young_used_in_bytes": "18461424",
+    "delayed_unassigned_shards": 0,
+    "gc_young_collection_count": "635921",
+    "thread_pool_index_threads": "2",
+    "nodes_os_mem_free": 126414848,
+    "mem_survivor_max_in_bytes": "17432576",
+    "heap_max_in_bytes": "2130051072",
+    "nodes_fs_free": 8067969024,
+    "mem_old_max_in_bytes": "1973026816",
+    "nodes_jvm_versions_version": "1.8.0_45",
+    "cluster_name": "dev_yb_stackstormdata",
+    "thread_pool_bulk_rejected": "0",
+    "thread_pool_search_rejected": "0",
+    "mem_old_used_in_bytes": "1343951848",
+    "indices_docs_count": 84192761,
+    "fs_total_total_in_bytes": "40237273088",
+    "indices_count": 168,
+    "number_of_data_nodes": 1,
+    "host_name": "dev1node.novalocal",
+    "status": "yellow",
+    "indices_fielddata_memory_size": 119880,
+    "thread_pool_bulk_active": "0",
+    "number_of_nodes": 1,
+    "unassigned_shards": 496,
+    "nodes_os_allocated_processors": 2,
+    "number_of_pending_tasks": 0,
+    "thread_pool_bulk_threads": "2",
+    "fs_total_available_in_bytes": "8067969024",
+    "jvm_node": "10.255.135.150",
+    "heap_used_percent": "64",
+    "initializing_shards": 0,
+    "thread_pool_index_queue": "0",
+    "thread_pool_search_queue": "0",
+    "nodes_process_open_file_descriptors_max": 1487,
+    "gc_old_collection_count": "1451",
+    "thread_pool_index_active": "0",
+    "gc_old_collection_time_in_millis": "186957",
+    "mem_survivor_used_in_bytes": "3440624",
+    "indices_query_cache_total_count": 1413440,
+    "indices_store_size": 27002287346,
+    "nodes_plugins_version": "5.4.1",
+    "indices_shards_primaries": 496,
+    "thread_pool_search_active": "0",
+    "nodes_os_available_processors": 2,
+    "heap_used_in_bytes": "1365853896",
+    "nodes_versions": "5.4.1",
+    "@timestamp": "2018-02-21T00:30:01+0900",
+    "fs_total_free_in_bytes": "8067969024",
+    "host_ipaddr": "10.255.135.150",
+    "relocating_shards": 0,
+    "nodes_fs_total": 40237273088,
+    "indices_shards_total": 496,
+    "mem_young_max_in_bytes": "139591680"
+}
+
+
+PUT _xpack/watcher/watch/mywatch
+{
+  "metadata": {
+    "threshold": 0.1,
+    "window_period": "30m"
+  },
+  "trigger": {
+    "schedule": {
+      "interval": "30m"
+    }
+  },
+  "input": {
+    "chain": {
+      "inputs": [
+        {
+          "mem_over_node": {
+            "search": {
+              "request": {
+                "search_type": "query_then_fetch",
+                "indices": [
+                  "first"
+                ],
+                "types": [
+                  "doc"
+                ],
+                "body": {
+                  "aggs": {
+                    "max_memory_used": {
+                      "max": {
+                        "field": "elastic.system.memory.actual.used.pct"
+                      }
+                    }
+                  },
+                  "query": {
+                    "match_all": {}
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "get_ip_mem_over_node": {
+            "search": {
+              "request": {
+                "indices": [
+                  "second"
+                ],
+                "body": {
+                  "query": {
+                    "match": {
+                      "host_name": "{{ctx.payload.mem_over_node.hits.hits.0._source.elastic.beat.hostname}}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "condition": {
+    "compare": {
+      "ctx.payload.mem_over_node.aggregations.max_memory_used.value": {
+        "gte": "{{ctx.metadata.threshold}}"
+      }
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": "memory usage have surpassed the threshold {{ctx.metadata.window_period}} in the following servers.\n {{#ctx.payload.get_ip_mem_over_node.hits.hits}} ip ={{_source.host_ipaddr}} \n{{/ctx.payload.get_ip_mem_over_node.hits.hits}}"
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/mywatch/_execute
