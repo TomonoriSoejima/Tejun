@@ -1,0 +1,115 @@
+PUT country/t/1
+{
+  "state" : "tokyo",
+  "country" : "japan"
+}
+
+PUT country/t/2
+{
+  "state" : "chiba",
+  "country" : "japan"
+}
+
+PUT country/t/3
+{
+  "state" : "nara",
+  "country" : "japan"
+}
+
+
+PUT city/t/1
+{
+  "state" : "tokyo",
+  "city" : "choufu"
+}
+
+
+
+PUT _xpack/watcher/watch/mywatch
+{
+  "trigger": {
+    "schedule": {
+      "interval": "10m"
+    }
+  },
+  "input": {
+    "chain": {
+      "inputs": [
+        {
+          "first": {
+            "search": {
+              "request": {
+                "indices": [
+                  "country"
+                ],
+                "body": {
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "japan"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "second": {
+            "search": {
+              "request": {
+                "indices": [
+                  "city"
+                ],
+                "body": {
+                  "query": {
+                    "match": {
+                      "state": "{{ctx.payload.first.hits.hits.1._source.state}}"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "condition": {
+    "script": {
+      "source": "return true"
+    }
+  },
+  "actions": {
+    "log": {
+      "transform": {
+        "script": """
+    def countries = ctx.payload.first.hits.hits;
+    def unique_countries = new ArrayList();
+    def listAll = new ArrayList();
+    for (int i = 0; i < countries.size(); i++) {
+      def kore = ((String)countries[i]._source.country);
+      if  (! listAll.contains(kore)) {
+        listAll.add((String)countries[i]._source.country);
+      }
+      
+      
+    }
+    unique_countries = listAll;
+                              
+    return [ 'unique_countries' : unique_countries.toString() ];
+"""
+      },
+      "logging": {
+        "text": "{{ctx.payload.unique_countries}}"
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/mywatch/_execute
