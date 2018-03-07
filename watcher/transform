@@ -96,8 +96,7 @@ PUT _xpack/watcher/watch/mywatch
       def kore = ((String)countries[i]._source.country);
       if  (! listAll.contains(kore)) {
         listAll.add((String)countries[i]._source.country);
-      }
-      
+      }     
       
     }
     unique_countries = listAll;
