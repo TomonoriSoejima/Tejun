@@ -1,13 +1,17 @@
 POST kore/1
 {
-  "name" : "12345"
+  "fname": "tom",
+  "lname": "cruise"
 }
 
 GET kore/_search
 {
   "script_fields": {
-    "kore": {
-      "script": {"source": "doc['name.keyword'].value.length()"}
+    "fname length": {
+      "script": {"source": "'fname length = '  + doc['fname.keyword'].value.length()"}
+    },
+    "lname length": {
+      "script": {"source": "'lname length = '  + doc['lname.keyword'].value.length()"}
     }
   }
 }
