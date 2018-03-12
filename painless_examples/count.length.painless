@@ -7,11 +7,20 @@ POST kore/1
 GET kore/_search
 {
   "script_fields": {
-    "fname length": {
-      "script": {"source": "'fname length = '  + doc['fname.keyword'].value.length()"}
+    "fname": {
+      "script": {
+        "source": "doc['fname.keyword'].value.length()"
+      }
     },
     "lname length": {
-      "script": {"source": "'lname length = '  + doc['lname.keyword'].value.length()"}
+      "script": {
+        "source": "doc['lname.keyword'].value.length()"
+      }
+    },
+    "max_field": {
+      "script": {
+        "source": "doc['fname.keyword'].value.length() > doc['lname.keyword'].value.length() ? doc['fname.keyword'].value.length() : doc['lname.keyword'].value.length() "
+      }
     }
   }
 }
