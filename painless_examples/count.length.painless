@@ -1,0 +1,13 @@
+POST kore/1
+{
+  "name" : "12345"
+}
+
+GET kore/_search
+{
+  "script_fields": {
+    "kore": {
+      "script": {"source": "doc['name.keyword'].value.length()"}
+    }
+  }
+}
