@@ -1,0 +1,41 @@
+PUT hoge/fuga/1
+{
+  "category": [
+    100,
+    134,
+    2180,
+    33506
+  ]
+}
+
+GET hoge/_search
+{
+  "query": {
+    "match": {
+      "category": 134
+    }
+  }
+}
+
+GET hoge/_search
+{
+  "query": {
+    "range": {
+      "category": {
+        "gte": 0,
+        "lte": 200
+      }
+    }
+  }
+}
+
+GET hoge/_search
+{
+  "aggs": {
+    "hoge": {
+      "sum": {
+        "field": "category"
+      }
+    }
+  }
+}
