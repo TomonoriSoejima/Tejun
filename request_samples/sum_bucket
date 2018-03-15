@@ -1,0 +1,37 @@
+POST a/3
+{"uid": 0, "value": 1} 
+POST a/3
+{"uid": 1, "value": 1} 
+POST a/3
+{"uid": 1, "value": 1} 
+POST a/3
+{"uid": 2, "value": 10} 
+POST a/3
+{"uid": 3, "value": 100} 
+POST a/3
+{"uid": 3, "value": 100} 
+
+GET a/_search
+{
+  "size": 0,
+  "aggs": {
+    "kore": {
+      "terms": {
+        "field": "uid",
+        "size": 10
+      },
+      "aggs": {
+        "kore2": {
+          "avg": {
+            "field": "value"
+          }
+        }
+      }
+    },
+    "unique_sum": {
+      "sum_bucket": {
+        "buckets_path": "kore>kore2"
+      }
+    }
+  }
+}
