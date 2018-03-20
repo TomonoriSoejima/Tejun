@@ -1,0 +1,12 @@
+GET .monitoring-es-6-2018.03.20/_search
+{
+  "query": {
+    "range": {
+      "timestamp": {
+        "gte": "2018-03-03T00:00:00.000Z",
+        "lte": "2018-03-29T00:00:00.000Z",
+         "time_zone": "+09:00"
+      }
+    }
+  }
+}
