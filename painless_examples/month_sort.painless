@@ -1,0 +1,18 @@
+GET hotel/_search
+{
+  "size": 100,
+  "_source": "*",
+  "script_fields": {
+    "month_number": {
+      "script": {
+        "lang": "painless", 
+        "source": """
+        // prepare the date
+          def month_number = doc['busy_month.keyword'].value; 
+          if (month_number == 'JANUARY') { return 1; }  
+          if (month_number == 'FEBRUARY') { return 2; }
+        """
+      }
+    }
+  }
+}
