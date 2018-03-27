@@ -10,7 +10,17 @@ GET hotel/_search
         // prepare the date
           def month_number = doc['busy_month.keyword'].value; 
           if (month_number == 'JANUARY') { return 1; }  
-          if (month_number == 'FEBRUARY') { return 2; }
+          if (month_number == 'FEBRUARY') { return 2;}
+          if (month_number == 'MARCH') { return 3; }
+          if (month_number == 'APRIL') { return 4; }
+          if (month_number == 'MAY') { return 5; }
+          if (month_number == 'JUNE') { return 6; }
+          if (month_number == 'JULY') { return 7; }
+          if (month_number == 'AUGUST') { return 8; }
+          if (month_number == 'SEPTEMBER') { return 9; }
+          if (month_number == 'OCTOBER') { return 10; }
+          if (month_number == 'NOVEMBER') { return 11; }
+          if (month_number == 'DECEMBER') { return 12; }
         """
       }
     }
