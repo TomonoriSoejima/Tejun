@@ -4,5 +4,4 @@ https://www.elastic.co/guide/en/kibana/current/scripted-fields.html#create-scrip
 
 
 
-
-![image4](https://github.com/TomonoriSoejima/Tejun/blob/master/Kibana/scripted_field_kibana.png?raw=true "profiler")
+![image5](https://github.com/TomonoriSoejima/Tejun/blob/master/Kibana/sample1.png)
