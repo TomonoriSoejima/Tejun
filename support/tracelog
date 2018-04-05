@@ -1,0 +1,17 @@
+# to enable
+
+PUT /_cluster/settings
+{
+  "persistent": {
+    "logger.org.elasticsearch": "trace"
+  }
+}
+
+
+# to disable
+PUT /_cluster/settings
+{
+  "persistent": {
+    "logger.org.elasticsearch": "info"
+  }
+}
