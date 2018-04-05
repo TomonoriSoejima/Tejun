@@ -9,6 +9,7 @@ PUT /_cluster/settings
 
 
 # to disable
+
 PUT /_cluster/settings
 {
   "persistent": {
