@@ -9,19 +9,22 @@ GET test/_search
 {
   "_source": "created",
   "script_fields": {
-    "minus_9": {
+    "a": {
       "script": {
         "lang": "painless",
         "source": """
           def kore = LocalDateTime.ofInstant(Instant.ofEpochMilli(doc['created'].date.getMillis()), ZoneId.of("Asia/Tokyo")).toString();
           return kore;
-"""
+         """
       }
     },
-    "minus_10": {
+    "b": {
       "script": {
         "lang": "painless",
-        "source": "          def kore = LocalDateTime.ofInstant(Instant.ofEpochMilli(doc['created'].date.getMillis()), ZoneId.systemDefault()).minusHours(5).toString();\n          return kore;"
+        "source": """
+          def kore = LocalDateTime.ofInstant(Instant.ofEpochMilli(doc['created'].date.getMillis()), ZoneId.systemDefault()).minusHours(5).toString();
+          return kore;
+        """
       }
     }
   },
@@ -31,9 +34,9 @@ GET test/_search
         "script": {
           "lang": "painless",
           "source": """
-          def kore = LocalDateTime.ofInstant(Instant.ofEpochMilli(doc['created'].date.getMillis()), ZoneId.of("Asia/Tokyo")).toString();
-          return kore;
-"""
+            def kore = LocalDateTime.ofInstant(Instant.ofEpochMilli(doc['created'].date.getMillis()), ZoneId.of("Asia/Tokyo")).toString();
+            return kore;
+          """
         }
       }
     }
