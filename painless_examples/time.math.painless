@@ -1,0 +1,31 @@
+PUT test/a/1
+{
+  "created" : "2018-04-06T13:20:53.000Z"
+}
+
+  
+  
+GET test/_search
+{
+  "_source": "created",
+  "script_fields": {
+    "minus_9": {
+      "script": {
+        "lang": "painless",
+        "source": """
+          def kore = LocalDateTime.ofInstant(Instant.ofEpochMilli(doc['created'].date.getMillis()), ZoneId.of("Asia/Tokyo")).toString();
+          return kore;
+"""
+      }
+    },
+    "minus_10": {
+      "script": {
+        "lang": "painless",
+        "source": """
+          def kore = LocalDateTime.ofInstant(Instant.ofEpochMilli(doc['created'].date.getMillis()), ZoneId.systemDefault()).minusHours(5).toString();
+          return kore;
+"""
+      }
+    }
+  }
+}
