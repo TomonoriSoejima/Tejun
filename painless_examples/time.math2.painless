@@ -1,0 +1,31 @@
+GET hotel/_search
+{
+  "_source": "created",
+  "script_fields": {
+      "a": {
+      "script": {
+        "lang": "painless",
+        "source": """
+        def millis = doc['created'].date.getMillis();
+        long jisa = 9 * 3600000;
+        return millis - jisa;
+"""
+      }
+    }
+
+  },
+  "aggs": {
+    "korene": {
+      "terms": {
+        "script": {
+          "lang": "painless",
+          "source": """
+        def millis = doc['created'].date.getMillis();
+        long jisa = 9 * 3600000;
+        return millis - jisa;
+"""
+        }
+      }
+    }
+  }
+}
