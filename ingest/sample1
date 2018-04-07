@@ -1,0 +1,26 @@
+PUT _ingest/pipeline/product_id
+{
+  "description": "extracts product id",
+  "processors": [
+    {
+      "script": {
+        "lang": "painless", "source": """
+         ctx.product_id_int = Integer.parseInt(ctx.product_id_str.substring(3));
+        """
+      }
+    }
+  ]
+}
+
+
+PUT newindex/type/1?pipeline=product_id
+{
+  "product_id_str": "ID-000000001"
+}
+
+PUT newindex/type/10?pipeline=product_id
+{
+  "product_id_str": "ID-000000010"
+}
+
+GET newindex/_search
