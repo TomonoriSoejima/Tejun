@@ -1,0 +1,29 @@
+# index level slow log
+
+PUT slow_test/_settings
+{
+ "index.search.slowlog.threshold.query.debug": "0ms"
+}
+
+
+# how to undo it.
+
+PUT slow_test/_settings
+{
+ "index.search.slowlog.threshold.query.debug": "-1"
+}
+
+
+# cluster level slog log
+
+PUT /_settings
+{
+ "index.search.slowlog.threshold.query.debug": "0ms"
+}
+
+# how to undo it.
+
+PUT /_settings
+{
+ "index.search.slowlog.threshold.query.debug": "-1"
+}
