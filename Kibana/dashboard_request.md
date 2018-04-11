@@ -9,6 +9,7 @@ Steps
    
    
 2. This is what it looks like
+
 Notice that there is a request going to "_msearch" endpoint
 ![image1](https://github.com/TomonoriSoejima/Tejun/blob/master/page1.png?raw=true "page1")
 
