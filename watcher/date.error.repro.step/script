@@ -51,3 +51,36 @@ PUT _xpack/watcher/watch/mywatch
 
 POST _xpack/watcher/watch/mywatch/_execute
 
+
+GET action_test/_search
+{
+  "_source": "created",
+  "script_fields": {
+      "a": {
+      "script": {
+        "lang": "painless",
+        "source": """
+          def millis = doc['aggregations.get_latest.buckets.key_as_string'].value.getMillis();
+        long jisa = 9 * 3600000;
+        return millis - jisa;
+"""
+      }
+    }
+
+  },
+  "aggs": {
+    "korene": {
+      "terms": {
+        "script": {
+          "lang": "painless",
+          "source": """
+          def millis = doc['aggregations.get_latest.buckets.key_as_string'].value.getMillis();
+        long jisa = 9 * 3600000;
+        return millis - jisa;
+"""
+        }
+      }
+    }
+  }
+}
+
