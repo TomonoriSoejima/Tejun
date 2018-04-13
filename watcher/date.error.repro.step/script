@@ -1,0 +1,53 @@
+DELETE action_test
+
+PUT _xpack/watcher/watch/mywatch
+{
+  "trigger": {
+    "schedule": {
+      "interval": "10m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          "hotel"
+        ],
+        "body": {
+          "aggs": {
+            "get_latest": {
+              "terms": {
+                "field": "created",
+                "size": 4,
+                "order": {
+                  "_key": "desc"
+                },
+                "script": {
+                  "source": "_value + 32400000"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "script": {
+      "source": "return true"
+    }
+  },
+  "actions": {
+    "create_index": {
+      "index": {
+        "index": "action_test",
+        "doc_type": "common_local_logon_linux"
+      }
+    }
+  }
+}
+
+
+
+POST _xpack/watcher/watch/mywatch/_execute
+
