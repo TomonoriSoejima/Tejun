@@ -20,7 +20,7 @@ PUT _xpack/watcher/watch/mywatch
                 "field": "created",
                 "size": 4,
                 "order": {
-                  "_key": "desc"
+                  "_term": "desc"
                 },
                 "script": {
                   "source": "_value + 32400000"
@@ -60,7 +60,7 @@ GET action_test/_search
       "script": {
         "lang": "painless",
         "source": """
-          def millis = doc['aggregations.get_latest.buckets.key_as_string'].value.getMillis();
+          def millis = doc['aggregations.get_latest.buckets.key_as_string'].date.getMillis();
         long jisa = 9 * 3600000;
         return millis - jisa;
 """
@@ -74,7 +74,7 @@ GET action_test/_search
         "script": {
           "lang": "painless",
           "source": """
-          def millis = doc['aggregations.get_latest.buckets.key_as_string'].value.getMillis();
+          def millis = doc['aggregations.get_latest.buckets.key_as_string'].date.getMillis();
         long jisa = 9 * 3600000;
         return millis - jisa;
 """
@@ -83,4 +83,3 @@ GET action_test/_search
     }
   }
 }
-
