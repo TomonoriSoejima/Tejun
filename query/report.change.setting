@@ -1,0 +1,81 @@
+PUT .reporting-2018.04.15
+{
+    "mappings": {
+      "esqueue": {
+        "properties": {
+          "attempts": {
+            "type": "short"
+          },
+          "completed_at": {
+            "type": "date"
+          },
+          "created_at": {
+            "type": "date"
+          },
+          "created_by": {
+            "type": "keyword"
+          },
+          "jobtype": {
+            "type": "keyword"
+          },
+          "max_attempts": {
+            "type": "short"
+          },
+          "output": {
+            "properties": {
+              "content": {
+                "type": "object",
+                "enabled": false
+              },
+              "content_type": {
+                "type": "keyword"
+              },
+              "max_size_reached": {
+                "type": "boolean"
+              }
+            }
+          },
+          "payload": {
+            "type": "object",
+            "enabled": true
+          },
+          "priority": {
+            "type": "byte"
+          },
+          "process_expiration": {
+            "type": "date"
+          },
+          "started_at": {
+            "type": "date"
+          },
+          "status": {
+            "type": "keyword"
+          },
+          "timeout": {
+            "type": "long"
+          }
+        }
+      }
+    }
+  }
+}
+ 
+GET .reporting-2018.04.15/_search
+{
+  "query": {
+    
+    "match": {
+      "payload.title": "csv_test"
+    }
+  }
+}
+
+
+POST .reporting-2018.04.15/_delete_by_query
+{
+  "query": {
+    "match": {
+      "payload.title": "csv_test"
+    }
+  }
+}
