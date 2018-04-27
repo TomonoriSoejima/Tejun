@@ -1,0 +1,21 @@
+PUT _ingest/pipeline/upper
+{
+  "description": "extracts product id",
+  "processors": [
+    {
+      "uppercase": {
+        "field": "greeting"
+      }
+    }
+  ]
+}
+
+
+PUT newindex/type/1?pipeline=upper
+{
+  "greeting": "hello"
+}
+
+
+
+GET newindex/_search
