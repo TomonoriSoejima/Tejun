@@ -1,0 +1,18 @@
+$USER = "elastic"
+$PASS = "changeme"
+$secpasswd = ConvertTo-SecureString $PASS -AsPlainText -Force
+$cred = New-Object System.Management.Automation.PSCredential($USER, $secpasswd)
+
+
+$uri = "http://localhost:9200/_msearch"
+
+# make sure to add extra epmty line in $body
+$body = '
+{"index":"hotel","ignore_unavailable":true,"preference":1499950407224}
+{"query":{"bool":{"must":[{"query_string":{"query":"*","analyze_wildcard":true}},{"query_string":{"query":"*","analyze_wildcard":true}}],"must_not":[]}},"size":0,"_source":{"excludes":[]},"aggs":{},"version":true,"highlight":{"pre_tags":["@kibana-highlighted-field@"],"post_tags":["@/kibana-highlighted-field@"],"fields":{"*":{"highlight_query":{"bool":{"must":[{"query_string":{"query":"*","analyze_wildcard":true,"all_fields":true}},{"query_string":{"query":"*","analyze_wildcard":true,"all_fields":true}}],"must_not":[]}}}},"fragment_size":2147483647}}
+
+'
+
+$result = Invoke-RestMethod -Method Post -Uri $uri -Credential $cred  -ContentType 'application/x-ndjson' -Body $body
+
+$result
