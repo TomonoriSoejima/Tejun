@@ -20,5 +20,5 @@ PUT my_index
 POST my_index/_analyze
 {
   "analyzer": "my_analyzer",
-  "text": "an_underscored_phrase hello.4mp"
+  "text": "hello.world"
 }
