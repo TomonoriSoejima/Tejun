@@ -1,0 +1,55 @@
+GET .monitoring-es-6-2018-06/_search
+{
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "bool": {
+            "should": [
+              {
+                "term": {
+                  "_type": {
+                    "value": "node_stats",
+                    "boost": 1
+                  }
+                }
+              },
+              {
+                "term": {
+                  "type": {
+                    "value": "node_stats",
+                    "boost": 1
+                  }
+                }
+              }
+            ],
+            "adjust_pure_negative": true,
+            "boost": 1
+          }
+        },
+        {
+          "term": {
+            "cluster_uuid": {
+              "value": "4-75hYrYSBq0wNvQO1WA8g",
+              "boost": 1
+            }
+          }
+        },
+        {
+          "range": {
+            "timestamp": {
+              "from": 1528073350960,
+              "to": 1528076950960,
+              "include_lower": true,
+              "include_upper": true,
+              "format": "epoch_millis",
+              "boost": 1
+            }
+          }
+        }
+      ],
+      "adjust_pure_negative": true,
+      "boost": 1
+    }
+  }
+}
