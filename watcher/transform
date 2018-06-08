@@ -107,6 +107,28 @@ PUT _xpack/watcher/watch/mywatch
       "logging": {
         "text": "{{ctx.payload.unique_countries}}"
       }
+    },
+    "log2": {
+      "transform": {
+        "script": """
+    def countries = ctx.payload.first.hits.hits;
+    def unique_countries = new ArrayList();
+    def listAll = new ArrayList();
+    for (int i = 0; i < countries.size(); i++) {
+      def kore = ((String)countries[i]._source.country);
+      if  (! listAll.contains(kore)) {
+        listAll.add((String)countries[i]._source.country);
+      }     
+      
+    }
+    unique_countries = listAll;
+                              
+    return [ 'unique_countries' : unique_countries.toString() ];
+"""
+      },
+      "logging": {
+        "text": "{{ctx.payload.unique_countries}}"
+      }
     }
   }
 }
