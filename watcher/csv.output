@@ -1,0 +1,49 @@
+PUT _xpack/watcher/watch/mywatch
+{
+  "trigger": {
+    "schedule": {
+      "interval": "10m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          "hotel"
+        ],
+        "body": {
+          "aggs": {
+            "get_latest": {
+              "terms": {
+                "field": "country.keyword",
+                "size": 4,
+                "order": {
+                  "_term": "desc"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "script": {
+      "source": "return true"
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": """
+        hello
+        """
+
+      }
+    }
+  }
+}
+
+
+
+POST _xpack/watcher/watch/mywatch/_execute
