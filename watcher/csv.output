@@ -33,17 +33,25 @@ PUT _xpack/watcher/watch/mywatch
     }
   },
   "actions": {
-    "log": {
-      "logging": {
-        "text": """
-        {{ctx.payload.aggregations.countries.buckets}}
+    "log2": {
+      "transform": {
+        "script": """
+        def countries = ctx.payload.aggregations.countries.buckets;
+        def unique_countries = new ArrayList();
+        for (int i = 0; i < countries.size(); i++) {
+            def kore = ((String)countries[i].key);
+            if  (! unique_countries.contains(kore)) {
+              unique_countries.add((String)countries[i].key);
+            }     
+      
+        }
+     
+        return [ 'unique_countries' : unique_countries.toString() ];
         """
-
+      },
+      "logging": {
+        "text": "{{ctx.payload.unique_countries}}"
       }
     }
   }
 }
-
-
-
-POST _xpack/watcher/watch/mywatch/_execute
