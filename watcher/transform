@@ -1,3 +1,17 @@
+# the way it accesses payload in transform does not work in 6.2.x anymore.
+
+# it should be written like this now.
+
+        def countries = ctx.payload.aggregations.countries.buckets;
+        def unique_countries = new ArrayList();
+        for (int i = 0; i < countries.size(); i++) {
+            def kore = ((String)countries[i].key);
+            if  (! unique_countries.contains(kore)) {
+              unique_countries.add((String)countries[i].key);
+              
+              
+              
+
 PUT country/t/1
 {
   "state" : "tokyo",
