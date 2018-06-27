@@ -13,12 +13,12 @@ PUT _xpack/watcher/watch/mywatch
         ],
         "body": {
           "aggs": {
-            "get_latest": {
+            "countries": {
               "terms": {
                 "field": "country.keyword",
                 "size": 4,
                 "order": {
-                  "_term": "desc"
+                  "_key": "desc"
                 }
               }
             }
@@ -36,7 +36,7 @@ PUT _xpack/watcher/watch/mywatch
     "log": {
       "logging": {
         "text": """
-        hello
+        {{ctx.payload.aggregations.countries.buckets}}
         """
 
       }
