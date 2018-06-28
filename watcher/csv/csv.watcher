@@ -67,3 +67,5 @@ PUT _xpack/watcher/watch/mywatch
     }
   }
 }
+
+POST _xpack/watcher/watch/mywatch/_execute
