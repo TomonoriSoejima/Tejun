@@ -1,0 +1,600 @@
+{"index":{"_index":"hotel","_id":1}}
+{"hotel_name":"hotel1","star":14,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Egypt","city":"","has_parking":"no","menu":["Udon","Tonkatsu","Udon"],"busy_month":"APRIL","closed":["SUNDAY","WEDNESDAY"],"price":2416,"created":"2018-06-27T04:31:12.000Z"}
+{"index":{"_index":"hotel","_id":2}}
+{"hotel_name":"hotel2","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CHINA","city":"","has_parking":"yes","menu":["Tonkatsu","Sushi","Sushi"],"busy_month":"JUNE","closed":["THURSDAY","FRIDAY"],"price":1094,"created":"2018-06-27T04:31:11.000Z"}
+{"index":{"_index":"hotel","_id":3}}
+{"hotel_name":"hotel3","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Australia","city":"","has_parking":"no","menu":["Salad","Soba","Sushi"],"busy_month":"JUNE","closed":["MONDAY","SATURDAY"],"price":504564,"created":"2018-06-27T04:31:10.000Z"}
+{"index":{"_index":"hotel","_id":4}}
+{"hotel_name":"hotel4","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CHINA","city":"","has_parking":"yes","menu":["Pasta","Sakana","Udon"],"busy_month":"JULY","closed":["SATURDAY","FRIDAY"],"price":3065,"created":"2018-06-27T04:31:09.000Z"}
+{"index":{"_index":"hotel","_id":5}}
+{"hotel_name":"hotel5","star":22,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"HAWAII","city":"","has_parking":"no","menu":["Pizza","Sakana","Sakana"],"busy_month":"MARCH","closed":["SUNDAY","FRIDAY"],"price":4554,"created":"2018-06-27T04:31:08.000Z"}
+{"index":{"_index":"hotel","_id":6}}
+{"hotel_name":"hotel6","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Greece","city":"","has_parking":"yes","menu":["Pizza","Tonkatsu","Udon"],"busy_month":"APRIL","closed":["TUESDAY","FRIDAY"],"price":4782,"created":"2018-06-27T04:31:07.000Z"}
+{"index":{"_index":"hotel","_id":7}}
+{"hotel_name":"hotel7","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Greece","city":"","has_parking":"no","menu":["Sakana","Udon","Pizza"],"busy_month":"MAY","closed":["TUESDAY","FRIDAY"],"price":4814,"created":"2018-06-27T04:31:06.000Z"}
+{"index":{"_index":"hotel","_id":8}}
+{"hotel_name":"hotel8","star":1,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"KOREA","city":"","has_parking":"yes","menu":["Udon","Tonkatsu","Soba"],"busy_month":"DECEMBER","closed":["TUESDAY","FRIDAY"],"price":3240,"created":"2018-06-27T04:31:05.000Z"}
+{"index":{"_index":"hotel","_id":9}}
+{"hotel_name":"hotel9","star":4,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Greece","city":"","has_parking":"no","menu":["Burger","Yakitori","Sakana"],"busy_month":"AUGUST","closed":["FRIDAY","TUESDAY"],"price":3628,"created":"2018-06-27T04:31:04.000Z"}
+{"index":{"_index":"hotel","_id":10}}
+{"hotel_name":"hotel10","star":3,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Mexico","city":"","has_parking":"yes","menu":["Yakiniku","Sakana","Tofu"],"busy_month":"APRIL","closed":["FRIDAY","TUESDAY"],"price":3160,"created":"2018-06-27T04:31:03.000Z"}
+{"index":{"_index":"hotel","_id":11}}
+{"hotel_name":"hotel11","star":6,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"HAWAII","city":"","has_parking":"no","menu":["Tonkatsu","Tonkatsu","Burger"],"busy_month":"JUNE","closed":["MONDAY","SUNDAY"],"price":1223,"created":"2018-06-27T04:31:02.000Z"}
+{"index":{"_index":"hotel","_id":12}}
+{"hotel_name":"hotel12","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Norway","city":"","has_parking":"yes","menu":["Tofu","Somen","Tofu"],"busy_month":"MARCH","closed":["TUESDAY","TUESDAY"],"price":3568,"created":"2018-06-27T04:31:01.000Z"}
+{"index":{"_index":"hotel","_id":13}}
+{"hotel_name":"hotel13","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Denmark","city":"","has_parking":"no","menu":["Ramen","Tonkatsu","Sushi"],"busy_month":"JANUARY","closed":["FRIDAY","TUESDAY"],"price":2551,"created":"2018-06-27T04:31:00.000Z"}
+{"index":{"_index":"hotel","_id":14}}
+{"hotel_name":"hotel14","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Greece","city":"","has_parking":"yes","menu":["Yakiniku","Yakiniku","Tofu"],"busy_month":"NOVEMBER","closed":["SUNDAY","SATURDAY"],"price":4022,"created":"2018-06-27T04:30:59.000Z"}
+{"index":{"_index":"hotel","_id":15}}
+{"hotel_name":"hotel15","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Poland","city":"","has_parking":"no","menu":["Tonkatsu","Somen","Tofu"],"busy_month":"AUGUST","closed":["SATURDAY","THURSDAY"],"price":3754,"created":"2018-06-27T04:30:58.000Z"}
+{"index":{"_index":"hotel","_id":16}}
+{"hotel_name":"hotel16","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"HAWAII","city":"","has_parking":"yes","menu":["Somen","Yakitori","Tofu"],"busy_month":"JANUARY","closed":["THURSDAY","MONDAY"],"price":1940,"created":"2018-06-27T04:30:57.000Z"}
+{"index":{"_index":"hotel","_id":17}}
+{"hotel_name":"hotel17","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Egypt","city":"","has_parking":"no","menu":["Inari","Tonkatsu","Pizza"],"busy_month":"APRIL","closed":["FRIDAY","FRIDAY"],"price":1867,"created":"2018-06-27T04:30:56.000Z"}
+{"index":{"_index":"hotel","_id":18}}
+{"hotel_name":"hotel18","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Mexico","city":"","has_parking":"yes","menu":["Inari","Tonkatsu","Somen"],"busy_month":"OCTOBER","closed":["THURSDAY","MONDAY"],"price":1579,"created":"2018-06-27T04:30:55.000Z"}
+{"index":{"_index":"hotel","_id":19}}
+{"hotel_name":"hotel19","star":6,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"FRANCE","city":"","has_parking":"no","menu":["Somen","Ramen","Sakana"],"busy_month":"DECEMBER","closed":["THURSDAY","SATURDAY"],"price":2911,"created":"2018-06-27T04:30:54.000Z"}
+{"index":{"_index":"hotel","_id":20}}
+{"hotel_name":"hotel20","star":26,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Australia","city":"","has_parking":"yes","menu":["Pizza","Pasta","Pasta"],"busy_month":"SEPTEMBER","closed":["SUNDAY","SUNDAY"],"price":1160,"created":"2018-06-27T04:30:53.000Z"}
+{"index":{"_index":"hotel","_id":21}}
+{"hotel_name":"hotel21","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Poland","city":"","has_parking":"no","menu":["Sushi","Udon","Yakitori"],"busy_month":"FEBRUARY","closed":["SATURDAY","THURSDAY"],"price":3596,"created":"2018-06-27T04:30:52.000Z"}
+{"index":{"_index":"hotel","_id":22}}
+{"hotel_name":"hotel22","star":3,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"HAWAII","city":"","has_parking":"yes","menu":["Tofu","Tofu","Yakiniku"],"busy_month":"NOVEMBER","closed":["TUESDAY","THURSDAY"],"price":2095,"created":"2018-06-27T04:30:51.000Z"}
+{"index":{"_index":"hotel","_id":23}}
+{"hotel_name":"hotel23","star":29,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CANADA","city":"","has_parking":"no","menu":["Sushi","Tofu","Tofu"],"busy_month":"NOVEMBER","closed":["TUESDAY","FRIDAY"],"price":4660,"created":"2018-06-27T04:30:50.000Z"}
+{"index":{"_index":"hotel","_id":24}}
+{"hotel_name":"hotel24","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"BRAZIL","city":"","has_parking":"yes","menu":["Tofu","Tonkatsu","Tonkatsu"],"busy_month":"FEBRUARY","closed":["WEDNESDAY","SATURDAY"],"price":3700,"created":"2018-06-27T04:30:49.000Z"}
+{"index":{"_index":"hotel","_id":25}}
+{"hotel_name":"hotel25","star":3,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"US","city":"","has_parking":"no","menu":["Inari","Tofu","Pasta"],"busy_month":"AUGUST","closed":["MONDAY","TUESDAY"],"price":2016,"created":"2018-06-27T04:30:48.000Z"}
+{"index":{"_index":"hotel","_id":26}}
+{"hotel_name":"hotel26","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"INDIA","city":"","has_parking":"yes","menu":["Inari","Burger","Inari"],"busy_month":"DECEMBER","closed":["TUESDAY","THURSDAY"],"price":3209,"created":"2018-06-27T04:30:47.000Z"}
+{"index":{"_index":"hotel","_id":27}}
+{"hotel_name":"hotel27","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CHINA","city":"","has_parking":"no","menu":["Inari","Udon","Pizza"],"busy_month":"AUGUST","closed":["MONDAY","SUNDAY"],"price":2680,"created":"2018-06-27T04:30:46.000Z"}
+{"index":{"_index":"hotel","_id":28}}
+{"hotel_name":"hotel28","star":11,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Denmark","city":"","has_parking":"yes","menu":["Yakiniku","Udon","Yakiniku"],"busy_month":"SEPTEMBER","closed":["FRIDAY","THURSDAY"],"price":4240,"created":"2018-06-27T04:30:45.000Z"}
+{"index":{"_index":"hotel","_id":29}}
+{"hotel_name":"hotel29","star":10,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"HAWAII","city":"","has_parking":"no","menu":["Sushi","Yakiniku","Pizza"],"busy_month":"JULY","closed":["SATURDAY","FRIDAY"],"price":4942,"created":"2018-06-27T04:30:44.000Z"}
+{"index":{"_index":"hotel","_id":30}}
+{"hotel_name":"hotel30","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"DE","city":"","has_parking":"yes","menu":["Pizza","Yakitori","Inari"],"busy_month":"APRIL","closed":["SATURDAY","SUNDAY"],"price":4050,"created":"2018-06-27T04:30:43.000Z"}
+{"index":{"_index":"hotel","_id":31}}
+{"hotel_name":"hotel31","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Norway","city":"","has_parking":"no","menu":["Ramen","Tonkatsu","Yakiniku"],"busy_month":"DECEMBER","closed":["WEDNESDAY","TUESDAY"],"price":2618,"created":"2018-06-27T04:30:42.000Z"}
+{"index":{"_index":"hotel","_id":32}}
+{"hotel_name":"hotel32","star":28,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"DE","city":"","has_parking":"yes","menu":["Yakitori","Soba","Somen"],"busy_month":"DECEMBER","closed":["TUESDAY","SUNDAY"],"price":2281,"created":"2018-06-27T04:30:41.000Z"}
+{"index":{"_index":"hotel","_id":33}}
+{"hotel_name":"hotel33","star":15,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Poland","city":"","has_parking":"no","menu":["Yakiniku","Sushi","Tofu"],"busy_month":"JULY","closed":["THURSDAY","FRIDAY"],"price":3968,"created":"2018-06-27T04:30:40.000Z"}
+{"index":{"_index":"hotel","_id":34}}
+{"hotel_name":"hotel34","star":6,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Egypt","city":"","has_parking":"yes","menu":["Udon","Udon","Yakitori"],"busy_month":"FEBRUARY","closed":["SUNDAY","FRIDAY"],"price":1816,"created":"2018-06-27T04:30:39.000Z"}
+{"index":{"_index":"hotel","_id":35}}
+{"hotel_name":"hotel35","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CHINA","city":"","has_parking":"no","menu":["Pasta","Tonkatsu","Sushi"],"busy_month":"JULY","closed":["WEDNESDAY","WEDNESDAY"],"price":4622,"created":"2018-06-27T04:30:38.000Z"}
+{"index":{"_index":"hotel","_id":36}}
+{"hotel_name":"hotel36","star":6,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Vietnam","city":"","has_parking":"yes","menu":["Tonkatsu","Yakitori","Inari"],"busy_month":"SEPTEMBER","closed":["FRIDAY","THURSDAY"],"price":4378,"created":"2018-06-27T04:30:37.000Z"}
+{"index":{"_index":"hotel","_id":37}}
+{"hotel_name":"hotel37","star":11,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Vietnam","city":"","has_parking":"no","menu":["Tofu","Pizza","Ramen"],"busy_month":"MARCH","closed":["WEDNESDAY","WEDNESDAY"],"price":4737,"created":"2018-06-27T04:30:36.000Z"}
+{"index":{"_index":"hotel","_id":38}}
+{"hotel_name":"hotel38","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Norway","city":"","has_parking":"yes","menu":["Tonkatsu","Pasta","Ramen"],"busy_month":"MARCH","closed":["THURSDAY","SUNDAY"],"price":2487,"created":"2018-06-27T04:30:35.000Z"}
+{"index":{"_index":"hotel","_id":39}}
+{"hotel_name":"hotel39","star":9,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Australia","city":"","has_parking":"no","menu":["Sushi","Pasta","Tonkatsu"],"busy_month":"JUNE","closed":["WEDNESDAY","MONDAY"],"price":3943,"created":"2018-06-27T04:30:34.000Z"}
+{"index":{"_index":"hotel","_id":40}}
+{"hotel_name":"hotel40","star":15,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Egypt","city":"","has_parking":"yes","menu":["Udon","Yakiniku","Yakitori"],"busy_month":"NOVEMBER","closed":["THURSDAY","MONDAY"],"price":3283,"created":"2018-06-27T04:30:33.000Z"}
+{"index":{"_index":"hotel","_id":41}}
+{"hotel_name":"hotel41","star":28,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Zambia","city":"","has_parking":"no","menu":["Soba","Ramen","Tofu"],"busy_month":"MAY","closed":["SATURDAY","TUESDAY"],"price":1920,"created":"2018-06-27T04:30:32.000Z"}
+{"index":{"_index":"hotel","_id":42}}
+{"hotel_name":"hotel42","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"UK","city":"","has_parking":"yes","menu":["Somen","Udon","Udon"],"busy_month":"DECEMBER","closed":["WEDNESDAY","TUESDAY"],"price":1697,"created":"2018-06-27T04:30:31.000Z"}
+{"index":{"_index":"hotel","_id":43}}
+{"hotel_name":"hotel43","star":6,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Mexico","city":"","has_parking":"no","menu":["Udon","Ramen","Salad"],"busy_month":"FEBRUARY","closed":["MONDAY","FRIDAY"],"price":4126,"created":"2018-06-27T04:30:30.000Z"}
+{"index":{"_index":"hotel","_id":44}}
+{"hotel_name":"hotel44","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Denmark","city":"","has_parking":"yes","menu":["Yakitori","Tofu","Tonkatsu"],"busy_month":"DECEMBER","closed":["SUNDAY","TUESDAY"],"price":1846,"created":"2018-06-27T04:30:29.000Z"}
+{"index":{"_index":"hotel","_id":45}}
+{"hotel_name":"hotel45","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"KOREA","city":"","has_parking":"no","menu":["Soba","Tonkatsu","Salad"],"busy_month":"SEPTEMBER","closed":["WEDNESDAY","SUNDAY"],"price":1995,"created":"2018-06-27T04:30:28.000Z"}
+{"index":{"_index":"hotel","_id":46}}
+{"hotel_name":"hotel46","star":12,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Australia","city":"","has_parking":"yes","menu":["Ramen","Sushi","Salad"],"busy_month":"JUNE","closed":["THURSDAY","SATURDAY"],"price":3223,"created":"2018-06-27T04:30:27.000Z"}
+{"index":{"_index":"hotel","_id":47}}
+{"hotel_name":"hotel47","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Denmark","city":"","has_parking":"no","menu":["Somen","Somen","Pasta"],"busy_month":"JANUARY","closed":["FRIDAY","TUESDAY"],"price":2185,"created":"2018-06-27T04:30:26.000Z"}
+{"index":{"_index":"hotel","_id":48}}
+{"hotel_name":"hotel48","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CHINA","city":"","has_parking":"yes","menu":["Yakiniku","Soba","Tonkatsu"],"busy_month":"JUNE","closed":["MONDAY","SUNDAY"],"price":1972,"created":"2018-06-27T04:30:25.000Z"}
+{"index":{"_index":"hotel","_id":49}}
+{"hotel_name":"hotel49","star":28,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CHINA","city":"","has_parking":"no","menu":["Salad","Pasta","Pizza"],"busy_month":"MAY","closed":["MONDAY","THURSDAY"],"price":4436,"created":"2018-06-27T04:30:24.000Z"}
+{"index":{"_index":"hotel","_id":50}}
+{"hotel_name":"hotel50","star":28,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CHILI","city":"","has_parking":"yes","menu":["Ramen","Pizza","Soba"],"busy_month":"MARCH","closed":["MONDAY","THURSDAY"],"price":2062,"created":"2018-06-27T04:30:23.000Z"}
+{"index":{"_index":"hotel","_id":51}}
+{"hotel_name":"hotel51","star":24,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"US","city":"","has_parking":"no","menu":["Burger","Pizza","Tofu"],"busy_month":"JUNE","closed":["THURSDAY","SATURDAY"],"price":4804,"created":"2018-06-27T04:30:22.000Z"}
+{"index":{"_index":"hotel","_id":52}}
+{"hotel_name":"hotel52","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Thailand","city":"","has_parking":"yes","menu":["Tonkatsu","Tonkatsu","Tonkatsu"],"busy_month":"NOVEMBER","closed":["TUESDAY","SUNDAY"],"price":2483,"created":"2018-06-27T04:30:21.000Z"}
+{"index":{"_index":"hotel","_id":53}}
+{"hotel_name":"hotel53","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Denmark","city":"","has_parking":"no","menu":["Sushi","Udon","Soba"],"busy_month":"JULY","closed":["TUESDAY","SATURDAY"],"price":4687,"created":"2018-06-27T04:30:20.000Z"}
+{"index":{"_index":"hotel","_id":54}}
+{"hotel_name":"hotel54","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"DE","city":"","has_parking":"yes","menu":["Inari","Pizza","Soba"],"busy_month":"OCTOBER","closed":["MONDAY","SUNDAY"],"price":2955,"created":"2018-06-27T04:30:19.000Z"}
+{"index":{"_index":"hotel","_id":55}}
+{"hotel_name":"hotel55","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Egypt","city":"","has_parking":"no","menu":["Ramen","Sushi","Salad"],"busy_month":"AUGUST","closed":["FRIDAY","WEDNESDAY"],"price":3467,"created":"2018-06-27T04:30:18.000Z"}
+{"index":{"_index":"hotel","_id":56}}
+{"hotel_name":"hotel56","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CHILI","city":"","has_parking":"yes","menu":["Yakitori","Sushi","Pasta"],"busy_month":"JANUARY","closed":["SUNDAY","THURSDAY"],"price":3275,"created":"2018-06-27T04:30:17.000Z"}
+{"index":{"_index":"hotel","_id":57}}
+{"hotel_name":"hotel57","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CHINA","city":"","has_parking":"no","menu":["Sakana","Salad","Sakana"],"busy_month":"MARCH","closed":["TUESDAY","FRIDAY"],"price":3729,"created":"2018-06-27T04:30:16.000Z"}
+{"index":{"_index":"hotel","_id":58}}
+{"hotel_name":"hotel58","star":23,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"INDIA","city":"","has_parking":"yes","menu":["Udon","Yakitori","Burger"],"busy_month":"MARCH","closed":["TUESDAY","THURSDAY"],"price":1126,"created":"2018-06-27T04:30:15.000Z"}
+{"index":{"_index":"hotel","_id":59}}
+{"hotel_name":"hotel59","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"HAWAII","city":"","has_parking":"no","menu":["Sushi","Ramen","Yakitori"],"busy_month":"FEBRUARY","closed":["SATURDAY","WEDNESDAY"],"price":1021,"created":"2018-06-27T04:30:14.000Z"}
+{"index":{"_index":"hotel","_id":60}}
+{"hotel_name":"hotel60","star":0,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"KOREA","city":"","has_parking":"yes","menu":["Tofu","Burger","Salad"],"busy_month":"APRIL","closed":["WEDNESDAY","WEDNESDAY"],"price":4419,"created":"2018-06-27T04:30:13.000Z"}
+{"index":{"_index":"hotel","_id":61}}
+{"hotel_name":"hotel61","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Greece","city":"","has_parking":"no","menu":["Inari","Tofu","Soba"],"busy_month":"SEPTEMBER","closed":["WEDNESDAY","WEDNESDAY"],"price":2098,"created":"2018-06-27T04:30:12.000Z"}
+{"index":{"_index":"hotel","_id":62}}
+{"hotel_name":"hotel62","star":6,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Poland","city":"","has_parking":"yes","menu":["Sakana","Ramen","Pasta"],"busy_month":"AUGUST","closed":["TUESDAY","SUNDAY"],"price":2954,"created":"2018-06-27T04:30:11.000Z"}
+{"index":{"_index":"hotel","_id":63}}
+{"hotel_name":"hotel63","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Norway","city":"","has_parking":"no","menu":["Somen","Burger","Somen"],"busy_month":"SEPTEMBER","closed":["THURSDAY","SUNDAY"],"price":2618,"created":"2018-06-27T04:30:10.000Z"}
+{"index":{"_index":"hotel","_id":64}}
+{"hotel_name":"hotel64","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Denmark","city":"","has_parking":"yes","menu":["Yakitori","Yakiniku","Pizza"],"busy_month":"SEPTEMBER","closed":["MONDAY","TUESDAY"],"price":4312,"created":"2018-06-27T04:30:09.000Z"}
+{"index":{"_index":"hotel","_id":65}}
+{"hotel_name":"hotel65","star":29,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"BRAZIL","city":"","has_parking":"no","menu":["Pizza","Somen","Burger"],"busy_month":"MARCH","closed":["TUESDAY","TUESDAY"],"price":4907,"created":"2018-06-27T04:30:08.000Z"}
+{"index":{"_index":"hotel","_id":66}}
+{"hotel_name":"hotel66","star":14,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CANADA","city":"","has_parking":"yes","menu":["Tofu","Soba","Yakiniku"],"busy_month":"AUGUST","closed":["TUESDAY","FRIDAY"],"price":4947,"created":"2018-06-27T04:30:07.000Z"}
+{"index":{"_index":"hotel","_id":67}}
+{"hotel_name":"hotel67","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Poland","city":"","has_parking":"no","menu":["Tofu","Ramen","Pasta"],"busy_month":"MARCH","closed":["MONDAY","MONDAY"],"price":2118,"created":"2018-06-27T04:30:06.000Z"}
+{"index":{"_index":"hotel","_id":68}}
+{"hotel_name":"hotel68","star":14,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Norway","city":"","has_parking":"yes","menu":["Inari","Yakiniku","Tofu"],"busy_month":"JULY","closed":["MONDAY","TUESDAY"],"price":2135,"created":"2018-06-27T04:30:05.000Z"}
+{"index":{"_index":"hotel","_id":69}}
+{"hotel_name":"hotel69","star":10,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Egypt","city":"","has_parking":"no","menu":["Udon","Tofu","Yakitori"],"busy_month":"JULY","closed":["TUESDAY","SATURDAY"],"price":3544,"created":"2018-06-27T04:30:04.000Z"}
+{"index":{"_index":"hotel","_id":70}}
+{"hotel_name":"hotel70","star":28,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CHINA","city":"","has_parking":"yes","menu":["Yakitori","Pizza","Inari"],"busy_month":"MARCH","closed":["WEDNESDAY","MONDAY"],"price":4814,"created":"2018-06-27T04:30:03.000Z"}
+{"index":{"_index":"hotel","_id":71}}
+{"hotel_name":"hotel71","star":0,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"INDIA","city":"","has_parking":"no","menu":["Sakana","Yakitori","Ramen"],"busy_month":"APRIL","closed":["FRIDAY","THURSDAY"],"price":2083,"created":"2018-06-27T04:30:02.000Z"}
+{"index":{"_index":"hotel","_id":72}}
+{"hotel_name":"hotel72","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Norway","city":"","has_parking":"yes","menu":["Pizza","Yakiniku","Ramen"],"busy_month":"APRIL","closed":["SUNDAY","FRIDAY"],"price":2846,"created":"2018-06-27T04:30:01.000Z"}
+{"index":{"_index":"hotel","_id":73}}
+{"hotel_name":"hotel73","star":4,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Greece","city":"","has_parking":"no","menu":["Ramen","Burger","Sushi"],"busy_month":"MARCH","closed":["FRIDAY","FRIDAY"],"price":1943,"created":"2018-06-27T04:30:00.000Z"}
+{"index":{"_index":"hotel","_id":74}}
+{"hotel_name":"hotel74","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Vietnam","city":"","has_parking":"yes","menu":["Sakana","Pasta","Pizza"],"busy_month":"MARCH","closed":["TUESDAY","SUNDAY"],"price":1980,"created":"2018-06-27T04:29:59.000Z"}
+{"index":{"_index":"hotel","_id":75}}
+{"hotel_name":"hotel75","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"BRAZIL","city":"","has_parking":"no","menu":["Burger","Pizza","Soba"],"busy_month":"AUGUST","closed":["SUNDAY","TUESDAY"],"price":3546,"created":"2018-06-27T04:29:58.000Z"}
+{"index":{"_index":"hotel","_id":76}}
+{"hotel_name":"hotel76","star":24,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Greece","city":"","has_parking":"yes","menu":["Soba","Sushi","Pasta"],"busy_month":"SEPTEMBER","closed":["THURSDAY","MONDAY"],"price":1278,"created":"2018-06-27T04:29:57.000Z"}
+{"index":{"_index":"hotel","_id":77}}
+{"hotel_name":"hotel77","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"HAWAII","city":"","has_parking":"no","menu":["Sakana","Sakana","Soba"],"busy_month":"NOVEMBER","closed":["SATURDAY","FRIDAY"],"price":4231,"created":"2018-06-27T04:29:56.000Z"}
+{"index":{"_index":"hotel","_id":78}}
+{"hotel_name":"hotel78","star":16,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CANADA","city":"","has_parking":"yes","menu":["Sakana","Somen","Sushi"],"busy_month":"OCTOBER","closed":["WEDNESDAY","WEDNESDAY"],"price":2574,"created":"2018-06-27T04:29:55.000Z"}
+{"index":{"_index":"hotel","_id":79}}
+{"hotel_name":"hotel79","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Denmark","city":"","has_parking":"no","menu":["Soba","Burger","Pasta"],"busy_month":"MARCH","closed":["THURSDAY","SATURDAY"],"price":2674,"created":"2018-06-27T04:29:54.000Z"}
+{"index":{"_index":"hotel","_id":80}}
+{"hotel_name":"hotel80","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Zambia","city":"","has_parking":"yes","menu":["Tonkatsu","Yakitori","Soba"],"busy_month":"JULY","closed":["FRIDAY","THURSDAY"],"price":3579,"created":"2018-06-27T04:29:53.000Z"}
+{"index":{"_index":"hotel","_id":81}}
+{"hotel_name":"hotel81","star":29,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"HAWAII","city":"","has_parking":"no","menu":["Yakitori","Pasta","Yakiniku"],"busy_month":"DECEMBER","closed":["WEDNESDAY","SUNDAY"],"price":1994,"created":"2018-06-27T04:29:52.000Z"}
+{"index":{"_index":"hotel","_id":82}}
+{"hotel_name":"hotel82","star":15,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"KOREA","city":"","has_parking":"yes","menu":["Burger","Sushi","Ramen"],"busy_month":"DECEMBER","closed":["THURSDAY","WEDNESDAY"],"price":3530,"created":"2018-06-27T04:29:51.000Z"}
+{"index":{"_index":"hotel","_id":83}}
+{"hotel_name":"hotel83","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CANADA","city":"","has_parking":"no","menu":["Tofu","Yakitori","Burger"],"busy_month":"SEPTEMBER","closed":["WEDNESDAY","MONDAY"],"price":4951,"created":"2018-06-27T04:29:50.000Z"}
+{"index":{"_index":"hotel","_id":84}}
+{"hotel_name":"hotel84","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"DE","city":"","has_parking":"yes","menu":["Burger","Salad","Pasta"],"busy_month":"MARCH","closed":["SATURDAY","SATURDAY"],"price":2121,"created":"2018-06-27T04:29:49.000Z"}
+{"index":{"_index":"hotel","_id":85}}
+{"hotel_name":"hotel85","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"KOREA","city":"","has_parking":"no","menu":["Pasta","Tonkatsu","Ramen"],"busy_month":"AUGUST","closed":["WEDNESDAY","THURSDAY"],"price":4066,"created":"2018-06-27T04:29:48.000Z"}
+{"index":{"_index":"hotel","_id":86}}
+{"hotel_name":"hotel86","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"US","city":"","has_parking":"yes","menu":["Somen","Pizza","Ramen"],"busy_month":"DECEMBER","closed":["WEDNESDAY","MONDAY"],"price":2596,"created":"2018-06-27T04:29:47.000Z"}
+{"index":{"_index":"hotel","_id":87}}
+{"hotel_name":"hotel87","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"JAPAN","city":"Kyoto","has_parking":"no","menu":["Yakitori","Pasta","Sushi"],"busy_month":"JULY","closed":["SATURDAY","MONDAY"],"price":2804,"created":"2018-06-27T04:29:46.000Z"}
+{"index":{"_index":"hotel","_id":88}}
+{"hotel_name":"hotel88","star":20,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Zambia","city":"","has_parking":"yes","menu":["Tonkatsu","Soba","Yakitori"],"busy_month":"MAY","closed":["THURSDAY","THURSDAY"],"price":4721,"created":"2018-06-27T04:29:45.000Z"}
+{"index":{"_index":"hotel","_id":89}}
+{"hotel_name":"hotel89","star":16,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Zambia","city":"","has_parking":"no","menu":["Ramen","Somen","Pasta"],"busy_month":"JANUARY","closed":["TUESDAY","SATURDAY"],"price":4535,"created":"2018-06-27T04:29:44.000Z"}
+{"index":{"_index":"hotel","_id":90}}
+{"hotel_name":"hotel90","star":11,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Australia","city":"","has_parking":"yes","menu":["Pizza","Somen","Soba"],"busy_month":"MARCH","closed":["THURSDAY","TUESDAY"],"price":1477,"created":"2018-06-27T04:29:43.000Z"}
+{"index":{"_index":"hotel","_id":91}}
+{"hotel_name":"hotel91","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Thailand","city":"","has_parking":"no","menu":["Yakiniku","Udon","Tonkatsu"],"busy_month":"APRIL","closed":["WEDNESDAY","WEDNESDAY"],"price":2008,"created":"2018-06-27T04:29:42.000Z"}
+{"index":{"_index":"hotel","_id":92}}
+{"hotel_name":"hotel92","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Zambia","city":"","has_parking":"yes","menu":["Sushi","Somen","Pasta"],"busy_month":"OCTOBER","closed":["MONDAY","SATURDAY"],"price":2313,"created":"2018-06-27T04:29:41.000Z"}
+{"index":{"_index":"hotel","_id":93}}
+{"hotel_name":"hotel93","star":10,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"KOREA","city":"","has_parking":"no","menu":["Salad","Udon","Pasta"],"busy_month":"MARCH","closed":["MONDAY","SATURDAY"],"price":2030,"created":"2018-06-27T04:29:40.000Z"}
+{"index":{"_index":"hotel","_id":94}}
+{"hotel_name":"hotel94","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"UK","city":"","has_parking":"yes","menu":["Yakiniku","Yakiniku","Soba"],"busy_month":"MAY","closed":["TUESDAY","SUNDAY"],"price":2760,"created":"2018-06-27T04:29:39.000Z"}
+{"index":{"_index":"hotel","_id":95}}
+{"hotel_name":"hotel95","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"CANADA","city":"","has_parking":"no","menu":["Soba","Inari","Salad"],"busy_month":"JANUARY","closed":["SATURDAY","MONDAY"],"price":1301,"created":"2018-06-27T04:29:38.000Z"}
+{"index":{"_index":"hotel","_id":96}}
+{"hotel_name":"hotel96","star":11,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"Egypt","city":"","has_parking":"yes","menu":["Sakana","Sushi","Tofu"],"busy_month":"NOVEMBER","closed":["THURSDAY","SATURDAY"],"price":3039,"created":"2018-06-27T04:29:37.000Z"}
+{"index":{"_index":"hotel","_id":97}}
+{"hotel_name":"hotel97","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"US","city":"","has_parking":"no","menu":["Tofu","Tofu","Soba"],"busy_month":"JULY","closed":["SUNDAY","THURSDAY"],"price":2995,"created":"2018-06-27T04:29:36.000Z"}
+{"index":{"_index":"hotel","_id":98}}
+{"hotel_name":"hotel98","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"FRANCE","city":"","has_parking":"yes","menu":["Sakana","Pizza","Inari"],"busy_month":"APRIL","closed":["WEDNESDAY","MONDAY"],"price":2679,"created":"2018-06-27T04:29:35.000Z"}
+{"index":{"_index":"hotel","_id":99}}
+{"hotel_name":"hotel99","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G1","country":"KOREA","city":"","has_parking":"no","menu":["Soba","Tonkatsu","Inari"],"busy_month":"JUNE","closed":["FRIDAY","FRIDAY"],"price":3163,"created":"2018-06-27T04:29:34.000Z"}
+{"index":{"_index":"hotel","_id":100}}
+{"hotel_name":"hotel100","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"","country":"FRANCE","city":"","has_parking":"yes","menu":["Ramen","Pasta","Yakiniku"],"busy_month":"FEBRUARY","closed":["SUNDAY","SUNDAY"],"price":4399,"created":"2018-06-27T04:29:33.000Z"}
+{"index":{"_index":"hotel","_id":101}}
+{"hotel_name":"hotel101","star":29,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"US","city":"","has_parking":"no","menu":["Tofu","Udon","Inari"],"busy_month":"SEPTEMBER","closed":["WEDNESDAY","FRIDAY"],"price":1744,"created":"2018-06-27T04:29:32.000Z"}
+{"index":{"_index":"hotel","_id":102}}
+{"hotel_name":"hotel102","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Australia","city":"","has_parking":"yes","menu":["Tofu","Somen","Tofu"],"busy_month":"MARCH","closed":["SUNDAY","SUNDAY"],"price":3697,"created":"2018-06-27T04:29:31.000Z"}
+{"index":{"_index":"hotel","_id":103}}
+{"hotel_name":"hotel103","star":14,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Poland","city":"","has_parking":"no","menu":["Inari","Soba","Pasta"],"busy_month":"SEPTEMBER","closed":["FRIDAY","WEDNESDAY"],"price":3585,"created":"2018-06-27T04:29:30.000Z"}
+{"index":{"_index":"hotel","_id":104}}
+{"hotel_name":"hotel104","star":20,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"JAPAN","city":"","has_parking":"yes","menu":["Yakitori","Tonkatsu","Yakitori"],"busy_month":"APRIL","closed":["MONDAY","WEDNESDAY"],"price":4551,"created":"2018-06-27T04:29:29.000Z"}
+{"index":{"_index":"hotel","_id":105}}
+{"hotel_name":"hotel105","star":23,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CANADA","city":"","has_parking":"no","menu":["Pizza","Tofu","Sushi"],"busy_month":"NOVEMBER","closed":["MONDAY","SATURDAY"],"price":1651,"created":"2018-06-27T04:29:28.000Z"}
+{"index":{"_index":"hotel","_id":106}}
+{"hotel_name":"hotel106","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"yes","menu":["Ramen","Inari","Ramen"],"busy_month":"JANUARY","closed":["FRIDAY","SUNDAY"],"price":2087,"created":"2018-06-27T04:29:27.000Z"}
+{"index":{"_index":"hotel","_id":107}}
+{"hotel_name":"hotel107","star":14,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"no","menu":["Yakitori","Somen","Tofu"],"busy_month":"JUNE","closed":["MONDAY","WEDNESDAY"],"price":3676,"created":"2018-06-27T04:29:26.000Z"}
+{"index":{"_index":"hotel","_id":108}}
+{"hotel_name":"hotel108","star":4,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"UK","city":"","has_parking":"yes","menu":["Tonkatsu","Yakitori","Tofu"],"busy_month":"APRIL","closed":["THURSDAY","SATURDAY"],"price":1290,"created":"2018-06-27T04:29:25.000Z"}
+{"index":{"_index":"hotel","_id":109}}
+{"hotel_name":"hotel109","star":28,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Egypt","city":"","has_parking":"no","menu":["Somen","Burger","Tofu"],"busy_month":"JUNE","closed":["FRIDAY","WEDNESDAY"],"price":2763,"created":"2018-06-27T04:29:24.000Z"}
+{"index":{"_index":"hotel","_id":110}}
+{"hotel_name":"hotel110","star":3,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Egypt","city":"","has_parking":"yes","menu":["Ramen","Pasta","Pasta"],"busy_month":"JULY","closed":["THURSDAY","THURSDAY"],"price":3930,"created":"2018-06-27T04:29:23.000Z"}
+{"index":{"_index":"hotel","_id":111}}
+{"hotel_name":"hotel111","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHINA","city":"","has_parking":"no","menu":["Tonkatsu","Sakana","Pasta"],"busy_month":"JUNE","closed":["WEDNESDAY","WEDNESDAY"],"price":1766,"created":"2018-06-27T04:29:22.000Z"}
+{"index":{"_index":"hotel","_id":112}}
+{"hotel_name":"hotel112","star":16,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHINA","city":"","has_parking":"yes","menu":["Udon","Yakitori","Tofu"],"busy_month":"AUGUST","closed":["SATURDAY","FRIDAY"],"price":1513,"created":"2018-06-27T04:29:21.000Z"}
+{"index":{"_index":"hotel","_id":113}}
+{"hotel_name":"hotel113","star":22,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"no","menu":["Yakiniku","Somen","Yakitori"],"busy_month":"OCTOBER","closed":["THURSDAY","SATURDAY"],"price":4107,"created":"2018-06-27T04:29:20.000Z"}
+{"index":{"_index":"hotel","_id":114}}
+{"hotel_name":"hotel114","star":26,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Egypt","city":"","has_parking":"yes","menu":["Tofu","Somen","Soba"],"busy_month":"DECEMBER","closed":["FRIDAY","MONDAY"],"price":3455,"created":"2018-06-27T04:29:19.000Z"}
+{"index":{"_index":"hotel","_id":115}}
+{"hotel_name":"hotel115","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CANADA","city":"","has_parking":"no","menu":["Pizza","Somen","Sakana"],"busy_month":"FEBRUARY","closed":["SATURDAY","WEDNESDAY"],"price":1464,"created":"2018-06-27T04:29:18.000Z"}
+{"index":{"_index":"hotel","_id":116}}
+{"hotel_name":"hotel116","star":14,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Egypt","city":"","has_parking":"yes","menu":["Tonkatsu","Yakiniku","Inari"],"busy_month":"OCTOBER","closed":["THURSDAY","THURSDAY"],"price":2283,"created":"2018-06-27T04:29:17.000Z"}
+{"index":{"_index":"hotel","_id":117}}
+{"hotel_name":"hotel117","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Greece","city":"","has_parking":"no","menu":["Burger","Udon","Pizza"],"busy_month":"APRIL","closed":["TUESDAY","WEDNESDAY"],"price":2022,"created":"2018-06-27T04:29:16.000Z"}
+{"index":{"_index":"hotel","_id":118}}
+{"hotel_name":"hotel118","star":15,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Egypt","city":"","has_parking":"yes","menu":["Soba","Yakitori","Pizza"],"busy_month":"AUGUST","closed":["THURSDAY","MONDAY"],"price":3450,"created":"2018-06-27T04:29:15.000Z"}
+{"index":{"_index":"hotel","_id":119}}
+{"hotel_name":"hotel119","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHINA","city":"","has_parking":"no","menu":["Ramen","Somen","Pasta"],"busy_month":"APRIL","closed":["SUNDAY","WEDNESDAY"],"price":1903,"created":"2018-06-27T04:29:14.000Z"}
+{"index":{"_index":"hotel","_id":120}}
+{"hotel_name":"hotel120","star":3,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Australia","city":"","has_parking":"yes","menu":["Pasta","Salad","Burger"],"busy_month":"FEBRUARY","closed":["THURSDAY","TUESDAY"],"price":3270,"created":"2018-06-27T04:29:13.000Z"}
+{"index":{"_index":"hotel","_id":121}}
+{"hotel_name":"hotel121","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Norway","city":"","has_parking":"no","menu":["Pizza","Salad","Pasta"],"busy_month":"APRIL","closed":["FRIDAY","SUNDAY"],"price":2192,"created":"2018-06-27T04:29:12.000Z"}
+{"index":{"_index":"hotel","_id":122}}
+{"hotel_name":"hotel122","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"yes","menu":["Udon","Inari","Tonkatsu"],"busy_month":"JULY","closed":["FRIDAY","MONDAY"],"price":3365,"created":"2018-06-27T04:29:11.000Z"}
+{"index":{"_index":"hotel","_id":123}}
+{"hotel_name":"hotel123","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHINA","city":"","has_parking":"no","menu":["Sushi","Yakiniku","Tonkatsu"],"busy_month":"APRIL","closed":["THURSDAY","TUESDAY"],"price":2506,"created":"2018-06-27T04:29:10.000Z"}
+{"index":{"_index":"hotel","_id":124}}
+{"hotel_name":"hotel124","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"yes","menu":["Pasta","Burger","Somen"],"busy_month":"NOVEMBER","closed":["WEDNESDAY","SUNDAY"],"price":3683,"created":"2018-06-27T04:29:09.000Z"}
+{"index":{"_index":"hotel","_id":125}}
+{"hotel_name":"hotel125","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Greece","city":"","has_parking":"no","menu":["Sushi","Inari","Ramen"],"busy_month":"MAY","closed":["FRIDAY","FRIDAY"],"price":2115,"created":"2018-06-27T04:29:08.000Z"}
+{"index":{"_index":"hotel","_id":126}}
+{"hotel_name":"hotel126","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Mexico","city":"","has_parking":"yes","menu":["Inari","Pasta","Udon"],"busy_month":"AUGUST","closed":["MONDAY","THURSDAY"],"price":4970,"created":"2018-06-27T04:29:07.000Z"}
+{"index":{"_index":"hotel","_id":127}}
+{"hotel_name":"hotel127","star":0,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"BRAZIL","city":"","has_parking":"no","menu":["Sushi","Yakiniku","Somen"],"busy_month":"APRIL","closed":["FRIDAY","TUESDAY"],"price":1545,"created":"2018-06-27T04:29:06.000Z"}
+{"index":{"_index":"hotel","_id":128}}
+{"hotel_name":"hotel128","star":26,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"UK","city":"","has_parking":"yes","menu":["Pasta","Salad","Pizza"],"busy_month":"NOVEMBER","closed":["SATURDAY","THURSDAY"],"price":4733,"created":"2018-06-27T04:29:05.000Z"}
+{"index":{"_index":"hotel","_id":129}}
+{"hotel_name":"hotel129","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Greece","city":"","has_parking":"no","menu":["Somen","Yakitori","Somen"],"busy_month":"MARCH","closed":["TUESDAY","SATURDAY"],"price":4119,"created":"2018-06-27T04:29:04.000Z"}
+{"index":{"_index":"hotel","_id":130}}
+{"hotel_name":"hotel130","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CANADA","city":"","has_parking":"yes","menu":["Tonkatsu","Soba","Soba"],"busy_month":"FEBRUARY","closed":["MONDAY","SATURDAY"],"price":1284,"created":"2018-06-27T04:29:03.000Z"}
+{"index":{"_index":"hotel","_id":131}}
+{"hotel_name":"hotel131","star":0,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"no","menu":["Tonkatsu","Somen","Udon"],"busy_month":"OCTOBER","closed":["TUESDAY","SATURDAY"],"price":4592,"created":"2018-06-27T04:29:02.000Z"}
+{"index":{"_index":"hotel","_id":132}}
+{"hotel_name":"hotel132","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"yes","menu":["Udon","Yakiniku","Yakiniku"],"busy_month":"MAY","closed":["THURSDAY","TUESDAY"],"price":4802,"created":"2018-06-27T04:29:01.000Z"}
+{"index":{"_index":"hotel","_id":133}}
+{"hotel_name":"hotel133","star":3,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Australia","city":"","has_parking":"no","menu":["Yakitori","Yakitori","Burger"],"busy_month":"DECEMBER","closed":["TUESDAY","WEDNESDAY"],"price":3623,"created":"2018-06-27T04:29:00.000Z"}
+{"index":{"_index":"hotel","_id":134}}
+{"hotel_name":"hotel134","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"yes","menu":["Somen","Yakitori","Pasta"],"busy_month":"AUGUST","closed":["TUESDAY","WEDNESDAY"],"price":3426,"created":"2018-06-27T04:28:59.000Z"}
+{"index":{"_index":"hotel","_id":135}}
+{"hotel_name":"hotel135","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"BRAZIL","city":"","has_parking":"no","menu":["Somen","Udon","Ramen"],"busy_month":"MARCH","closed":["TUESDAY","TUESDAY"],"price":4001,"created":"2018-06-27T04:28:58.000Z"}
+{"index":{"_index":"hotel","_id":136}}
+{"hotel_name":"hotel136","star":6,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Greece","city":"","has_parking":"yes","menu":["Pizza","Salad","Pizza"],"busy_month":"OCTOBER","closed":["SUNDAY","SATURDAY"],"price":4816,"created":"2018-06-27T04:28:57.000Z"}
+{"index":{"_index":"hotel","_id":137}}
+{"hotel_name":"hotel137","star":26,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Norway","city":"","has_parking":"no","menu":["Inari","Pizza","Pizza"],"busy_month":"AUGUST","closed":["TUESDAY","TUESDAY"],"price":3027,"created":"2018-06-27T04:28:56.000Z"}
+{"index":{"_index":"hotel","_id":138}}
+{"hotel_name":"hotel138","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"yes","menu":["Yakitori","Burger","Udon"],"busy_month":"MAY","closed":["WEDNESDAY","MONDAY"],"price":3556,"created":"2018-06-27T04:28:55.000Z"}
+{"index":{"_index":"hotel","_id":139}}
+{"hotel_name":"hotel139","star":12,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"KOREA","city":"","has_parking":"no","menu":["Somen","Inari","Sakana"],"busy_month":"SEPTEMBER","closed":["FRIDAY","SATURDAY"],"price":3941,"created":"2018-06-27T04:28:54.000Z"}
+{"index":{"_index":"hotel","_id":140}}
+{"hotel_name":"hotel140","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"JAPAN","city":"","has_parking":"yes","menu":["Somen","Soba","Pasta"],"busy_month":"APRIL","closed":["TUESDAY","SATURDAY"],"price":4760,"created":"2018-06-27T04:28:53.000Z"}
+{"index":{"_index":"hotel","_id":141}}
+{"hotel_name":"hotel141","star":10,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"JAPAN","city":"","has_parking":"no","menu":["Pizza","Inari","Tonkatsu"],"busy_month":"APRIL","closed":["FRIDAY","TUESDAY"],"price":1048,"created":"2018-06-27T04:28:52.000Z"}
+{"index":{"_index":"hotel","_id":142}}
+{"hotel_name":"hotel142","star":10,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"BRAZIL","city":"","has_parking":"yes","menu":["Pizza","Tonkatsu","Ramen"],"busy_month":"OCTOBER","closed":["THURSDAY","WEDNESDAY"],"price":4923,"created":"2018-06-27T04:28:51.000Z"}
+{"index":{"_index":"hotel","_id":143}}
+{"hotel_name":"hotel143","star":16,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"no","menu":["Udon","Inari","Ramen"],"busy_month":"JULY","closed":["TUESDAY","TUESDAY"],"price":1571,"created":"2018-06-27T04:28:50.000Z"}
+{"index":{"_index":"hotel","_id":144}}
+{"hotel_name":"hotel144","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"yes","menu":["Ramen","Inari","Tofu"],"busy_month":"AUGUST","closed":["TUESDAY","SATURDAY"],"price":3359,"created":"2018-06-27T04:28:49.000Z"}
+{"index":{"_index":"hotel","_id":145}}
+{"hotel_name":"hotel145","star":22,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"no","menu":["Somen","Sushi","Sakana"],"busy_month":"NOVEMBER","closed":["FRIDAY","FRIDAY"],"price":1657,"created":"2018-06-27T04:28:48.000Z"}
+{"index":{"_index":"hotel","_id":146}}
+{"hotel_name":"hotel146","star":23,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Mexico","city":"","has_parking":"yes","menu":["Tofu","Sushi","Inari"],"busy_month":"SEPTEMBER","closed":["SUNDAY","TUESDAY"],"price":4556,"created":"2018-06-27T04:28:47.000Z"}
+{"index":{"_index":"hotel","_id":147}}
+{"hotel_name":"hotel147","star":9,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"HAWAII","city":"","has_parking":"no","menu":["Tofu","Yakitori","Pizza"],"busy_month":"MAY","closed":["SATURDAY","THURSDAY"],"price":2247,"created":"2018-06-27T04:28:46.000Z"}
+{"index":{"_index":"hotel","_id":148}}
+{"hotel_name":"hotel148","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Norway","city":"","has_parking":"yes","menu":["Pasta","Tofu","Udon"],"busy_month":"FEBRUARY","closed":["WEDNESDAY","WEDNESDAY"],"price":2199,"created":"2018-06-27T04:28:45.000Z"}
+{"index":{"_index":"hotel","_id":149}}
+{"hotel_name":"hotel149","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"INDIA","city":"","has_parking":"no","menu":["Salad","Yakiniku","Yakitori"],"busy_month":"JUNE","closed":["SUNDAY","WEDNESDAY"],"price":3833,"created":"2018-06-27T04:28:44.000Z"}
+{"index":{"_index":"hotel","_id":150}}
+{"hotel_name":"hotel150","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"yes","menu":["Udon","Burger","Salad"],"busy_month":"FEBRUARY","closed":["THURSDAY","SUNDAY"],"price":1742,"created":"2018-06-27T04:28:43.000Z"}
+{"index":{"_index":"hotel","_id":151}}
+{"hotel_name":"hotel151","star":4,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"no","menu":["Yakiniku","Yakitori","Pasta"],"busy_month":"MARCH","closed":["TUESDAY","SUNDAY"],"price":3228,"created":"2018-06-27T04:28:42.000Z"}
+{"index":{"_index":"hotel","_id":152}}
+{"hotel_name":"hotel152","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"yes","menu":["Tofu","Somen","Tofu"],"busy_month":"NOVEMBER","closed":["SATURDAY","SUNDAY"],"price":4234,"created":"2018-06-27T04:28:41.000Z"}
+{"index":{"_index":"hotel","_id":153}}
+{"hotel_name":"hotel153","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"no","menu":["Tonkatsu","Burger","Soba"],"busy_month":"MAY","closed":["SATURDAY","FRIDAY"],"price":2782,"created":"2018-06-27T04:28:40.000Z"}
+{"index":{"_index":"hotel","_id":154}}
+{"hotel_name":"hotel154","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Zambia","city":"","has_parking":"yes","menu":["Soba","Pasta","Yakitori"],"busy_month":"MAY","closed":["SATURDAY","SATURDAY"],"price":4999,"created":"2018-06-27T04:28:39.000Z"}
+{"index":{"_index":"hotel","_id":155}}
+{"hotel_name":"hotel155","star":9,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"HAWAII","city":"","has_parking":"no","menu":["Sakana","Soba","Pasta"],"busy_month":"NOVEMBER","closed":["WEDNESDAY","SATURDAY"],"price":4722,"created":"2018-06-27T04:28:38.000Z"}
+{"index":{"_index":"hotel","_id":156}}
+{"hotel_name":"hotel156","star":23,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"yes","menu":["Pasta","Inari","Tonkatsu"],"busy_month":"MARCH","closed":["SATURDAY","MONDAY"],"price":3855,"created":"2018-06-27T04:28:37.000Z"}
+{"index":{"_index":"hotel","_id":157}}
+{"hotel_name":"hotel157","star":12,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"JAPAN","city":"","has_parking":"no","menu":["Tofu","Tonkatsu","Inari"],"busy_month":"NOVEMBER","closed":["MONDAY","SATURDAY"],"price":4367,"created":"2018-06-27T04:28:36.000Z"}
+{"index":{"_index":"hotel","_id":158}}
+{"hotel_name":"hotel158","star":28,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Zambia","city":"","has_parking":"yes","menu":["Udon","Udon","Sushi"],"busy_month":"NOVEMBER","closed":["THURSDAY","SATURDAY"],"price":2546,"created":"2018-06-27T04:28:35.000Z"}
+{"index":{"_index":"hotel","_id":159}}
+{"hotel_name":"hotel159","star":11,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"no","menu":["Pizza","Burger","Sakana"],"busy_month":"MARCH","closed":["FRIDAY","SATURDAY"],"price":1816,"created":"2018-06-27T04:28:34.000Z"}
+{"index":{"_index":"hotel","_id":160}}
+{"hotel_name":"hotel160","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"HAWAII","city":"","has_parking":"yes","menu":["Burger","Soba","Pasta"],"busy_month":"MAY","closed":["THURSDAY","WEDNESDAY"],"price":2386,"created":"2018-06-27T04:28:33.000Z"}
+{"index":{"_index":"hotel","_id":161}}
+{"hotel_name":"hotel161","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"no","menu":["Soba","Soba","Tonkatsu"],"busy_month":"JANUARY","closed":["FRIDAY","WEDNESDAY"],"price":4630,"created":"2018-06-27T04:28:32.000Z"}
+{"index":{"_index":"hotel","_id":162}}
+{"hotel_name":"hotel162","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Greece","city":"","has_parking":"yes","menu":["Soba","Sakana","Pizza"],"busy_month":"JUNE","closed":["SUNDAY","SUNDAY"],"price":3003,"created":"2018-06-27T04:28:31.000Z"}
+{"index":{"_index":"hotel","_id":163}}
+{"hotel_name":"hotel163","star":0,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"no","menu":["Tofu","Udon","Pizza"],"busy_month":"JANUARY","closed":["FRIDAY","THURSDAY"],"price":2178,"created":"2018-06-27T04:28:30.000Z"}
+{"index":{"_index":"hotel","_id":164}}
+{"hotel_name":"hotel164","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"yes","menu":["Tonkatsu","Inari","Pasta"],"busy_month":"APRIL","closed":["MONDAY","WEDNESDAY"],"price":4304,"created":"2018-06-27T04:28:29.000Z"}
+{"index":{"_index":"hotel","_id":165}}
+{"hotel_name":"hotel165","star":11,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"BRAZIL","city":"","has_parking":"no","menu":["Udon","Pizza","Pizza"],"busy_month":"DECEMBER","closed":["MONDAY","SUNDAY"],"price":2367,"created":"2018-06-27T04:28:28.000Z"}
+{"index":{"_index":"hotel","_id":166}}
+{"hotel_name":"hotel166","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Greece","city":"","has_parking":"yes","menu":["Udon","Tonkatsu","Pizza"],"busy_month":"JANUARY","closed":["MONDAY","SUNDAY"],"price":3072,"created":"2018-06-27T04:28:27.000Z"}
+{"index":{"_index":"hotel","_id":167}}
+{"hotel_name":"hotel167","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"no","menu":["Yakitori","Pasta","Yakiniku"],"busy_month":"JANUARY","closed":["SUNDAY","WEDNESDAY"],"price":1635,"created":"2018-06-27T04:28:26.000Z"}
+{"index":{"_index":"hotel","_id":168}}
+{"hotel_name":"hotel168","star":15,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CANADA","city":"","has_parking":"yes","menu":["Sushi","Udon","Somen"],"busy_month":"NOVEMBER","closed":["WEDNESDAY","SUNDAY"],"price":1272,"created":"2018-06-27T04:28:25.000Z"}
+{"index":{"_index":"hotel","_id":169}}
+{"hotel_name":"hotel169","star":29,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Australia","city":"","has_parking":"no","menu":["Sushi","Pizza","Yakitori"],"busy_month":"JULY","closed":["MONDAY","TUESDAY"],"price":1686,"created":"2018-06-27T04:28:24.000Z"}
+{"index":{"_index":"hotel","_id":170}}
+{"hotel_name":"hotel170","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"yes","menu":["Udon","Inari","Inari"],"busy_month":"MAY","closed":["THURSDAY","MONDAY"],"price":1874,"created":"2018-06-27T04:28:23.000Z"}
+{"index":{"_index":"hotel","_id":171}}
+{"hotel_name":"hotel171","star":4,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"no","menu":["Yakitori","Udon","Ramen"],"busy_month":"SEPTEMBER","closed":["FRIDAY","SUNDAY"],"price":1300,"created":"2018-06-27T04:28:22.000Z"}
+{"index":{"_index":"hotel","_id":172}}
+{"hotel_name":"hotel172","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"yes","menu":["Tonkatsu","Tonkatsu","Yakitori"],"busy_month":"JANUARY","closed":["MONDAY","THURSDAY"],"price":2986,"created":"2018-06-27T04:28:21.000Z"}
+{"index":{"_index":"hotel","_id":173}}
+{"hotel_name":"hotel173","star":20,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Poland","city":"","has_parking":"no","menu":["Udon","Pasta","Ramen"],"busy_month":"APRIL","closed":["TUESDAY","TUESDAY"],"price":4301,"created":"2018-06-27T04:28:20.000Z"}
+{"index":{"_index":"hotel","_id":174}}
+{"hotel_name":"hotel174","star":20,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"UK","city":"","has_parking":"yes","menu":["Tonkatsu","Burger","Salad"],"busy_month":"JULY","closed":["SUNDAY","THURSDAY"],"price":2353,"created":"2018-06-27T04:28:19.000Z"}
+{"index":{"_index":"hotel","_id":175}}
+{"hotel_name":"hotel175","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"no","menu":["Tofu","Yakitori","Tofu"],"busy_month":"JANUARY","closed":["MONDAY","SATURDAY"],"price":2475,"created":"2018-06-27T04:28:18.000Z"}
+{"index":{"_index":"hotel","_id":176}}
+{"hotel_name":"hotel176","star":0,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Thailand","city":"","has_parking":"yes","menu":["Sushi","Ramen","Pizza"],"busy_month":"AUGUST","closed":["MONDAY","WEDNESDAY"],"price":2267,"created":"2018-06-27T04:28:17.000Z"}
+{"index":{"_index":"hotel","_id":177}}
+{"hotel_name":"hotel177","star":26,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Australia","city":"","has_parking":"no","menu":["Pasta","Sushi","Tonkatsu"],"busy_month":"OCTOBER","closed":["TUESDAY","WEDNESDAY"],"price":2515,"created":"2018-06-27T04:28:16.000Z"}
+{"index":{"_index":"hotel","_id":178}}
+{"hotel_name":"hotel178","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"yes","menu":["Soba","Sushi","Yakitori"],"busy_month":"SEPTEMBER","closed":["WEDNESDAY","MONDAY"],"price":4499,"created":"2018-06-27T04:28:15.000Z"}
+{"index":{"_index":"hotel","_id":179}}
+{"hotel_name":"hotel179","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Mexico","city":"","has_parking":"no","menu":["Udon","Inari","Sushi"],"busy_month":"OCTOBER","closed":["TUESDAY","MONDAY"],"price":2436,"created":"2018-06-27T04:28:14.000Z"}
+{"index":{"_index":"hotel","_id":180}}
+{"hotel_name":"hotel180","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Thailand","city":"","has_parking":"yes","menu":["Tonkatsu","Sushi","Yakitori"],"busy_month":"JANUARY","closed":["WEDNESDAY","SUNDAY"],"price":2639,"created":"2018-06-27T04:28:13.000Z"}
+{"index":{"_index":"hotel","_id":181}}
+{"hotel_name":"hotel181","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"no","menu":["Sushi","Somen","Burger"],"busy_month":"APRIL","closed":["FRIDAY","SUNDAY"],"price":4957,"created":"2018-06-27T04:28:12.000Z"}
+{"index":{"_index":"hotel","_id":182}}
+{"hotel_name":"hotel182","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Zambia","city":"","has_parking":"yes","menu":["Tofu","Tonkatsu","Soba"],"busy_month":"MARCH","closed":["THURSDAY","MONDAY"],"price":2782,"created":"2018-06-27T04:28:11.000Z"}
+{"index":{"_index":"hotel","_id":183}}
+{"hotel_name":"hotel183","star":22,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"BRAZIL","city":"","has_parking":"no","menu":["Pizza","Yakitori","Pasta"],"busy_month":"JANUARY","closed":["SUNDAY","WEDNESDAY"],"price":2779,"created":"2018-06-27T04:28:10.000Z"}
+{"index":{"_index":"hotel","_id":184}}
+{"hotel_name":"hotel184","star":4,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Thailand","city":"","has_parking":"yes","menu":["Soba","Sakana","Ramen"],"busy_month":"JANUARY","closed":["TUESDAY","SUNDAY"],"price":3997,"created":"2018-06-27T04:28:09.000Z"}
+{"index":{"_index":"hotel","_id":185}}
+{"hotel_name":"hotel185","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Zambia","city":"","has_parking":"no","menu":["Tofu","Sakana","Inari"],"busy_month":"JUNE","closed":["MONDAY","SUNDAY"],"price":3168,"created":"2018-06-27T04:28:08.000Z"}
+{"index":{"_index":"hotel","_id":186}}
+{"hotel_name":"hotel186","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"KOREA","city":"","has_parking":"yes","menu":["Sakana","Yakiniku","Sushi"],"busy_month":"NOVEMBER","closed":["FRIDAY","SUNDAY"],"price":4585,"created":"2018-06-27T04:28:07.000Z"}
+{"index":{"_index":"hotel","_id":187}}
+{"hotel_name":"hotel187","star":9,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Thailand","city":"","has_parking":"no","menu":["Pizza","Yakitori","Udon"],"busy_month":"MAY","closed":["WEDNESDAY","MONDAY"],"price":2671,"created":"2018-06-27T04:28:06.000Z"}
+{"index":{"_index":"hotel","_id":188}}
+{"hotel_name":"hotel188","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Poland","city":"","has_parking":"yes","menu":["Sakana","Yakitori","Sakana"],"busy_month":"JUNE","closed":["WEDNESDAY","FRIDAY"],"price":1678,"created":"2018-06-27T04:28:05.000Z"}
+{"index":{"_index":"hotel","_id":189}}
+{"hotel_name":"hotel189","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"US","city":"","has_parking":"no","menu":["Salad","Pasta","Pizza"],"busy_month":"JANUARY","closed":["MONDAY","SUNDAY"],"price":1652,"created":"2018-06-27T04:28:04.000Z"}
+{"index":{"_index":"hotel","_id":190}}
+{"hotel_name":"hotel190","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"BRAZIL","city":"","has_parking":"yes","menu":["Somen","Burger","Sushi"],"busy_month":"FEBRUARY","closed":["MONDAY","TUESDAY"],"price":3230,"created":"2018-06-27T04:28:03.000Z"}
+{"index":{"_index":"hotel","_id":191}}
+{"hotel_name":"hotel191","star":26,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"KOREA","city":"","has_parking":"no","menu":["Soba","Salad","Soba"],"busy_month":"JANUARY","closed":["SUNDAY","SUNDAY"],"price":2081,"created":"2018-06-27T04:28:02.000Z"}
+{"index":{"_index":"hotel","_id":192}}
+{"hotel_name":"hotel192","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHINA","city":"","has_parking":"yes","menu":["Burger","Inari","Burger"],"busy_month":"APRIL","closed":["THURSDAY","WEDNESDAY"],"price":1310,"created":"2018-06-27T04:28:01.000Z"}
+{"index":{"_index":"hotel","_id":193}}
+{"hotel_name":"hotel193","star":29,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"UK","city":"","has_parking":"no","menu":["Udon","Yakiniku","Tofu"],"busy_month":"FEBRUARY","closed":["WEDNESDAY","FRIDAY"],"price":3890,"created":"2018-06-27T04:28:00.000Z"}
+{"index":{"_index":"hotel","_id":194}}
+{"hotel_name":"hotel194","star":3,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Mexico","city":"","has_parking":"yes","menu":["Pasta","Somen","Sushi"],"busy_month":"DECEMBER","closed":["SATURDAY","MONDAY"],"price":4954,"created":"2018-06-27T04:27:59.000Z"}
+{"index":{"_index":"hotel","_id":195}}
+{"hotel_name":"hotel195","star":12,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"UK","city":"","has_parking":"no","menu":["Soba","Yakitori","Soba"],"busy_month":"DECEMBER","closed":["WEDNESDAY","TUESDAY"],"price":1778,"created":"2018-06-27T04:27:58.000Z"}
+{"index":{"_index":"hotel","_id":196}}
+{"hotel_name":"hotel196","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"yes","menu":["Soba","Sushi","Pasta"],"busy_month":"JULY","closed":["WEDNESDAY","WEDNESDAY"],"price":2809,"created":"2018-06-27T04:27:57.000Z"}
+{"index":{"_index":"hotel","_id":197}}
+{"hotel_name":"hotel197","star":16,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Thailand","city":"","has_parking":"no","menu":["Inari","Salad","Sushi"],"busy_month":"SEPTEMBER","closed":["TUESDAY","THURSDAY"],"price":2935,"created":"2018-06-27T04:27:56.000Z"}
+{"index":{"_index":"hotel","_id":198}}
+{"hotel_name":"hotel198","star":28,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Australia","city":"","has_parking":"yes","menu":["Pizza","Soba","Tofu"],"busy_month":"OCTOBER","closed":["WEDNESDAY","SATURDAY"],"price":1003,"created":"2018-06-27T04:27:55.000Z"}
+{"index":{"_index":"hotel","_id":199}}
+{"hotel_name":"hotel199","star":22,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"JAPAN","city":"","has_parking":"no","menu":["Sushi","Yakiniku","Ramen"],"busy_month":"AUGUST","closed":["WEDNESDAY","WEDNESDAY"],"price":3432,"created":"2018-06-27T04:27:54.000Z"}
+{"index":{"_index":"hotel","_id":200}}
+{"hotel_name":"hotel200","star":20,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"yes","menu":["Udon","Soba","Somen"],"busy_month":"JULY","closed":["THURSDAY","SATURDAY"],"price":3327,"created":"2018-06-27T04:27:53.000Z"}
+{"index":{"_index":"hotel","_id":201}}
+{"hotel_name":"hotel201","star":12,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"INDIA","city":"","has_parking":"no","menu":["Burger","Salad","Ramen"],"busy_month":"AUGUST","closed":["SUNDAY","SUNDAY"],"price":3966,"created":"2018-06-27T04:27:52.000Z"}
+{"index":{"_index":"hotel","_id":202}}
+{"hotel_name":"hotel202","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"yes","menu":["Somen","Pizza","Ramen"],"busy_month":"NOVEMBER","closed":["THURSDAY","MONDAY"],"price":3536,"created":"2018-06-27T04:27:51.000Z"}
+{"index":{"_index":"hotel","_id":203}}
+{"hotel_name":"hotel203","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"no","menu":["Sakana","Pasta","Pizza"],"busy_month":"JUNE","closed":["FRIDAY","SATURDAY"],"price":3464,"created":"2018-06-27T04:27:50.000Z"}
+{"index":{"_index":"hotel","_id":204}}
+{"hotel_name":"hotel204","star":20,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"yes","menu":["Burger","Tonkatsu","Inari"],"busy_month":"DECEMBER","closed":["SATURDAY","SUNDAY"],"price":4959,"created":"2018-06-27T04:27:49.000Z"}
+{"index":{"_index":"hotel","_id":205}}
+{"hotel_name":"hotel205","star":0,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"no","menu":["Salad","Tonkatsu","Udon"],"busy_month":"MAY","closed":["SATURDAY","MONDAY"],"price":3753,"created":"2018-06-27T04:27:48.000Z"}
+{"index":{"_index":"hotel","_id":206}}
+{"hotel_name":"hotel206","star":6,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"UK","city":"","has_parking":"yes","menu":["Tonkatsu","Tofu","Ramen"],"busy_month":"DECEMBER","closed":["WEDNESDAY","FRIDAY"],"price":3549,"created":"2018-06-27T04:27:47.000Z"}
+{"index":{"_index":"hotel","_id":207}}
+{"hotel_name":"hotel207","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"no","menu":["Yakiniku","Pasta","Burger"],"busy_month":"DECEMBER","closed":["TUESDAY","SUNDAY"],"price":2621,"created":"2018-06-27T04:27:46.000Z"}
+{"index":{"_index":"hotel","_id":208}}
+{"hotel_name":"hotel208","star":4,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"yes","menu":["Sushi","Udon","Salad"],"busy_month":"AUGUST","closed":["WEDNESDAY","SATURDAY"],"price":1663,"created":"2018-06-27T04:27:45.000Z"}
+{"index":{"_index":"hotel","_id":209}}
+{"hotel_name":"hotel209","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"US","city":"","has_parking":"no","menu":["Tonkatsu","Soba","Soba"],"busy_month":"JULY","closed":["SATURDAY","FRIDAY"],"price":2009,"created":"2018-06-27T04:27:44.000Z"}
+{"index":{"_index":"hotel","_id":210}}
+{"hotel_name":"hotel210","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"JAPAN","city":"","has_parking":"yes","menu":["Tofu","Soba","Tofu"],"busy_month":"MAY","closed":["FRIDAY","FRIDAY"],"price":2260,"created":"2018-06-27T04:27:43.000Z"}
+{"index":{"_index":"hotel","_id":211}}
+{"hotel_name":"hotel211","star":14,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CANADA","city":"","has_parking":"no","menu":["Sakana","Sushi","Salad"],"busy_month":"SEPTEMBER","closed":["WEDNESDAY","SUNDAY"],"price":3471,"created":"2018-06-27T04:27:42.000Z"}
+{"index":{"_index":"hotel","_id":212}}
+{"hotel_name":"hotel212","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Zambia","city":"","has_parking":"yes","menu":["Ramen","Yakitori","Tonkatsu"],"busy_month":"JANUARY","closed":["SUNDAY","THURSDAY"],"price":4978,"created":"2018-06-27T04:27:41.000Z"}
+{"index":{"_index":"hotel","_id":213}}
+{"hotel_name":"hotel213","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"no","menu":["Pasta","Pizza","Sakana"],"busy_month":"SEPTEMBER","closed":["TUESDAY","MONDAY"],"price":1361,"created":"2018-06-27T04:27:40.000Z"}
+{"index":{"_index":"hotel","_id":214}}
+{"hotel_name":"hotel214","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Mexico","city":"","has_parking":"yes","menu":["Yakiniku","Burger","Pizza"],"busy_month":"FEBRUARY","closed":["MONDAY","THURSDAY"],"price":3884,"created":"2018-06-27T04:27:39.000Z"}
+{"index":{"_index":"hotel","_id":215}}
+{"hotel_name":"hotel215","star":15,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Mexico","city":"","has_parking":"no","menu":["Yakiniku","Pizza","Salad"],"busy_month":"SEPTEMBER","closed":["FRIDAY","SATURDAY"],"price":3437,"created":"2018-06-27T04:27:38.000Z"}
+{"index":{"_index":"hotel","_id":216}}
+{"hotel_name":"hotel216","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHINA","city":"","has_parking":"yes","menu":["Yakiniku","Ramen","Ramen"],"busy_month":"DECEMBER","closed":["THURSDAY","SUNDAY"],"price":4864,"created":"2018-06-27T04:27:37.000Z"}
+{"index":{"_index":"hotel","_id":217}}
+{"hotel_name":"hotel217","star":23,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Australia","city":"","has_parking":"no","menu":["Sakana","Pizza","Sushi"],"busy_month":"JULY","closed":["WEDNESDAY","WEDNESDAY"],"price":3190,"created":"2018-06-27T04:27:36.000Z"}
+{"index":{"_index":"hotel","_id":218}}
+{"hotel_name":"hotel218","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Mexico","city":"","has_parking":"yes","menu":["Pizza","Soba","Sushi"],"busy_month":"JULY","closed":["SUNDAY","THURSDAY"],"price":1900,"created":"2018-06-27T04:27:35.000Z"}
+{"index":{"_index":"hotel","_id":219}}
+{"hotel_name":"hotel219","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"US","city":"","has_parking":"no","menu":["Tofu","Sushi","Yakiniku"],"busy_month":"JANUARY","closed":["SATURDAY","TUESDAY"],"price":1443,"created":"2018-06-27T04:27:34.000Z"}
+{"index":{"_index":"hotel","_id":220}}
+{"hotel_name":"hotel220","star":1,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"HAWAII","city":"","has_parking":"yes","menu":["Sushi","Udon","Sakana"],"busy_month":"APRIL","closed":["WEDNESDAY","FRIDAY"],"price":2369,"created":"2018-06-27T04:27:33.000Z"}
+{"index":{"_index":"hotel","_id":221}}
+{"hotel_name":"hotel221","star":23,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Zambia","city":"","has_parking":"no","menu":["Pizza","Salad","Burger"],"busy_month":"AUGUST","closed":["TUESDAY","SUNDAY"],"price":2801,"created":"2018-06-27T04:27:32.000Z"}
+{"index":{"_index":"hotel","_id":222}}
+{"hotel_name":"hotel222","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Thailand","city":"","has_parking":"yes","menu":["Tofu","Sushi","Ramen"],"busy_month":"DECEMBER","closed":["WEDNESDAY","SUNDAY"],"price":3184,"created":"2018-06-27T04:27:31.000Z"}
+{"index":{"_index":"hotel","_id":223}}
+{"hotel_name":"hotel223","star":0,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"UK","city":"","has_parking":"no","menu":["Inari","Pizza","Pasta"],"busy_month":"JUNE","closed":["SATURDAY","TUESDAY"],"price":3940,"created":"2018-06-27T04:27:30.000Z"}
+{"index":{"_index":"hotel","_id":224}}
+{"hotel_name":"hotel224","star":10,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Australia","city":"","has_parking":"yes","menu":["Somen","Sushi","Udon"],"busy_month":"JANUARY","closed":["WEDNESDAY","TUESDAY"],"price":3649,"created":"2018-06-27T04:27:29.000Z"}
+{"index":{"_index":"hotel","_id":225}}
+{"hotel_name":"hotel225","star":10,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"no","menu":["Salad","Burger","Yakitori"],"busy_month":"SEPTEMBER","closed":["SUNDAY","FRIDAY"],"price":1130,"created":"2018-06-27T04:27:28.000Z"}
+{"index":{"_index":"hotel","_id":226}}
+{"hotel_name":"hotel226","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Norway","city":"","has_parking":"yes","menu":["Yakiniku","Sakana","Pizza"],"busy_month":"APRIL","closed":["FRIDAY","MONDAY"],"price":1443,"created":"2018-06-27T04:27:27.000Z"}
+{"index":{"_index":"hotel","_id":227}}
+{"hotel_name":"hotel227","star":0,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Poland","city":"","has_parking":"no","menu":["Yakitori","Tonkatsu","Soba"],"busy_month":"NOVEMBER","closed":["TUESDAY","SATURDAY"],"price":1728,"created":"2018-06-27T04:27:26.000Z"}
+{"index":{"_index":"hotel","_id":228}}
+{"hotel_name":"hotel228","star":14,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"HAWAII","city":"","has_parking":"yes","menu":["Tofu","Udon","Yakiniku"],"busy_month":"OCTOBER","closed":["SATURDAY","WEDNESDAY"],"price":4157,"created":"2018-06-27T04:27:25.000Z"}
+{"index":{"_index":"hotel","_id":229}}
+{"hotel_name":"hotel229","star":3,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"no","menu":["Pizza","Tofu","Tonkatsu"],"busy_month":"FEBRUARY","closed":["SATURDAY","SATURDAY"],"price":1967,"created":"2018-06-27T04:27:24.000Z"}
+{"index":{"_index":"hotel","_id":230}}
+{"hotel_name":"hotel230","star":24,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"yes","menu":["Soba","Soba","Burger"],"busy_month":"DECEMBER","closed":["MONDAY","SATURDAY"],"price":3491,"created":"2018-06-27T04:27:23.000Z"}
+{"index":{"_index":"hotel","_id":231}}
+{"hotel_name":"hotel231","star":24,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"HAWAII","city":"","has_parking":"no","menu":["Burger","Pasta","Salad"],"busy_month":"OCTOBER","closed":["THURSDAY","SUNDAY"],"price":3886,"created":"2018-06-27T04:27:22.000Z"}
+{"index":{"_index":"hotel","_id":232}}
+{"hotel_name":"hotel232","star":1,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Greece","city":"","has_parking":"yes","menu":["Tonkatsu","Yakitori","Sushi"],"busy_month":"FEBRUARY","closed":["FRIDAY","TUESDAY"],"price":1061,"created":"2018-06-27T04:27:21.000Z"}
+{"index":{"_index":"hotel","_id":233}}
+{"hotel_name":"hotel233","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"INDIA","city":"","has_parking":"no","menu":["Pasta","Somen","Pasta"],"busy_month":"OCTOBER","closed":["FRIDAY","SATURDAY"],"price":3403,"created":"2018-06-27T04:27:20.000Z"}
+{"index":{"_index":"hotel","_id":234}}
+{"hotel_name":"hotel234","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CANADA","city":"","has_parking":"yes","menu":["Inari","Sushi","Salad"],"busy_month":"AUGUST","closed":["MONDAY","MONDAY"],"price":2369,"created":"2018-06-27T04:27:19.000Z"}
+{"index":{"_index":"hotel","_id":235}}
+{"hotel_name":"hotel235","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Norway","city":"","has_parking":"no","menu":["Inari","Soba","Pizza"],"busy_month":"AUGUST","closed":["SATURDAY","MONDAY"],"price":3971,"created":"2018-06-27T04:27:18.000Z"}
+{"index":{"_index":"hotel","_id":236}}
+{"hotel_name":"hotel236","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHINA","city":"","has_parking":"yes","menu":["Udon","Yakitori","Ramen"],"busy_month":"NOVEMBER","closed":["SATURDAY","FRIDAY"],"price":3800,"created":"2018-06-27T04:27:17.000Z"}
+{"index":{"_index":"hotel","_id":237}}
+{"hotel_name":"hotel237","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Greece","city":"","has_parking":"no","menu":["Burger","Sushi","Soba"],"busy_month":"SEPTEMBER","closed":["SUNDAY","SATURDAY"],"price":1934,"created":"2018-06-27T04:27:16.000Z"}
+{"index":{"_index":"hotel","_id":238}}
+{"hotel_name":"hotel238","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"yes","menu":["Soba","Salad","Yakiniku"],"busy_month":"MARCH","closed":["SUNDAY","SATURDAY"],"price":3933,"created":"2018-06-27T04:27:15.000Z"}
+{"index":{"_index":"hotel","_id":239}}
+{"hotel_name":"hotel239","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"no","menu":["Salad","Sushi","Soba"],"busy_month":"AUGUST","closed":["SATURDAY","THURSDAY"],"price":4441,"created":"2018-06-27T04:27:14.000Z"}
+{"index":{"_index":"hotel","_id":240}}
+{"hotel_name":"hotel240","star":9,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Egypt","city":"","has_parking":"yes","menu":["Inari","Salad","Tofu"],"busy_month":"JULY","closed":["THURSDAY","FRIDAY"],"price":2858,"created":"2018-06-27T04:27:13.000Z"}
+{"index":{"_index":"hotel","_id":241}}
+{"hotel_name":"hotel241","star":20,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"no","menu":["Ramen","Ramen","Pizza"],"busy_month":"JULY","closed":["FRIDAY","WEDNESDAY"],"price":1131,"created":"2018-06-27T04:27:12.000Z"}
+{"index":{"_index":"hotel","_id":242}}
+{"hotel_name":"hotel242","star":15,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"US","city":"","has_parking":"yes","menu":["Pizza","Ramen","Yakiniku"],"busy_month":"OCTOBER","closed":["SATURDAY","MONDAY"],"price":2829,"created":"2018-06-27T04:27:11.000Z"}
+{"index":{"_index":"hotel","_id":243}}
+{"hotel_name":"hotel243","star":12,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Zambia","city":"","has_parking":"no","menu":["Inari","Pasta","Sakana"],"busy_month":"MAY","closed":["MONDAY","SATURDAY"],"price":1769,"created":"2018-06-27T04:27:10.000Z"}
+{"index":{"_index":"hotel","_id":244}}
+{"hotel_name":"hotel244","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"INDIA","city":"","has_parking":"yes","menu":["Burger","Ramen","Inari"],"busy_month":"APRIL","closed":["SUNDAY","SATURDAY"],"price":4000,"created":"2018-06-27T04:27:09.000Z"}
+{"index":{"_index":"hotel","_id":245}}
+{"hotel_name":"hotel245","star":26,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Greece","city":"","has_parking":"no","menu":["Tonkatsu","Tofu","Tofu"],"busy_month":"SEPTEMBER","closed":["WEDNESDAY","MONDAY"],"price":1237,"created":"2018-06-27T04:27:08.000Z"}
+{"index":{"_index":"hotel","_id":246}}
+{"hotel_name":"hotel246","star":20,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"yes","menu":["Yakitori","Tonkatsu","Yakiniku"],"busy_month":"AUGUST","closed":["MONDAY","SUNDAY"],"price":3478,"created":"2018-06-27T04:27:07.000Z"}
+{"index":{"_index":"hotel","_id":247}}
+{"hotel_name":"hotel247","star":10,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"no","menu":["Sakana","Pizza","Somen"],"busy_month":"MARCH","closed":["MONDAY","SATURDAY"],"price":2384,"created":"2018-06-27T04:27:06.000Z"}
+{"index":{"_index":"hotel","_id":248}}
+{"hotel_name":"hotel248","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"yes","menu":["Pizza","Yakitori","Tonkatsu"],"busy_month":"NOVEMBER","closed":["WEDNESDAY","TUESDAY"],"price":2929,"created":"2018-06-27T04:27:05.000Z"}
+{"index":{"_index":"hotel","_id":249}}
+{"hotel_name":"hotel249","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"UK","city":"","has_parking":"no","menu":["Pasta","Tonkatsu","Soba"],"busy_month":"JULY","closed":["SUNDAY","FRIDAY"],"price":4544,"created":"2018-06-27T04:27:04.000Z"}
+{"index":{"_index":"hotel","_id":250}}
+{"hotel_name":"hotel250","star":16,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Thailand","city":"","has_parking":"yes","menu":["Somen","Soba","Sakana"],"busy_month":"MARCH","closed":["MONDAY","THURSDAY"],"price":1009,"created":"2018-06-27T04:27:03.000Z"}
+{"index":{"_index":"hotel","_id":251}}
+{"hotel_name":"hotel251","star":24,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHINA","city":"","has_parking":"no","menu":["Sakana","Ramen","Tonkatsu"],"busy_month":"JANUARY","closed":["TUESDAY","THURSDAY"],"price":4781,"created":"2018-06-27T04:27:02.000Z"}
+{"index":{"_index":"hotel","_id":252}}
+{"hotel_name":"hotel252","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"yes","menu":["Soba","Pasta","Tonkatsu"],"busy_month":"FEBRUARY","closed":["WEDNESDAY","SUNDAY"],"price":1639,"created":"2018-06-27T04:27:01.000Z"}
+{"index":{"_index":"hotel","_id":253}}
+{"hotel_name":"hotel253","star":16,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"KOREA","city":"","has_parking":"no","menu":["Soba","Pasta","Tofu"],"busy_month":"FEBRUARY","closed":["WEDNESDAY","FRIDAY"],"price":4998,"created":"2018-06-27T04:27:00.000Z"}
+{"index":{"_index":"hotel","_id":254}}
+{"hotel_name":"hotel254","star":9,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"yes","menu":["Sakana","Inari","Udon"],"busy_month":"JANUARY","closed":["TUESDAY","SUNDAY"],"price":3303,"created":"2018-06-27T04:26:59.000Z"}
+{"index":{"_index":"hotel","_id":255}}
+{"hotel_name":"hotel255","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"no","menu":["Salad","Sakana","Ramen"],"busy_month":"JUNE","closed":["MONDAY","WEDNESDAY"],"price":3425,"created":"2018-06-27T04:26:58.000Z"}
+{"index":{"_index":"hotel","_id":256}}
+{"hotel_name":"hotel256","star":17,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Mexico","city":"","has_parking":"yes","menu":["Pasta","Yakiniku","Somen"],"busy_month":"DECEMBER","closed":["SATURDAY","WEDNESDAY"],"price":4636,"created":"2018-06-27T04:26:57.000Z"}
+{"index":{"_index":"hotel","_id":257}}
+{"hotel_name":"hotel257","star":12,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"UK","city":"","has_parking":"no","menu":["Udon","Yakitori","Pasta"],"busy_month":"MARCH","closed":["MONDAY","WEDNESDAY"],"price":1823,"created":"2018-06-27T04:26:56.000Z"}
+{"index":{"_index":"hotel","_id":258}}
+{"hotel_name":"hotel258","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"BRAZIL","city":"","has_parking":"yes","menu":["Ramen","Pizza","Burger"],"busy_month":"JANUARY","closed":["TUESDAY","THURSDAY"],"price":3989,"created":"2018-06-27T04:26:55.000Z"}
+{"index":{"_index":"hotel","_id":259}}
+{"hotel_name":"hotel259","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"no","menu":["Ramen","Sushi","Sushi"],"busy_month":"FEBRUARY","closed":["TUESDAY","WEDNESDAY"],"price":4749,"created":"2018-06-27T04:26:54.000Z"}
+{"index":{"_index":"hotel","_id":260}}
+{"hotel_name":"hotel260","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"US","city":"","has_parking":"yes","menu":["Burger","Tonkatsu","Pizza"],"busy_month":"FEBRUARY","closed":["SUNDAY","FRIDAY"],"price":4861,"created":"2018-06-27T04:26:53.000Z"}
+{"index":{"_index":"hotel","_id":261}}
+{"hotel_name":"hotel261","star":22,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"no","menu":["Burger","Pizza","Pasta"],"busy_month":"MAY","closed":["TUESDAY","TUESDAY"],"price":2247,"created":"2018-06-27T04:26:52.000Z"}
+{"index":{"_index":"hotel","_id":262}}
+{"hotel_name":"hotel262","star":1,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Egypt","city":"","has_parking":"yes","menu":["Sushi","Yakiniku","Yakiniku"],"busy_month":"FEBRUARY","closed":["TUESDAY","FRIDAY"],"price":3400,"created":"2018-06-27T04:26:51.000Z"}
+{"index":{"_index":"hotel","_id":263}}
+{"hotel_name":"hotel263","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Australia","city":"","has_parking":"no","menu":["Tofu","Ramen","Soba"],"busy_month":"SEPTEMBER","closed":["SUNDAY","TUESDAY"],"price":4279,"created":"2018-06-27T04:26:50.000Z"}
+{"index":{"_index":"hotel","_id":264}}
+{"hotel_name":"hotel264","star":28,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"INDIA","city":"","has_parking":"yes","menu":["Soba","Soba","Salad"],"busy_month":"JULY","closed":["SATURDAY","TUESDAY"],"price":3018,"created":"2018-06-27T04:26:49.000Z"}
+{"index":{"_index":"hotel","_id":265}}
+{"hotel_name":"hotel265","star":23,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"no","menu":["Inari","Burger","Tonkatsu"],"busy_month":"JANUARY","closed":["THURSDAY","SATURDAY"],"price":1883,"created":"2018-06-27T04:26:48.000Z"}
+{"index":{"_index":"hotel","_id":266}}
+{"hotel_name":"hotel266","star":4,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Thailand","city":"","has_parking":"yes","menu":["Somen","Pizza","Somen"],"busy_month":"MAY","closed":["MONDAY","FRIDAY"],"price":1346,"created":"2018-06-27T04:26:47.000Z"}
+{"index":{"_index":"hotel","_id":267}}
+{"hotel_name":"hotel267","star":23,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"no","menu":["Sushi","Pizza","Soba"],"busy_month":"OCTOBER","closed":["TUESDAY","MONDAY"],"price":4869,"created":"2018-06-27T04:26:46.000Z"}
+{"index":{"_index":"hotel","_id":268}}
+{"hotel_name":"hotel268","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Zambia","city":"","has_parking":"yes","menu":["Tofu","Tofu","Burger"],"busy_month":"DECEMBER","closed":["SATURDAY","SUNDAY"],"price":2803,"created":"2018-06-27T04:26:45.000Z"}
+{"index":{"_index":"hotel","_id":269}}
+{"hotel_name":"hotel269","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"no","menu":["Sushi","Tonkatsu","Sakana"],"busy_month":"JULY","closed":["SUNDAY","MONDAY"],"price":3803,"created":"2018-06-27T04:26:44.000Z"}
+{"index":{"_index":"hotel","_id":270}}
+{"hotel_name":"hotel270","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"US","city":"","has_parking":"yes","menu":["Soba","Pasta","Soba"],"busy_month":"APRIL","closed":["SATURDAY","MONDAY"],"price":2451,"created":"2018-06-27T04:26:43.000Z"}
+{"index":{"_index":"hotel","_id":271}}
+{"hotel_name":"hotel271","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"no","menu":["Tonkatsu","Sakana","Inari"],"busy_month":"OCTOBER","closed":["SUNDAY","TUESDAY"],"price":4671,"created":"2018-06-27T04:26:42.000Z"}
+{"index":{"_index":"hotel","_id":272}}
+{"hotel_name":"hotel272","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Vietnam","city":"","has_parking":"yes","menu":["Pasta","Sushi","Tofu"],"busy_month":"OCTOBER","closed":["SUNDAY","SATURDAY"],"price":2172,"created":"2018-06-27T04:26:41.000Z"}
+{"index":{"_index":"hotel","_id":273}}
+{"hotel_name":"hotel273","star":29,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"KOREA","city":"","has_parking":"no","menu":["Udon","Somen","Pizza"],"busy_month":"FEBRUARY","closed":["TUESDAY","SUNDAY"],"price":4713,"created":"2018-06-27T04:26:40.000Z"}
+{"index":{"_index":"hotel","_id":274}}
+{"hotel_name":"hotel274","star":18,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"yes","menu":["Burger","Yakiniku","Tofu"],"busy_month":"OCTOBER","closed":["SATURDAY","MONDAY"],"price":2463,"created":"2018-06-27T04:26:39.000Z"}
+{"index":{"_index":"hotel","_id":275}}
+{"hotel_name":"hotel275","star":9,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"BRAZIL","city":"","has_parking":"no","menu":["Salad","Yakiniku","Salad"],"busy_month":"MARCH","closed":["FRIDAY","MONDAY"],"price":3024,"created":"2018-06-27T04:26:38.000Z"}
+{"index":{"_index":"hotel","_id":276}}
+{"hotel_name":"hotel276","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"yes","menu":["Tofu","Pizza","Sakana"],"busy_month":"JANUARY","closed":["WEDNESDAY","SATURDAY"],"price":1145,"created":"2018-06-27T04:26:37.000Z"}
+{"index":{"_index":"hotel","_id":277}}
+{"hotel_name":"hotel277","star":3,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"JAPAN","city":"","has_parking":"no","menu":["Inari","Yakiniku","Yakitori"],"busy_month":"AUGUST","closed":["SUNDAY","TUESDAY"],"price":1161,"created":"2018-06-27T04:26:36.000Z"}
+{"index":{"_index":"hotel","_id":278}}
+{"hotel_name":"hotel278","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Poland","city":"","has_parking":"yes","menu":["Sushi","Yakiniku","Pasta"],"busy_month":"JULY","closed":["TUESDAY","TUESDAY"],"price":1502,"created":"2018-06-27T04:26:35.000Z"}
+{"index":{"_index":"hotel","_id":279}}
+{"hotel_name":"hotel279","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"DE","city":"","has_parking":"no","menu":["Tonkatsu","Inari","Soba"],"busy_month":"APRIL","closed":["SUNDAY","THURSDAY"],"price":4742,"created":"2018-06-27T04:26:34.000Z"}
+{"index":{"_index":"hotel","_id":280}}
+{"hotel_name":"hotel280","star":8,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Egypt","city":"","has_parking":"yes","menu":["Sushi","Pizza","Burger"],"busy_month":"NOVEMBER","closed":["THURSDAY","THURSDAY"],"price":1458,"created":"2018-06-27T04:26:33.000Z"}
+{"index":{"_index":"hotel","_id":281}}
+{"hotel_name":"hotel281","star":27,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Zambia","city":"","has_parking":"no","menu":["Yakitori","Tofu","Somen"],"busy_month":"MARCH","closed":["SATURDAY","WEDNESDAY"],"price":1151,"created":"2018-06-27T04:26:32.000Z"}
+{"index":{"_index":"hotel","_id":282}}
+{"hotel_name":"hotel282","star":7,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CANADA","city":"","has_parking":"yes","menu":["Udon","Tonkatsu","Udon"],"busy_month":"DECEMBER","closed":["THURSDAY","SATURDAY"],"price":4247,"created":"2018-06-27T04:26:31.000Z"}
+{"index":{"_index":"hotel","_id":283}}
+{"hotel_name":"hotel283","star":9,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"no","menu":["Yakitori","Pasta","Soba"],"busy_month":"MARCH","closed":["MONDAY","FRIDAY"],"price":1229,"created":"2018-06-27T04:26:30.000Z"}
+{"index":{"_index":"hotel","_id":284}}
+{"hotel_name":"hotel284","star":29,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Norway","city":"","has_parking":"yes","menu":["Salad","Inari","Inari"],"busy_month":"JULY","closed":["SUNDAY","SATURDAY"],"price":1312,"created":"2018-06-27T04:26:29.000Z"}
+{"index":{"_index":"hotel","_id":285}}
+{"hotel_name":"hotel285","star":19,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Mexico","city":"","has_parking":"no","menu":["Tonkatsu","Ramen","Pasta"],"busy_month":"APRIL","closed":["WEDNESDAY","TUESDAY"],"price":4723,"created":"2018-06-27T04:26:28.000Z"}
+{"index":{"_index":"hotel","_id":286}}
+{"hotel_name":"hotel286","star":12,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"US","city":"","has_parking":"yes","menu":["Inari","Sakana","Sakana"],"busy_month":"OCTOBER","closed":["FRIDAY","MONDAY"],"price":4451,"created":"2018-06-27T04:26:27.000Z"}
+{"index":{"_index":"hotel","_id":287}}
+{"hotel_name":"hotel287","star":24,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"JAPAN","city":"","has_parking":"no","menu":["Sakana","Inari","Ramen"],"busy_month":"JUNE","closed":["SATURDAY","MONDAY"],"price":2712,"created":"2018-06-27T04:26:26.000Z"}
+{"index":{"_index":"hotel","_id":288}}
+{"hotel_name":"hotel288","star":0,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Thailand","city":"","has_parking":"yes","menu":["Pasta","Tonkatsu","Udon"],"busy_month":"APRIL","closed":["SATURDAY","FRIDAY"],"price":1389,"created":"2018-06-27T04:26:25.000Z"}
+{"index":{"_index":"hotel","_id":289}}
+{"hotel_name":"hotel289","star":6,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"BRAZIL","city":"","has_parking":"no","menu":["Sakana","Soba","Udon"],"busy_month":"NOVEMBER","closed":["SATURDAY","THURSDAY"],"price":3663,"created":"2018-06-27T04:26:24.000Z"}
+{"index":{"_index":"hotel","_id":290}}
+{"hotel_name":"hotel290","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Denmark","city":"","has_parking":"yes","menu":["Salad","Udon","Udon"],"busy_month":"SEPTEMBER","closed":["SUNDAY","SATURDAY"],"price":3568,"created":"2018-06-27T04:26:23.000Z"}
+{"index":{"_index":"hotel","_id":291}}
+{"hotel_name":"hotel291","star":13,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CHILI","city":"","has_parking":"no","menu":["Salad","Tofu","Sakana"],"busy_month":"SEPTEMBER","closed":["SATURDAY","THURSDAY"],"price":2872,"created":"2018-06-27T04:26:22.000Z"}
+{"index":{"_index":"hotel","_id":292}}
+{"hotel_name":"hotel292","star":29,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Australia","city":"","has_parking":"yes","menu":["Ramen","Pizza","Salad"],"busy_month":"JUNE","closed":["WEDNESDAY","SATURDAY"],"price":2328,"created":"2018-06-27T04:26:21.000Z"}
+{"index":{"_index":"hotel","_id":293}}
+{"hotel_name":"hotel293","star":22,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"HAWAII","city":"","has_parking":"no","menu":["Somen","Pasta","Tofu"],"busy_month":"MAY","closed":["MONDAY","MONDAY"],"price":3615,"created":"2018-06-27T04:26:20.000Z"}
+{"index":{"_index":"hotel","_id":294}}
+{"hotel_name":"hotel294","star":21,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"FRANCE","city":"","has_parking":"yes","menu":["Ramen","Sushi","Salad"],"busy_month":"MAY","closed":["TUESDAY","SUNDAY"],"price":1915,"created":"2018-06-27T04:26:19.000Z"}
+{"index":{"_index":"hotel","_id":295}}
+{"hotel_name":"hotel295","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Thailand","city":"","has_parking":"no","menu":["Udon","Inari","Pizza"],"busy_month":"APRIL","closed":["FRIDAY","FRIDAY"],"price":4705,"created":"2018-06-27T04:26:18.000Z"}
+{"index":{"_index":"hotel","_id":296}}
+{"hotel_name":"hotel296","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"BRAZIL","city":"","has_parking":"yes","menu":["Pasta","Yakiniku","Salad"],"busy_month":"MARCH","closed":["SATURDAY","MONDAY"],"price":2222,"created":"2018-06-27T04:26:17.000Z"}
+{"index":{"_index":"hotel","_id":297}}
+{"hotel_name":"hotel297","star":25,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"CANADA","city":"","has_parking":"no","menu":["Inari","Ramen","Soba"],"busy_month":"OCTOBER","closed":["MONDAY","MONDAY"],"price":1359,"created":"2018-06-27T04:26:16.000Z"}
+{"index":{"_index":"hotel","_id":298}}
+{"hotel_name":"hotel298","star":26,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"HAWAII","city":"","has_parking":"yes","menu":["Sakana","Pasta","Pasta"],"busy_month":"AUGUST","closed":["SATURDAY","SATURDAY"],"price":2740,"created":"2018-06-27T04:26:15.000Z"}
+{"index":{"_index":"hotel","_id":299}}
+{"hotel_name":"hotel299","star":5,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"Egypt","city":"","has_parking":"no","menu":["Tofu","Sushi","Ramen"],"busy_month":"JANUARY","closed":["WEDNESDAY","THURSDAY"],"price":3724,"created":"2018-06-27T04:26:14.000Z"}
+{"index":{"_index":"hotel","_id":300}}
+{"hotel_name":"hotel300","star":2,"free_text":"A cluster is a collection of one or more nodes0 A cluster is a collection of one or more nodes1 ","group":"G11","country":"KOREA","city":"","has_parking":"yes","menu":["Soba","Somen","Inari"],"busy_month":"JUNE","closed":["SUNDAY","WEDNESDAY"],"price":2161,"created":"2018-06-27T04:26:13.000Z"}
