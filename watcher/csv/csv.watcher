@@ -1,0 +1,69 @@
+PUT _xpack/watcher/watch/mywatch
+{
+  "trigger": {
+    "schedule": {
+      "interval": "10m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          "hotel"
+        ],
+        "body": {
+          "aggs": {
+            "countries": {
+              "terms": {
+                "field": "country.keyword",
+                "size": 4,
+                "order": {
+                  "_key": "desc"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "script": {
+      "source": "return true"
+    }
+  },
+  "actions": {
+    "log": {
+      "transform": {
+        "script": """
+        def countries = ctx.payload.aggregations.countries.buckets;
+        
+        // list of countries
+        def csv = new ArrayList();
+        
+        // list of doc_count
+        def county_doc_count = new ArrayList();
+        
+        for (int i = 0; i < countries.size(); i++) {
+
+              def country = countries[i].key;
+              def total = countries[i].doc_count;
+              csv.add(country + "," + total);
+      
+        }
+        
+        return [ 'csv' : csv ];
+        """
+      },
+      "logging": {
+        "text": """
+              country, total
+                 {{#ctx.payload.csv}} 
+          {{.}}
+          {{/ctx.payload.csv}} 
+        """
+        
+      }
+    }
+  }
+}
