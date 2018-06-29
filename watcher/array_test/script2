@@ -1,4 +1,4 @@
-PUT _xpack/watcher/watch/my_watch
+PUT _xpack/watcher/watch/gon
 {
   "trigger": {
     "schedule": {
@@ -42,9 +42,12 @@ PUT _xpack/watcher/watch/my_watch
       "logging": {
         "text": "hello"
       }
+    },
+    "create_index": {
+      "index": {
+        "index": "action_log",
+        "doc_type": "type"
+      }
     }
   }
 }
-
-
-POST _xpack/watcher/watch/my_watch/_execute
