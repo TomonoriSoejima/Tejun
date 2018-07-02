@@ -63,11 +63,11 @@ PUT _xpack/watcher/watch/josh
       
       
       for (int i = 0; i < countries_list.size(); i++) {
-        def city = countries_list[i].city.buckets;
+        def cities = countries_list[i].city.buckets;
         
-        for (int j = 0; j < city.size(); j++) {
+        for (int j = 0; j < cities.size(); j++) {
         
-          def city_name = city[j].key;
+          def city_name = cities[j].key;
           def country_name = countries_list[i].key;
            fqcn.add(country_name + "." + city_name);
         }
@@ -84,53 +84,4 @@ PUT _xpack/watcher/watch/josh
   }
 }
 
-
 POST _xpack/watcher/watch/josh/_execute
-
-**sample output**
-
-      "condition": {
-        "type": "always",
-        "status": "success",
-        "met": true
-      },
-      "transform": {
-        "type": "script",
-        "status": "success",
-        "payload": {
-          "fqcn": [
-            "INDIA.Nara",
-            "INDIA.Osaka",
-            "INDIA.Tokyo",
-            "Mexico.Kyoto",
-            "Mexico.Nara",
-            "Mexico.Tokyo",
-            "FRANCE.Nara",
-            "FRANCE.Kyoto",
-            "FRANCE.Osaka"
-          ]
-        }
-      },
-      "actions": [
-        {
-          "id": "log",
-          "type": "logging",
-          "status": "success",
-          "logging": {
-            "logged_text": """
-         INDIA.Nara
-         INDIA.Osaka
-         INDIA.Tokyo
-         Mexico.Kyoto
-         Mexico.Nara
-         Mexico.Tokyo
-         FRANCE.Nara
-         FRANCE.Kyoto
-         FRANCE.Osaka
- 
-"""
-          }
-        }
-      ]
-    },
-
