@@ -51,3 +51,6 @@ PUT _xpack/watcher/watch/gon
     }
   }
 }
+
+
+PUT _xpack/watcher/watch/gon
