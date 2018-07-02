@@ -84,4 +84,52 @@ PUT _xpack/watcher/watch/josh
   }
 }
 
+
+
+**sample output**
+
+      "condition": {
+        "type": "always",
+        "status": "success",
+        "met": true
+      },
+      "transform": {
+        "type": "script",
+        "status": "success",
+        "payload": {
+          "fqcn": [
+            "INDIA.Nara",
+            "INDIA.Osaka",
+            "INDIA.Tokyo",
+            "Mexico.Kyoto",
+            "Mexico.Nara",
+            "Mexico.Tokyo",
+            "FRANCE.Nara",
+            "FRANCE.Kyoto",
+            "FRANCE.Osaka"
+          ]
+        }
+      },
+      "actions": [
+        {
+          "id": "log",
+          "type": "logging",
+          "status": "success",
+          "logging": {
+            "logged_text": """
+         INDIA.Nara
+         INDIA.Osaka
+         INDIA.Tokyo
+         Mexico.Kyoto
+         Mexico.Nara
+         Mexico.Tokyo
+         FRANCE.Nara
+         FRANCE.Kyoto
+         FRANCE.Osaka
+ 
+"""
+          }
+        }
+      ]
+    },
 POST _xpack/watcher/watch/josh/_execute
