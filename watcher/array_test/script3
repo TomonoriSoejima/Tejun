@@ -1,0 +1,55 @@
+PUT _xpack/watcher/watch/hhh
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          "hotel"
+        ],
+        "body": {
+          "aggs": {
+            "country": {
+              "date_histogram": {
+                "field": "created",
+                "interval": "5m",
+                "time_zone": "Asia/Tokyo"
+              },
+              "aggs": {
+                "country": {
+                  "terms": {
+                    "field": "country.keyword",
+                    "size": 10
+                  }, "aggs": {
+                  "don": {
+                    "max": {
+                      "field": "price"
+                    }
+                  }
+                  }
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "always" : {}
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": "hello"
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/hhh/_execute
