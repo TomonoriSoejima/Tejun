@@ -12,6 +12,7 @@ PUT _xpack/watcher/watch/hhh
           "hotel"
         ],
         "body": {
+          "size" : 0,
           "aggs": {
             "country": {
               "date_histogram": {
