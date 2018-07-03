@@ -54,3 +54,78 @@ PUT _xpack/watcher/watch/hhh
 }
 
 POST _xpack/watcher/watch/hhh/_execute
+
+
+PUT _xpack/watcher/watch/mwatch
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          "hotel"
+        ],
+        "body": {
+          "size": 0,
+          "query": {
+            "bool": {
+              "must": [
+                {
+                  "match_all": {}
+                },
+                {
+                  "range": {
+                    "created": {
+                      "gte": 1530594405117,
+                      "lte": 1530596205117,
+                      "format": "epoch_millis"
+                    }
+                  }
+                }
+              ],
+              "filter": [],
+              "should": [],
+              "must_not": []
+            }
+          },
+          "aggs": {
+            "country": {
+              "terms": {
+                "field": "country.keyword",
+                "size": 4
+              },
+              "aggs": {
+                "max_price": {
+                  "max": {
+                    "field": "price"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "script": {
+      "source": "return ctx.payload.aggregations.country.buckets.stream().anyMatch(it -> it.max_price.value > 4900);",
+      "lang": "painless"
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": "hello"
+      }
+    }
+  }
+}
+
+
+
+POST _xpack/watcher/watch/mwatch/_execute
