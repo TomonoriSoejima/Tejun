@@ -1,4 +1,4 @@
-PUT _xpack/watcher/watch/gon
+PUT _xpack/watcher/watch/mwatch
 {
   "trigger": {
     "schedule": {
@@ -36,21 +36,12 @@ PUT _xpack/watcher/watch/gon
       "source": "return ctx.payload.aggregations.country.buckets.stream().anyMatch(it -> it.max_price.value > 4900);",
       "lang": "painless"
     }
-    },
+  },
   "actions": {
     "log": {
       "logging": {
         "text": "hello"
       }
-    },
-    "create_index": {
-      "index": {
-        "index": "action_log",
-        "doc_type": "type"
-      }
     }
   }
 }
-
-
-PUT _xpack/watcher/watch/gon
