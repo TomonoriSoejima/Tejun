@@ -1,0 +1,138 @@
+PUT _xpack/watcher/watch/hhh
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          "hotel"
+        ],
+        "body": {
+          "size" : 0,
+                   "query": {
+            "bool": {
+              "must": [
+                {
+                  "match_all": {}
+                },
+                {
+                  "range": {
+                    "created": {
+                      "gte": 1530963158021,
+                      "lte": 1531006358021,
+                      "format": "epoch_millis"
+                    }
+                  }
+                }
+              ],
+              "filter": [],
+              "should": [],
+              "must_not": []
+            }
+          },
+          "aggs": {
+            "hist": {
+              "date_histogram": {
+                "field": "created",
+                "interval": "10m",
+                "time_zone": "Asia/Tokyo"
+              },
+              "aggs": {
+                "country": {
+                  "terms": {
+                    "field": "country.keyword",
+                    "size": 5
+                  }, "aggs": {
+                  "max_price": {
+                    "max": {
+                      "field": "price"
+                    }
+                  }
+                  }
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "script" : {
+      "source" : 
+      """
+def all_list = ctx.payload.aggregations.hist.buckets.stream()
+  .map(b -> {
+    b.country.buckets.stream()
+    .collect(Collectors.toList())
+      })
+      .flatMap(Collection::stream)
+      .collect(Collectors.toList());
+      
+    def unique = all_list.stream().distinct().collect(Collectors.toList());
+    def u1 = unique.stream().map(d -> ['name' : d.key]).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList());
+    
+        def u2 = unique.stream().filter(it -> it.max_price.value >= 4681)
+        .collect(Collectors.toList()).stream().collect(Collectors.toList());
+        
+        def canada_times = u2.stream().filter(s-> s.key.equals("CANADA")).count();
+                
+        return canada_times == 6;
+      
+      """
+    
+    }
+  },
+    "transform": {
+    "script": {
+      "source": """
+def all_list = ctx.payload.aggregations.hist.buckets.stream()
+  .map(b -> {
+    b.country.buckets.stream()
+    .collect(Collectors.toList())
+      })
+      .flatMap(Collection::stream)
+      .collect(Collectors.toList());
+      
+    def unique = all_list.stream().distinct().collect(Collectors.toList());
+    def u1 = unique.stream().map(d -> ['name' : d.key]).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList());
+    
+        def u2 = unique.stream().filter(it -> it.max_price.value >= 4681)
+        .collect(Collectors.toList()).stream().collect(Collectors.toList());
+        
+        def canada_times = u2.stream().filter(s-> s.key.equals("CANADA"))
+        .collect(Collectors.toList()).stream().collect(Collectors.toList());
+        
+        
+        
+        
+   
+    return ['all_list' : canada_times];
+
+      """
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": """
+                  {{#ctx.payload.all_list}} 
+        {{.}}
+          {{/ctx.payload.all_list}} 
+          
+         
+           
+
+        """
+
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/hhh/_execute
