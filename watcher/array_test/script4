@@ -1,0 +1,112 @@
+PUT _xpack/watcher/watch/hhh
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          "hotel"
+        ],
+        "body": {
+          "size" : 0,
+                   "query": {
+            "bool": {
+              "must": [
+                {
+                  "match_all": {}
+                },
+                {
+                  "range": {
+                    "created": {
+                      "gte": 1530963158021,
+                      "lte": 1531006358021,
+                      "format": "epoch_millis"
+                    }
+                  }
+                }
+              ],
+              "filter": [],
+              "should": [],
+              "must_not": []
+            }
+          },
+          "aggs": {
+            "hist": {
+              "date_histogram": {
+                "field": "created",
+                "interval": "10m",
+                "time_zone": "Asia/Tokyo"
+              },
+              "aggs": {
+                "country": {
+                  "terms": {
+                    "field": "country.keyword",
+                    "size": 5
+                  }, "aggs": {
+                  "max_price": {
+                    "max": {
+                      "field": "price"
+                    }
+                  }
+                  }
+                }
+
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "always" : {}
+  },
+    "transform": {
+    "script": {
+      "source": """
+ctx.vars.test = ctx.payload.aggregations.hist.buckets.stream()
+  .map(b -> {
+    b.country.buckets.stream()
+    .collect(Collectors.toList())
+      })
+      .flatMap(Collection::stream)
+      .collect(Collectors.toList());
+  
+  
+return ctx
+      """
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": """
+         {{ ctx.vars.test }}
+        """
+
+      }
+    }
+  }
+}
+
+
+
+
+
+output
+
+     "actions": [
+        {
+          "id": "log",
+          "type": "logging",
+          "status": "success",
+          "logging": {
+            "logged_text": "         {0={doc_count=88, max_price={value=4941.0}, key=FRANCE}, 1={doc_count=81, max_price={value=4997.0}, key=CHILI}, 2={doc_count=80, max_price={value=4998.0}, key=CANADA}, 3={doc_count=72, max_price={value=4981.0}, key=INDIA}, 4={doc_count=72, max_price={value=4802.0}, key=JAPAN}, 5={doc_count=94, max_price={value=4994.0}, key=CHILI}, 6={doc_count=92, max_price={value=4978.0}, key=BRAZIL}, 7={doc_count=87, max_price={value=4964.0}, key=INDIA}, 8={doc_count=86, max_price={value=4981.0}, key=CANADA}, 9={doc_count=86, max_price={value=4934.0}, key=HAWAII}, 10={doc_count=100, max_price={value=4984.0}, key=JAPAN}, 11={doc_count=91, max_price={value=4891.0}, key=BRAZIL}, 12={doc_count=89, max_price={value=4948.0}, key=CHILI}, 13={doc_count=89, max_price={value=4994.0}, key=HAWAII}, 14={doc_count=82, max_price={value=4919.0}, key=CANADA}, 15={doc_count=93, max_price={value=4942.0}, key=FRANCE}, 16={doc_count=92, max_price={value=4999.0}, key=BRAZIL}, 17={doc_count=92, max_price={value=4990.0}, key=CANADA}, 18={doc_count=91, max_price={value=4947.0}, key=HAWAII}, 19={doc_count=83, max_price={value=4979.0}, key=CHILI}, 20={doc_count=95, max_price={value=4951.0}, key=CHILI}, 21={doc_count=92, max_price={value=4814.0}, key=JAPAN}, 22={doc_count=89, max_price={value=4984.0}, key=CANADA}, 23={doc_count=87, max_price={value=4959.0}, key=FRANCE}, 24={doc_count=81, max_price={value=4923.0}, key=HAWAII}, 25={doc_count=20, max_price={value=501876.0}, key=HAWAII}, 26={doc_count=13, max_price={value=4867.0}, key=CHILI}, 27={doc_count=13, max_price={value=4597.0}, key=JAPAN}, 28={doc_count=12, max_price={value=4828.0}, key=BRAZIL}, 29={doc_count=12, max_price={value=4681.0}, key=CANADA}}"
+          }
+        }
+      ]
+    },
