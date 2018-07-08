@@ -12,8 +12,8 @@ PUT _xpack/watcher/watch/hhh
           "hotel"
         ],
         "body": {
-          "size" : 0,
-                   "query": {
+          "size": 0,
+          "query": {
             "bool": {
               "must": [
                 {
@@ -46,15 +46,15 @@ PUT _xpack/watcher/watch/hhh
                   "terms": {
                     "field": "country.keyword",
                     "size": 5
-                  }, "aggs": {
-                  "max_price": {
-                    "max": {
-                      "field": "price"
+                  },
+                  "aggs": {
+                    "max_price": {
+                      "max": {
+                        "field": "price"
+                      }
                     }
                   }
-                  }
                 }
-
               }
             }
           }
@@ -63,32 +63,6 @@ PUT _xpack/watcher/watch/hhh
     }
   },
   "condition": {
-    "script" : {
-      "source" : 
-      """
-def all_list = ctx.payload.aggregations.hist.buckets.stream()
-  .map(b -> {
-    b.country.buckets.stream()
-    .collect(Collectors.toList())
-      })
-      .flatMap(Collection::stream)
-      .collect(Collectors.toList());
-      
-    def unique = all_list.stream().distinct().collect(Collectors.toList());
-    def u1 = unique.stream().map(d -> ['name' : d.key]).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList());
-    
-        def u2 = unique.stream().filter(it -> it.max_price.value >= 4681)
-        .collect(Collectors.toList()).stream().collect(Collectors.toList());
-        
-        def canada_times = u2.stream().filter(s-> s.key.equals("CANADA")).count();
-                
-        return canada_times == 6;
-      
-      """
-    
-    }
-  },
-    "transform": {
     "script": {
       "source": """
 def all_list = ctx.payload.aggregations.hist.buckets.stream()
@@ -102,6 +76,42 @@ def all_list = ctx.payload.aggregations.hist.buckets.stream()
     def unique = all_list.stream().distinct().collect(Collectors.toList());
     def u1 = unique.stream().map(d -> ['name' : d.key]).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList());
     
+   
+    
+        def u2 = unique.stream().filter(it -> it.max_price.value >= 4681)
+        .collect(Collectors.toList()).stream().collect(Collectors.toList());
+        
+  
+          def dc = unique.stream().map(d -> d.key).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList());
+        
+          for (String kore : dc) {
+            def met_times = u2.stream().filter(s-> s.key.equals(kore)).count();
+            
+            if ( met_times == 6) {
+              return true;
+            }
+          }
+        
+          
+                
+        
+"""
+    }
+  },
+  "transform": {
+    "script": {
+      "source": """
+def all_list = ctx.payload.aggregations.hist.buckets.stream()
+  .map(b -> {
+    b.country.buckets.stream()
+    .collect(Collectors.toList())
+      })
+      .flatMap(Collection::stream)
+      .collect(Collectors.toList());
+      
+    def unique = all_list.stream().distinct().collect(Collectors.toList());
+    def u1 = unique.stream().map(d -> d.key).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList());
+    
         def u2 = unique.stream().filter(it -> it.max_price.value >= 4681)
         .collect(Collectors.toList()).stream().collect(Collectors.toList());
         
@@ -112,9 +122,8 @@ def all_list = ctx.payload.aggregations.hist.buckets.stream()
         
         
    
-    return ['all_list' : canada_times];
-
-      """
+    return ['all_list' : u1];
+"""
     }
   },
   "actions": {
@@ -124,15 +133,11 @@ def all_list = ctx.payload.aggregations.hist.buckets.stream()
                   {{#ctx.payload.all_list}} 
         {{.}}
           {{/ctx.payload.all_list}} 
-          
-         
-           
-
-        """
-
+"""
       }
     }
   }
 }
+
 
 POST _xpack/watcher/watch/hhh/_execute
