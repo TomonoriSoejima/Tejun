@@ -1,0 +1,111 @@
+PUT _xpack/watcher/watch/hhh
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          "hotel"
+        ],
+        "body": {
+          "size": 0,
+          "query": {
+            "bool": {
+              "must": [
+                {
+                  "match_all": {}
+                },
+                {
+                  "range": {
+                    "created": {
+                      "gte": 1530963158021,
+                      "lte": 1531006358021,
+                      "format": "epoch_millis"
+                    }
+                  }
+                }
+              ],
+              "filter": [],
+              "should": [],
+              "must_not": []
+            }
+          },
+          "aggs": {
+            "hist": {
+              "date_histogram": {
+                "field": "created",
+                "interval": "10m",
+                "time_zone": "Asia/Tokyo"
+              },
+              "aggs": {
+                "country": {
+                  "terms": {
+                    "field": "country.keyword",
+                    "size": 5
+                  },
+                  "aggs": {
+                    "max_price": {
+                      "max": {
+                        "field": "price"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "price_threshold": 4681,
+    "min_times": 6
+  },
+  "condition": {
+    "script": {
+      "source": """
+def all_list = ctx.payload.aggregations.hist.buckets.stream()
+  .map(b -> {
+    b.country.buckets.stream()
+    .collect(Collectors.toList())
+      })
+      .flatMap(Collection::stream)
+      .collect(Collectors.toList());
+      
+    def unique = all_list.stream().distinct().collect(Collectors.toList());
+  
+      
+        def list_condition_met = unique.stream().filter(it -> it.max_price.value >= ctx.metadata.price_threshold)
+        .collect(Collectors.toList()).stream().collect(Collectors.toList());
+        
+  
+          // distinct countries list
+          def dc = unique.stream().map(d -> d.key).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList());
+        
+          for (String country : dc) {
+            def met_times = list_condition_met.stream().filter(s-> s.key.equals(country)).count();
+            
+            if ( met_times == ctx.metadata.min_times) {
+              return true;
+            }
+          }
+"""
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": """
+hello
+"""
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/hhh/_execute
