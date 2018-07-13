@@ -44,18 +44,28 @@ PUT _xpack/watcher/watch/mywatch
       "source": "return true"
     }
   },
+  "transform" : {
+    "script": {
+      "source": """
+    
+    def yesr = ["dfa", "gfa"];
+    def cal = Calendar.getInstance();
+    def today = cal.getTime();
+    cal.add(Calendar.DATE, -1);
+    def yesterday = cal.getTime();
+    return ['yesterday' : yesr];
+    """
+    }
+  }
+  ,
   "actions": {
     "log": {
       "logging": {
         "text": """
-        {{#ctx.payload.hits.hits}}
-        {{_source.purchase_date}}
-        {{/ctx.payload.hits.hits}}
+now-1d/d :  {{ctx.payload.yesterday}}\n
+exection : {{ctx.execution_time}}
         """
       }
     }
   }
-}  
- 
- 
-POST _xpack/watcher/watch/mywatch/_execute   
+}   
