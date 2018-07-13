@@ -1,32 +1,54 @@
-PUT /_watcher/watch/mustache-test
+PUT _xpack/watcher/watch/mywatch
 {
   "trigger": {
     "schedule": {
-      "interval": "1h"
+      "interval": "10m"
     }
   },
   "input": {
-    "http": {
+    "search": {
       "request": {
-        "host": "localhost",
-        "port": 9200,
-        "path": "/foo/_search",
-             "auth" : {
-        "basic" : {
-          "username" : "elastic",
-          "password" : "changeme"
+        "indices": "sales",
+        "body": {
+          "size": 1000,
+          "query": {
+            "bool": {
+              "must": [
+                {
+                  "range": {
+                    "purchase_date": {
+                      "gte": "now-1d/d",
+                      "lt": "now/d"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "sort": [
+            {
+              "purchase_date": {
+                "order": "asc"
+              }
+            }
+          ]
         }
       }
-      }
+    }
+  },
+  "condition": {
+    "script": {
+      "source": "return true"
     }
   },
   "actions": {
     "log": {
       "logging": {
-        "text": "{{ctx.payload.hits.hits.0._source.name.first}}"
+        "text": "hehi"
       }
     }
   }
-} 
+}    
 
-POST _xpack/watcher/watch/mustache-test/_execute
+
+POST _xpack/watcher/watch/mywatch/_execute 
