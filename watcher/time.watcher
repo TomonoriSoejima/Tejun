@@ -65,9 +65,15 @@ PUT _xpack/watcher/watch/mywatch
     
     cal1.add(Calendar.DATE, -1);
     def yesterday = cal1.getTime();
-     def t2 = df.format(yesterday);
-    def range_date = [t1, t2];
-    return ['range_date' : range_date];
+    def t2 = df.format(yesterday);
+    
+    def list = new ArrayList();
+    list.add("now/d : " + t1);
+     list.add("now-1d/d : " + t2);
+     
+     
+  
+    return ['range_date' : list];
     """
     }
   }
@@ -76,8 +82,9 @@ PUT _xpack/watcher/watch/mywatch
     "log": {
       "logging": {
         "text": """
-{{ctx.payload.range_date}}
-
+{{#ctx.payload.range_date}}
+ {{.}}
+ {{/ctx.payload.range_date}}
         """
       }
     }
