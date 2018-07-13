@@ -51,14 +51,22 @@ PUT _xpack/watcher/watch/mywatch
     cal1.set (Calendar.MILLISECOND, 0);
     cal1.set (Calendar.SECOND, 0);
     cal1.set (Calendar.MINUTE, 0);
-    cal1.set (Calendar.HOUR, 0);
-    cal1.add (Calendar.HOUR, -12);
-    def rounded = cal1.getTime();
+    //cal1.set (Calendar.HOUR, 0);
+    cal1.add (Calendar.HOUR, -9);
     
-  
+    
+    def rounded = cal1.getTime();
+    def df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    df.setTimeZone(TimeZone.getTimeZone("GMT"));
+ 
+    
+    def t1 = df.format(rounded);
+    
+    
     cal1.add(Calendar.DATE, -1);
     def yesterday = cal1.getTime();
-    def range_date = [rounded, yesterday];
+     def t2 = df.format(yesterday);
+    def range_date = [t1, t2];
     return ['range_date' : range_date];
     """
     }
@@ -68,10 +76,14 @@ PUT _xpack/watcher/watch/mywatch
     "log": {
       "logging": {
         "text": """
-{{ctx.payload.range_date}}\n
+{{ctx.payload.range_date}}
 
         """
       }
     }
   }
-} 
+}    
+
+POST _xpack/watcher/watch/mywatch/_execute   
+ 
+ 
