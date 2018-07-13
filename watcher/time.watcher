@@ -44,11 +44,16 @@ PUT _xpack/watcher/watch/mywatch
   "actions": {
     "log": {
       "logging": {
-        "text": "hehi"
+        "text": """
+        {{#ctx.payload.hits.hits}}
+        {{_source.purchase_date}}
+        {{/ctx.payload.hits.hits}}
+        """
       }
     }
   }
 }    
-
-
-POST _xpack/watcher/watch/mywatch/_execute 
+ 
+ 
+ 
+POST _xpack/watcher/watch/mywatch/_execute   
