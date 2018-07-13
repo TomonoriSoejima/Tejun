@@ -47,13 +47,19 @@ PUT _xpack/watcher/watch/mywatch
   "transform" : {
     "script": {
       "source": """
+    def cal1 = Calendar.getInstance();
+    cal1.set (Calendar.MILLISECOND, 0);
+    cal1.set (Calendar.SECOND, 0);
+    cal1.set (Calendar.MINUTE, 0);
+    cal1.set (Calendar.HOUR, 0);
+    cal1.add (Calendar.HOUR, -12);
+    def rounded = cal1.getTime();
     
-    def yesr = ["dfa", "gfa"];
-    def cal = Calendar.getInstance();
-    def today = cal.getTime();
-    cal.add(Calendar.DATE, -1);
-    def yesterday = cal.getTime();
-    return ['yesterday' : yesr];
+  
+    cal1.add(Calendar.DATE, -1);
+    def yesterday = cal1.getTime();
+    def range_date = [rounded, yesterday];
+    return ['range_date' : range_date];
     """
     }
   }
@@ -62,10 +68,10 @@ PUT _xpack/watcher/watch/mywatch
     "log": {
       "logging": {
         "text": """
-now-1d/d :  {{ctx.payload.yesterday}}\n
-exection : {{ctx.execution_time}}
+{{ctx.payload.range_date}}\n
+
         """
       }
     }
   }
-}   
+} 
