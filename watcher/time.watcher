@@ -47,33 +47,28 @@ PUT _xpack/watcher/watch/mywatch
   "transform" : {
     "script": {
       "source": """
-    def cal1 = Calendar.getInstance();
-    cal1.set (Calendar.MILLISECOND, 0);
-    cal1.set (Calendar.SECOND, 0);
-    cal1.set (Calendar.MINUTE, 0);
-    //cal1.set (Calendar.HOUR, 0);
-    cal1.add (Calendar.HOUR, -9);
-    
-    
-    def rounded = cal1.getTime();
-    def df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    df.setTimeZone(TimeZone.getTimeZone("GMT"));
- 
-    
-    def t1 = df.format(rounded);
-    
-    
-    cal1.add(Calendar.DATE, -1);
-    def yesterday = cal1.getTime();
-    def t2 = df.format(yesterday);
-    
-    def list = new ArrayList();
-    list.add("now/d : " + t1);
-     list.add("now-1d/d : " + t2);
+        def cal1 = Calendar.getInstance();
+        cal1.set (Calendar.MILLISECOND, 0);
+        cal1.set (Calendar.SECOND, 0);
+        cal1.set (Calendar.MINUTE, 0);
+        cal1.add (Calendar.HOUR, -9);
+        
+        
+        def rounded = cal1.getTime();
+        def df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        df.setTimeZone(TimeZone.getTimeZone("GMT"));
      
-     
-  
-    return ['range_date' : list];
+        def t1 = df.format(rounded);
+        
+        cal1.add(Calendar.DATE, -1);
+        def yesterday = cal1.getTime();
+        def t2 = df.format(yesterday);
+        
+        def list = new ArrayList();
+        list.add("now/d : " + t1);
+        list.add("now-1d/d : " + t2);
+      
+        return ['range_date' : list];
     """
     }
   }
@@ -82,9 +77,9 @@ PUT _xpack/watcher/watch/mywatch
     "log": {
       "logging": {
         "text": """
-{{#ctx.payload.range_date}}
- {{.}}
- {{/ctx.payload.range_date}}
+          {{#ctx.payload.range_date}}
+          {{.}}
+          {{/ctx.payload.range_date}}
         """
       }
     }
