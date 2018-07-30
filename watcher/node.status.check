@@ -1,0 +1,35 @@
+PUT /_xpack/watcher/watch/status-test
+{
+  "trigger": {
+    "schedule": {
+      "interval": "1h"
+    }
+  },
+  "input": {
+    "http": {
+      "request": {
+        "host": "localhost",
+        "port": 9200,
+        "path": "_cat/health?format=json"
+      }
+    }
+  },
+  "condition": {
+    "script": {
+      "source": """
+      def color = ctx.payload.data.0.status;
+      
+      return color == "red" || color == "yellow";
+    """
+    }
+  }, 
+  "actions": {
+    "log": {
+      "logging": {
+        "text": "cluster is {{ctx.payload.data.0.status}}"
+      }
+    }
+  }
+} 
+
+POST _xpack/watcher/watch/status-test/_execute
