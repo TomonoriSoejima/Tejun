@@ -19,7 +19,7 @@ PUT /_xpack/watcher/watch/status-test
       "source": """
       def color = ctx.payload.data.0.status;
       
-      return color == "red" || color == "yellow";
+      return color != "green";
     """
     }
   }, 
