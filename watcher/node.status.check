@@ -33,3 +33,40 @@ PUT /_xpack/watcher/watch/status-test
 } 
 
 POST _xpack/watcher/watch/status-test/_execute
+
+
+PUT /_xpack/watcher/watch/status-test2
+{
+  "trigger": {
+    "schedule": {
+      "interval": "1h"
+    }
+  },
+  "input": {
+    "http": {
+      "request": {
+        "host": "localhost",
+        "port": 9200,
+        "path": "_cat/health"
+      }
+    }
+  },
+  "condition": {
+    "script": {
+      "source": """
+      def color = ctx.payload._value;
+      
+      return ! color.contains("green");
+    """
+    }
+  }, 
+  "actions": {
+    "log": {
+      "logging": {
+        "text": "cluster is {{ctx.payload._value}}"
+      }
+    }
+  }
+} 
+
+POST _xpack/watcher/watch/status-test2/_execute
