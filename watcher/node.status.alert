@@ -1,0 +1,43 @@
+PUT /_xpack/watcher/watch/status-test2
+{
+  "trigger": {
+    "schedule": {
+      "interval": "1h"
+    }
+  },
+  "input": {
+    "http": {
+      "request": {
+        "host": "localhost",
+        "port": 9200,
+        "method" : "get",
+        "path": "_cat/nodes",
+        "params" : {
+          "format" : "json"
+        }
+      }
+    }
+  },
+    "metadata": {
+    "node_count": 4
+  },
+  "condition": {
+    "script": {
+      "source": """
+      def color = ctx.payload.data.size();
+      
+      return ctx.payload.node_count != ctx.payload.data.size();
+    """
+    }
+  }, 
+  "actions": {
+    "log": {
+      "logging": {
+        "text": "some node in es is down"
+      }
+    }
+  }
+} 
+
+
+POST _xpack/watcher/watch/status-test2/_execute
