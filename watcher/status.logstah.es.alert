@@ -1,0 +1,109 @@
+PUT _xpack/watcher/watch/mywatch
+{
+  "trigger": {
+    "schedule": {
+      "interval": "10m"
+    }
+  },
+  "input": {
+    "chain": {
+      "inputs": [
+        {
+          "logstash1": {
+            "http": {
+              "request": {
+                "host": "localhost",
+                "port": 9600,
+                "method": "get",
+                "path": "/",
+                "params": {
+                  "format": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "logstash2": {
+            "http": {
+              "request": {
+                "host": "localhost",
+                "port": 9601,
+                "method": "get",
+                "path": "/",
+                "params": {
+                  "format": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "es": {
+            "http": {
+              "request": {
+                "host": "localhost",
+                "port": 9200,
+                "method": "get",
+                "path": "_cat/nodes",
+                "params": {
+                  "format": "json"
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "metadata": {
+    "es_node_count": 2,
+    "ls_node_count": 2
+  },
+  "condition": {
+    "script": {
+      "source": """
+      if (   ctx.payload.logstash1.size() == 0 ) {
+        return true;
+      }
+      
+      if (   ctx.payload.logstash2.size() == 0 ) {
+        return true;
+      }
+      
+      return ctx.metadata.es_node_count != ctx.payload.es.data.size();
+   
+"""
+    }
+  },
+  "actions": {
+    "log": {
+      "transform": {
+        "script": {
+          "source": """
+      def status_list = new ArrayList();
+      if (ctx.payload.logstash1.size() == 0 ) {
+        status_list.add("logstash1 is down");
+      }
+      
+      if (ctx.payload.logstash2.size() == 0 ) {
+        status_list.add("logstash2 is down");
+      }
+      
+      if (ctx.metadata.es_node_count != ctx.payload.es.data.size()) {
+        status_list.add("some es node is down");
+      }
+
+   
+    return ['status_list' : status_list];
+"""
+        }
+      },
+      "logging": {
+        "text": "{{ctx.payload.status_lis}}"
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/mywatch/_execute
