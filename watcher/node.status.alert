@@ -26,7 +26,7 @@ PUT /_xpack/watcher/watch/status-test2
       "source": """
       def color = ctx.payload.data.size();
       
-      return ctx.payload.node_count != ctx.payload.data.size();
+      return ctx.metadata.node_count != ctx.payload.data.size();
     """
     }
   }, 
