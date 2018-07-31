@@ -100,7 +100,7 @@ PUT _xpack/watcher/watch/mywatch
         }
       },
       "logging": {
-        "text": "{{ctx.payload.status_lis}}"
+        "text": "{{ctx.payload.status_list}}"
       }
     }
   }
