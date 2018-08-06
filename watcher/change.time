@@ -1,0 +1,49 @@
+PUT _xpack/watcher/watch/hhh
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": "sales",
+        "body": {
+          "size" : 2,
+          "query": {
+            "match_all": {
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "always" : {}
+  },
+  "transform" : {
+      "script": {
+      "source": """
+        def purchase_dates = ctx.payload.hits.hits;
+        
+        
+            return ['purchase_dates' : purchase_dates];
+
+"""
+}
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": """
+            {{#ctx.payload.purchase_dates}} 
+        {{.}}
+          {{/ctx.payload.purchase_dates}} 
+"""
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/hhh/_execute
