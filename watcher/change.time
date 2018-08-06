@@ -29,10 +29,10 @@ PUT _xpack/watcher/watch/hhh
         for (int i = 0; i < total; i++) {
           
          
-          new_dates.add("old : " + ctx.payload.hits.hits[i]._source.purchase_date + ", new:" + ctx.payload.hits.hits[i]._source.purchase_date);
+          new_dates.add("old : " + ctx.payload.hits.hits[i]._source.purchase_date + ", unix time:" + ZonedDateTime.parse(ctx.payload.hits.hits[i]._source.purchase_date).toInstant().toEpochMilli());
           
         }
-        
+
         return ['purchase_dates' : new_dates];
 """
     }
