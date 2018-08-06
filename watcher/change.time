@@ -51,3 +51,31 @@ PUT _xpack/watcher/watch/hhh
 }
 
 POST _xpack/watcher/watch/hhh/_execute
+
+
+RESPONSE sample
+
+      "transform": {
+        "type": "script",
+        "status": "success",
+        "payload": {
+          "purchase_dates": [
+            "old : 2018-08-05T14:26:44.000Z, unix time:1533479204000",
+            "old : 2018-08-05T09:26:44.000Z, unix time:1533461204000",
+            "old : 2018-08-05T06:26:44.000Z, unix time:1533450404000"
+          ]
+        }
+      },
+      "actions": [
+        {
+          "id": "log",
+          "type": "logging",
+          "status": "success",
+          "logging": {
+            "logged_text": """
+         old : 2018-08-05T14:26:44.000Z, unix time:1533479204000
+         old : 2018-08-05T09:26:44.000Z, unix time:1533461204000
+         old : 2018-08-05T06:26:44.000Z, unix time:1533450404000
+ 
+"""
+          }
