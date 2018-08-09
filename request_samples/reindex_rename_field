@@ -1,0 +1,53 @@
+DELETE test
+
+POST test/_doc/1?refresh
+{
+  "text": "japan",
+  "flag": "foo"
+}
+
+POST test/_doc/2?refresh
+{
+  "text": "korea",
+  "flag": "foo"
+}
+
+POST test/_doc/3?refresh
+{
+  "text": "japan",
+  "flag": "foo"
+}
+
+
+GET test/_search
+{
+  "query": {
+    "match": {
+      "text": "japan"
+    }
+  }
+}
+
+
+
+POST _reindex
+{
+  "size": 10,
+  "source": {
+    "index": "test",
+    "query": {
+      "match": {
+        "text": "japan"
+      }
+    },
+    "sort": "_score"
+  },
+  "dest": {
+    "index": "new_test"
+  },
+    "script": {
+    "source": "ctx._source.tag = ctx._source.remove(\"flag\")"
+  }
+}
+
+GET new_test/_search
