@@ -135,3 +135,24 @@ PUT _xpack/watcher/watch/ls-alert
 }
 
 POST _xpack/watcher/watch/ls-alert/_execute
+
+
+```
+
+      "actions": [
+        {
+          "id": "log",
+          "type": "logging",
+          "status": "success",
+          "logging": {
+            "logged_text": """
+             {last_3=[1000, 1000, 1000], instance=127.0.0.1:9600, alert_level=unknown}
+             {last_3=[1000, 1000, 1000], instance=127.0.0.1:9601, alert_level=unknown}
+             {last_3=[1000, 1000, 1000], instance=127.0.0.1:9602, alert_level=unknown}
+ 
+"""
+          }
+        }
+      ]
+      
+```
