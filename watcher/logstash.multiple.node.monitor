@@ -68,7 +68,7 @@ PUT _xpack/watcher/watch/ls-alert
   },
   "condition": {
     "script": {
-      "source": "              return true;"
+      "source": "return true;"
     }
   },
   "transform": {
