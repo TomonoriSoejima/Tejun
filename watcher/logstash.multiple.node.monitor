@@ -1,0 +1,278 @@
+POST _xpack/watcher/watch/_execute
+{
+  "watch" : {
+      "trigger": {
+    "schedule": {
+      "interval": "10m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          ".monitoring-logstash-6-2018.08.10"
+        ],
+        "body": {
+          "size": 0,
+          "query": {
+            "bool": {
+              "must": [
+                {
+                  "match_all": {}
+                },
+                {
+                  "range": {
+                    "timestamp": {
+         "gte": "now-1d/d",
+              "lte": "now/d",
+                      "format": "epoch_millis"
+                    }
+                  }
+                }
+              ],
+              "filter": [],
+              "should": [],
+              "must_not": []
+            }
+          },
+          "aggs": {
+            "hist": {
+              "date_histogram": {
+                "field": "timestamp",
+                "interval": "5m",
+                "time_zone": "Asia/Tokyo"
+              },
+              "aggs": {
+                "address": {
+                  "terms": {
+                    "field": "logstash_stats.logstash.http_address",
+                    "size": 5
+                  },
+                  "aggs": {
+                    "out_count": {
+                      "terms": {
+                        "field": "logstash_stats.events.out",
+                        "size": 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "price_threshold": 4681,
+    "min_times": 3
+  },
+  "condition": {
+    "script": {
+      "source": "              return true;"
+    }
+  },
+  "transform": {
+    "script": {
+      "source": """
+      def ls1_list = new ArrayList();
+      def key_only = new ArrayList();
+
+      // flatten the bucket.
+      def all_list = ctx.payload.aggregations.hist.buckets.stream()
+        .map(b -> {
+          b.address.buckets.stream()
+          .collect(Collectors.toList())
+            })
+            .flatMap(Collection::stream)
+            .collect(Collectors.toList());
+      
+      def ls1 = "127.0.0.1:9600";
+      def ls2 = "127.0.0.1:9601";
+      def ls3 = "127.0.0.1:9602";
+
+    
+    // filtering the list to 1 logstash instance.
+    def ls2_list = all_list.stream().filter(it -> it.key == ls1)
+        .collect(Collectors.toList()).stream().collect(Collectors.toList());
+        
+    // getting the logstash out event count. 
+    def ls2_list_out_list = new ArrayList();
+    for (HashMap kore : ls2_list) {
+      def kore2 = kore.out_count.buckets[0].key;
+      ls2_list_out_list.add(kore2);
+    }
+  
+  // finally getting the logstash out event count from the last 3 intervals.
+  def  last3 = ls2_list_out_list.stream().skip(ls2_list_out_list.size() - ctx.metadata.min_times).collect(Collectors.toList());
+
+  // check if they are all the same, if so flag it as problematic.
+  // which I will code tomorrow.
+  
+  //def ls1_list_2_2 = all_list.stream().filter(it -> it.out_count.buckets[0].doc_count == 17)
+  // .collect(Collectors.toList()).stream().collect(Collectors.toList());
+   
+   
+   
+        
+        
+        
+   
+    return ['all_list' : last3 ];
+"""
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": """
+                 {{#ctx.payload.all_list}} 
+        {{.}}
+          {{/ctx.payload.all_list}} 
+"""
+      }
+    }
+  }
+  }
+}
+
+
+PUT _xpack/watcher/watch/ls-alert
+{
+  "trigger": {
+    "schedule": {
+      "interval": "10m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": [
+          ".monitoring-logstash-6-2018.08.10"
+        ],
+        "body": {
+          "size": 0,
+          "query": {
+            "bool": {
+              "must": [
+                {
+                  "match_all": {}
+                },
+                {
+                  "range": {
+                    "timestamp": {
+                      "gte": "now-1d/d",
+                      "lte": "now/d",
+                      "format": "epoch_millis"
+                    }
+                  }
+                }
+              ],
+              "filter": [],
+              "should": [],
+              "must_not": []
+            }
+          },
+          "aggs": {
+            "hist": {
+              "date_histogram": {
+                "field": "timestamp",
+                "interval": "5m",
+                "time_zone": "Asia/Tokyo"
+              },
+              "aggs": {
+                "address": {
+                  "terms": {
+                    "field": "logstash_stats.logstash.http_address",
+                    "size": 5
+                  },
+                  "aggs": {
+                    "out_count": {
+                      "terms": {
+                        "field": "logstash_stats.events.out",
+                        "size": 3
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "price_threshold": 4681,
+    "min_times": 3
+  },
+  "condition": {
+    "script": {
+      "source": "              return true;"
+    }
+  },
+  "transform": {
+    "script": {
+      "source": """
+        def ls1_list = new ArrayList();
+        def key_only = new ArrayList();
+
+      // flatten the bucket.
+        def all_list = ctx.payload.aggregations.hist.buckets.stream()
+          .map(b -> {
+            b.address.buckets.stream()
+            .collect(Collectors.toList())
+              })
+              .flatMap(Collection::stream)
+              .collect(Collectors.toList());
+      
+        
+        List logstash_instnaces = ["127.0.0.1:9600", "127.0.0.1:9601", "127.0.0.1:9602"];
+        List result_set = new ArrayList();
+  
+       for (String instance : logstash_instnaces) {
+          Map result = new HashMap();
+          result.put("instance", instance);
+            // filtering the list to 1 logstash instance.
+          def list_ls = all_list.stream().filter(it -> it.key == instance)
+              .collect(Collectors.toList()).stream().collect(Collectors.toList());
+            
+        // getting the logstash out event count. 
+          def out_list = new ArrayList();
+          for (HashMap kore : list_ls) {
+            def kore2 = kore.out_count.buckets[0].key;
+            out_list.add(kore2);
+          
+            // finally getting the logstash out event count from the last 3 intervals.
+            
+          }
+          def  last3 = out_list.stream().skip(out_list.size() - ctx.metadata.min_times).collect(Collectors.toList());
+          result.put("last_3", last3);
+          result.put("alert_level", "unknown");
+          // todo
+          // you will need to decide what to do about last 3 out count.
+          // you may just focus on the very last one being non zero to determine logstash is stalling or not.
+          result_set.add(result);
+  
+      }
+  
+
+    return ['result' : result_set ];
+"""
+    }
+  },
+  "actions": {
+    "log": {
+      "logging": {
+        "text": """
+                 {{#ctx.payload.result}} 
+        {{.}}
+          {{/ctx.payload.result}} 
+"""
+      }
+    }
+  }
+}
+
+POST _xpack/watcher/watch/ls-alert/_execute
