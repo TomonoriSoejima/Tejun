@@ -94,19 +94,19 @@ PUT _xpack/watcher/watch/ls-alert
           Map result = new HashMap();
           result.put("instance", instance);
             // filtering the list to 1 logstash instance.
-          def list_ls = all_list.stream().filter(it -> it.key == instance)
+          List list_ls = all_list.stream().filter(it -> it.key == instance)
               .collect(Collectors.toList()).stream().collect(Collectors.toList());
             
         // getting the logstash out event count. 
-          def out_list = new ArrayList();
+          List out_list = new ArrayList();
           for (HashMap kore : list_ls) {
-            def kore2 = kore.out_count.buckets[0].key;
-            out_list.add(kore2);
+            def out_array = kore.out_count.buckets[0].key;
+            out_list.add(out_array);
           
             // finally getting the logstash out event count from the last 3 intervals.
             
           }
-          def  last3 = out_list.stream().skip(out_list.size() - ctx.metadata.min_times).collect(Collectors.toList());
+          List last3 = out_list.stream().skip(out_list.size() - ctx.metadata.min_times).collect(Collectors.toList());
           result.put("last_3", last3);
           result.put("alert_level", "unknown");
           // todo
