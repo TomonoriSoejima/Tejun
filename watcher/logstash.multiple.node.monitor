@@ -136,8 +136,7 @@ PUT _xpack/watcher/watch/ls-alert
 
 POST _xpack/watcher/watch/ls-alert/_execute
 
-
-```
+# Action will look like this.
 
       "actions": [
         {
@@ -155,4 +154,3 @@ POST _xpack/watcher/watch/ls-alert/_execute
         }
       ]
       
-```
