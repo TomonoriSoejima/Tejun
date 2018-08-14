@@ -1,3 +1,14 @@
+PUT sales/1/1
+{
+  "purchase_date": "2018-08-05T15:43:13.000Z"
+}
+
+PUT sales/1/2
+{
+  "purchase_date": "2018-08-05T15:43:13.000Z"
+}
+
+
 PUT _xpack/watcher/watch/hhh
 {
   "trigger": {
@@ -24,12 +35,12 @@ PUT _xpack/watcher/watch/hhh
   "transform": {
     "script": {
       "source": """
-        def total = ctx.payload.hits.size();
-        def new_dates = new ArrayList();
+        def total = ctx.payload.hits.hits.size();
+        List new_dates = new ArrayList();
         for (int i = 0; i < total; i++) {
           
          
-          new_dates.add("old : " + ctx.payload.hits.hits[i]._source.purchase_date + ", unix time:" + ZonedDateTime.parse(ctx.payload.hits.hits[i]._source.purchase_date).toInstant().toEpochMilli());
+      new_dates.add("old : " + ctx.payload.hits.hits[i]._source.purchase_date);
           
         }
 
@@ -51,184 +62,3 @@ PUT _xpack/watcher/watch/hhh
 }
 
 POST _xpack/watcher/watch/hhh/_execute
-
-
-RESPONSE sample
-
-      "transform": {
-        "type": "script",
-        "status": "success",
-        "payload": {
-          "purchase_dates": [
-            "old : 2018-08-05T14:26:44.000Z, unix time:1533479204000",
-            "old : 2018-08-05T09:26:44.000Z, unix time:1533461204000",
-            "old : 2018-08-05T06:26:44.000Z, unix time:1533450404000"
-          ]
-        }
-      },
-      "actions": [
-        {
-          "id": "log",
-          "type": "logging",
-          "status": "success",
-          "logging": {
-            "logged_text": """
-         old : 2018-08-05T14:26:44.000Z, unix time:1533479204000
-         old : 2018-08-05T09:26:44.000Z, unix time:1533461204000
-         old : 2018-08-05T06:26:44.000Z, unix time:1533450404000
- 
-"""
-          }
-          
-          
-          
-          
-# sample data
-
-  "hits": {
-    "total": 50,
-    "max_score": 1,
-    "hits": [
-      {
-        "_index": "sales",
-        "_type": "type1",
-        "_id": "14",
-        "_score": 1,
-        "_source": {
-          "car": "car9",
-          "payment_method": "Cash",
-          "issuer": "",
-          "shipping_country": "JAPAN",
-          "price": 2536,
-          "purchase_date": "2018-08-05T15:43:13.000Z"
-        }
-      },
-      {
-        "_index": "sales",
-        "_type": "type1",
-        "_id": "19",
-        "_score": 1,
-        "_source": {
-          "car": "car25",
-          "payment_method": "credit",
-          "issuer": "visa",
-          "shipping_country": "JAPAN",
-          "price": 2368,
-          "purchase_date": "2018-08-05T10:43:13.000Z"
-        }
-      },
-      {
-        "_index": "sales",
-        "_type": "type1",
-        "_id": "22",
-        "_score": 1,
-        "_source": {
-          "car": "car30",
-          "payment_method": "BitCoin",
-          "issuer": "",
-          "shipping_country": "HAWAII",
-          "price": 3314,
-          "purchase_date": "2018-08-05T07:43:13.000Z"
-        }
-      },
-      {
-        "_index": "sales",
-        "_type": "type1",
-        "_id": "24",
-        "_score": 1,
-        "_source": {
-          "car": "car9",
-          "payment_method": "Cash",
-          "issuer": "",
-          "shipping_country": "CHILI",
-          "price": 2354,
-          "purchase_date": "2018-08-05T05:43:13.000Z"
-        }
-      },
-      {
-        "_index": "sales",
-        "_type": "type1",
-        "_id": "25",
-        "_score": 1,
-        "_source": {
-          "car": "car18",
-          "payment_method": "credit",
-          "issuer": "jcb",
-          "shipping_country": "FRANCE",
-          "price": 2089,
-          "purchase_date": "2018-08-05T04:43:13.000Z"
-        }
-      },
-      {
-        "_index": "sales",
-        "_type": "type1",
-        "_id": "26",
-        "_score": 1,
-        "_source": {
-          "car": "car25",
-          "payment_method": "credit",
-          "issuer": "visa",
-          "shipping_country": "INDIA",
-          "price": 3685,
-          "purchase_date": "2018-08-05T03:43:13.000Z"
-        }
-      },
-      {
-        "_index": "sales",
-        "_type": "type1",
-        "_id": "29",
-        "_score": 1,
-        "_source": {
-          "car": "car3",
-          "payment_method": "BitCoin",
-          "issuer": "",
-          "shipping_country": "FRANCE",
-          "price": 4154,
-          "purchase_date": "2018-08-05T00:43:13.000Z"
-        }
-      },
-      {
-        "_index": "sales",
-        "_type": "type1",
-        "_id": "40",
-        "_score": 1,
-        "_source": {
-          "car": "car13",
-          "payment_method": "Cash",
-          "issuer": "",
-          "shipping_country": "INDIA",
-          "price": 1625,
-          "purchase_date": "2018-08-04T13:43:13.000Z"
-        }
-      },
-      {
-        "_index": "sales",
-        "_type": "type1",
-        "_id": "41",
-        "_score": 1,
-        "_source": {
-          "car": "car3",
-          "payment_method": "BitCoin",
-          "issuer": "",
-          "shipping_country": "FRANCE",
-          "price": 1069,
-          "purchase_date": "2018-08-04T12:43:13.000Z"
-        }
-      },
-      {
-        "_index": "sales",
-        "_type": "type1",
-        "_id": "44",
-        "_score": 1,
-        "_source": {
-          "car": "car28",
-          "payment_method": "Cash",
-          "issuer": "",
-          "shipping_country": "JAPAN",
-          "price": 2678,
-          "purchase_date": "2018-08-04T09:43:13.000Z"
-        }
-      }
-    ]
-  }
-}
