@@ -2,6 +2,9 @@
 
 [Tune for indexing speed](https://www.elastic.co/guide/en/elasticsearch/reference/master/tune-for-indexing-speed.html)
 
+
+[bulk rejection](https://www.elastic.co/blog/why-am-i-seeing-bulk-rejections-in-my-elasticsearch-cluster)
+
 [Logstash - Performance Troubleshooting Guide](https://www.elastic.co/guide/en/logstash/5.5/performance-troubleshooting.html)
 
 [logstash](https://www.elastic.co/guide/en/logstash/5.5/performance-tuning.html)
