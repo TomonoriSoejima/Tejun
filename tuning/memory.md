@@ -3,7 +3,7 @@ fielddata cache は heap 領域を使用するため、fielddata cache が肥大
 heap 領域の不足による影響は以下となります。
 
 
-**検索時
+**検索時**
 
 パフォーマンスの劣化
 
@@ -12,7 +12,7 @@ OOM については、circuit breaker の仕組みにて、対処できる場合
 
 詳細 : https://www.elastic.co/guide/en/elasticsearch/reference/current/circuit-breaker.html
 
-**index 作成時
+**index 作成時**
 
 indexing のパフォーマンス劣化
 
