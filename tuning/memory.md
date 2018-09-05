@@ -19,3 +19,10 @@ indexing のパフォーマンス劣化
 なお、fielddata の上限値を設ける事で、上記を回避する事が可能です。
 
 詳細 : https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-fielddata.html#modules-fielddata
+
+
+fielddata の使用量チェック
+
+http://localhost:9200/_nodes/stats?pretty
+
+`indices.fielddata.memory_size_in_bytes`
