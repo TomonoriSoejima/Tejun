@@ -9,17 +9,17 @@ PUT /test1
           "filter": [
             "standard",
             "lowercase",
-            "my_snow",
-                        "my_snow2"
+            "my_stemmer",
+            "my_stemmer2"
           ]
         }
       },
       "filter": {
-        "my_snow": {
+        "my_stemmer": {
           "type": "stemmer",
           "language": "English"
         },
-                "my_snow2": {
+        "my_stemmer2": {
           "type": "stemmer",
           "language": "porter2"
         }
