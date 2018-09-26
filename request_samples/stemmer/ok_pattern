@@ -1,0 +1,85 @@
+DELETE test1
+PUT /test1
+{
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "my_analyzer": {
+          "tokenizer": "standard",
+          "filter": [
+            "standard",
+            "lowercase",
+            "my_snow",
+                        "my_snow2"
+          ]
+        }
+      },
+      "filter": {
+        "my_snow": {
+          "type": "stemmer",
+          "language": "English"
+        },
+                "my_snow2": {
+          "type": "stemmer",
+          "language": "porter2"
+        }
+      }
+      
+    }
+  },
+  "mappings": {
+    "test": {
+      "properties": {
+        "country": {
+          "type": "text",
+          "index": "true"
+        },
+        "hotel_name": {
+          "type": "text",
+          "analyzer": "my_analyzer"
+        },
+        "null_test": {
+          "type": "text",
+          "analyzer": "standard"
+        },
+        "message": {
+          "type": "text"
+        },
+        "postDate": {
+          "type": "date",
+          "format": "strict_date_optional_time||epoch_millis"
+        },
+        "price": {
+          "type": "long"
+        },
+        "user": {
+          "type": "text"
+        }
+      }
+    }
+  }
+}
+
+ 
+
+PUT test1/test/4
+{
+  "hotel_name": "fdfa"
+}
+
+Response
+
+{
+  "_index": "test1",
+  "_type": "test",
+  "_id": "4",
+  "_version": 1,
+  "result": "created",
+  "_shards": {
+    "total": 2,
+    "successful": 1,
+    "failed": 0
+  },
+  "_seq_no": 0,
+  "_primary_term": 1
+}
