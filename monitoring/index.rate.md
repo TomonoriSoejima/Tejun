@@ -137,3 +137,14 @@ GET .monitoring-es-6-2018.10.29/_search
           }
         },
 ```
+
+
+**6. disable slow log**
+Once you capture the monitoring request, you can turn off slowlog.
+
+```
+PUT .monitoring-es-6-2018.10.29/_settings
+{
+ "index.search.slowlog.threshold.query.debug": "-1"
+}
+```
