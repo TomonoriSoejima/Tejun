@@ -8,7 +8,7 @@ PUT .monitoring-es-6-2018.10.29/_settings
 }
 ```
 
-**2. Look for `indices_stats._all.total.indexing.index_total` in slow log file.
+**2. Look for `indices_stats._all.total.indexing.index_total` in slow log file.**
 
 `ag indices_stats._all.total.indexing.index_total elasticsearch_index_search_slowlog.log`
 (Assuming `elasticsearch` is your cluster name)
@@ -17,7 +17,7 @@ The metric name is found in this file.
 
 https://github.com/elastic/kibana/blob/master/x-pack/plugins/monitoring/server/lib/metrics/elasticsearch/metrics.js
 
-**3. Once the request is found, you can parse it and replay in Kibana.
+**3. Once the request is found, you can parse it and replay in Kibana.**
 
 Assuming the line containing the relevant request is found in line 10 of elasticsearch_index_search_slowlog.log
 
