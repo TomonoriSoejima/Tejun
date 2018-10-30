@@ -8,6 +8,42 @@ PUT .monitoring-es-6-2018.10.29/_settings
 }
 ```
 
+**2. Look for `indices_stats._all.total.indexing.index_total` in slow log file.
+
+`ag indices_stats._all.total.indexing.index_total elasticsearch_index_search_slowlog.log`
+(Assuming `elasticsearch` is your cluster name)
+
+The metric name is found in this file.
+
+https://github.com/elastic/kibana/blob/master/x-pack/plugins/monitoring/server/lib/metrics/elasticsearch/metrics.js
+
+**3. Once the request is found, you can parse it and replay in Kibana.
+
+Assuming the line containing the relevant request is found in line 10 of elasticsearch_index_search_slowlog.log
+
+sed -n 10p elasticsearch_index_search_slowlog.log > bingo.log
+sh slow.log.parser.sh bingo.log | pbcopy
+
+slow.log.parser.sh should look like this.
+
+```
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied"
+    echo "Please specify full path to slow log file"
+    exit
+fi
+path=$1
+
+cat $path | while read line
+do
+	index=$(echo $line | awk -F ' ' '{print $3}' | sed -e 's/^\[//' -e s/\]// | awk -F '[' '{print $1}')
+	echo "GET $index/_search"
+	echo $line | awk -F ' ' '{print $11}' | sed -e s,^source,,  -e 's/^\[//'  -e s/\],$// | jq -r  . 
+	echo ""
+done
+```
+
 
 GET .monitoring-es-6-2018.10.29/_search
 {
