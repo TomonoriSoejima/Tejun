@@ -21,8 +21,10 @@ https://github.com/elastic/kibana/blob/master/x-pack/plugins/monitoring/server/l
 
 Assuming the line containing the relevant request is found in line 10 of elasticsearch_index_search_slowlog.log
 
+```
 sed -n 10p elasticsearch_index_search_slowlog.log > bingo.log
 sh slow.log.parser.sh bingo.log | pbcopy
+```
 
 slow.log.parser.sh should look like this.
 
@@ -44,6 +46,8 @@ do
 done
 ```
 
+**4. The query should now look like this**
+```
 
 GET .monitoring-es-6-2018.10.29/_search
 {
@@ -115,3 +119,21 @@ GET .monitoring-es-6-2018.10.29/_search
     }
   }
 }
+```
+
+**5. `metric_deriv` should be the Index Rate found in monitoring UI**
+
+```
+        {
+          "key_as_string": "2018-10-29T06:03:30.000Z",
+          "key": 1540793010000,
+          "doc_count": 3,
+          "metric": {
+            "value": 5202
+          },
+          "metric_deriv": {
+            "value": 5202,
+            "normalized_value": 173.4
+          }
+        },
+```
