@@ -2,6 +2,11 @@ When you run into security feature not working to your expectation.
 
 **Here are few things you can do.**
 
+Check the settings in 
+- elasticsearch.yml
+- roles.yml
+- role_mapping.yml
+
 5.x
 
 https://www.elastic.co/guide/en/x-pack/5.4/security-api-authenticate.html
