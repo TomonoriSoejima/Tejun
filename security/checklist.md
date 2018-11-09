@@ -4,7 +4,7 @@ When you run into security feature not working to your expectation.
 
 5.x
 
-https://www.elastic.co/guide/en/elasticsearch/reference/current/security-api-authenticate.html
+https://www.elastic.co/guide/en/x-pack/5.4/security-api-authenticate.html
 https://www.elastic.co/guide/en/x-pack/5.4/security-api-privileges.html
 
 
