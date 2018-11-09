@@ -9,6 +9,7 @@ https://www.elastic.co/guide/en/x-pack/5.4/security-api-privileges.html
 
 
 6.x
+
 https://www.elastic.co/guide/en/elasticsearch/reference/current/security-api-authenticate.html
 https://www.elastic.co/guide/en/elasticsearch/reference/current/security-api-has-privileges.html
 
