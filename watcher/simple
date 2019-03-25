@@ -1,0 +1,21 @@
+{
+  "trigger" : {
+    "schedule" : {
+      "daily" : { "at" : "noon" }
+    }
+  },
+  "input" : {
+    "simple" : {
+      "name" : "John"
+    }
+  },
+  "actions" : {
+    "reminder_email" : {
+      "email" : {
+        "to" : "to@host.domain",
+        "subject" : "Reminder",
+        "body" : "Dear {{ctx.payload.name}}, by the time you read these lines, I'll be gone"
+      }
+    }
+  }
+}
