@@ -44,3 +44,25 @@ GET hotel/_search
     }
   }
 }
+
+
+# simple version
+
+GET hotel/_search
+{
+  "size": 1,
+  "_source": [
+    "created"
+  ],
+  "script_fields": {
+    "today": {
+      "script": {
+        "lang": "painless",
+          "source": """
+            def today = new SimpleDateFormat('yyyyMMdd HH:mm:ss').format(new Date());
+            return today;
+          """
+      }
+    }
+  }
+}
