@@ -53,3 +53,17 @@ GET test_index3/_doc/_search
     }
   }
 }
+
+# with hitlighting
+GET test_index3/_doc/_search
+{
+    "query" : {
+        "match": { "text": "universe" }
+    },
+    "highlight" : {
+        "fields" : {
+            "text" : {}
+        }
+    }
+}
+
