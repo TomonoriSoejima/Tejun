@@ -1,3 +1,4 @@
+DELETE test*
 PUT /test_index3
 {
   "settings": {
@@ -27,7 +28,6 @@ PUT /test_index3
       "properties": {
         "kore": {
           "type": "text",
-          "fielddata": true,
           "fields": {
             "raw": {
               "type": "keyword"
@@ -50,20 +50,24 @@ PUT test_index3/_doc/1
 }
 
 
-PUT test_index3/_doc/2
-{
-  "kore": "cosmos"
-}
-
 GET test_index3/_doc/_search
 {
   "query": {
     "match": {
       "kore": "universe"
     }
+  },
+  "script_fields": {
+    "today": {
+      "script": {
+        "lang": "painless",
+        "source": """
+         return 'hello' + doc['kore.raw'].value;
+        """
+      }
+    }
   }
 }
-
 
 GET test_index3/_doc/_search
 {
