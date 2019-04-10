@@ -1,0 +1,55 @@
+PUT /test_index3
+{
+  "settings": {
+    "index": {
+      "analysis": {
+        "analyzer": {
+          "synonym": {
+            "tokenizer": "whitespace",
+            "filter": [
+              "synonym"
+            ]
+          }
+        },
+        "filter": {
+          "synonym": {
+            "type": "synonym",
+            "synonyms_path": "synonym.txt"
+          }
+        }
+      }
+    }
+  },
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "text": {
+          "type": "text",
+          "analyzer": "synonym", 
+          "search_analyzer": "synonym" 
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+PUT test_index3/_doc/1
+{
+  "text": "cosmos"
+}
+
+
+
+GET test_index3/_doc/_search
+{
+  "query": {
+    "match": {
+      "text": "universe"
+    }
+  }
+}
