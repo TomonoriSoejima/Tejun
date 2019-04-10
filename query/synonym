@@ -58,6 +58,26 @@ GET test_index3/_doc/_search
   }
 }
 
+
+GET test_index3/_doc/_search
+{
+  "query": {
+    "match": {
+      "kore": "universe"
+    }
+  },
+  "script_fields": {
+    "today": {
+      "script": {
+        "lang": "painless",
+        "source": """
+         return 'hello' + doc['kore.keyword'].value;
+        """
+      }
+    }
+  }
+}
+
 # with hitlighting
 GET test_index3/_doc/_search
 {
