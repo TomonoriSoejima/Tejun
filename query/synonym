@@ -1,3 +1,4 @@
+DELETE test*
 PUT /test_index3
 {
   "settings": {
@@ -14,7 +15,7 @@ PUT /test_index3
         "filter": {
           "synonym": {
             "type": "synonym",
-            "synonyms_path": "synonym.txt"
+            "synonyms" : ["universe,cosmos"]
           }
         }
       }
@@ -23,7 +24,7 @@ PUT /test_index3
   "mappings": {
     "_doc": {
       "properties": {
-        "text": {
+        "kore": {
           "type": "text",
           "analyzer": "synonym", 
           "search_analyzer": "synonym" 
@@ -37,19 +38,22 @@ PUT /test_index3
 
 
 
-
 PUT test_index3/_doc/1
 {
-  "text": "cosmos"
+  "kore": "universe"
 }
 
 
+PUT test_index3/_doc/2
+{
+  "kore": "cosmos"
+}
 
 GET test_index3/_doc/_search
 {
   "query": {
     "match": {
-      "text": "universe"
+      "kore": "universe"
     }
   }
 }
