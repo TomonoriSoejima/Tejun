@@ -1,0 +1,21 @@
+POST <index>/_update_by_query?pipeline=add-virus
+{
+  "query": {
+    "term": {
+      "event.threatType_ja": "ウイルス対策"
+    }
+  }
+}
+
+
+
+PUT _ingest/pipeline/add-virus
+{
+  "description" : "sets Antivirus",
+  "processors" : [ {
+      "set" : {
+        "field": "event.threatType",
+        "value": "Antivirus"
+      }
+  } ]
+}
