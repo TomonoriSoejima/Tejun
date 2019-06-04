@@ -1,3 +1,15 @@
+PUT _ingest/pipeline/add-virus
+{
+  "description" : "sets Antivirus",
+  "processors" : [ {
+      "set" : {
+        "field": "event.threatType",
+        "value": "Antivirus"
+      }
+  } ]
+}
+
+
 POST <index>/_update_by_query?pipeline=add-virus
 {
   "query": {
@@ -9,13 +21,3 @@ POST <index>/_update_by_query?pipeline=add-virus
 
 
 
-PUT _ingest/pipeline/add-virus
-{
-  "description" : "sets Antivirus",
-  "processors" : [ {
-      "set" : {
-        "field": "event.threatType",
-        "value": "Antivirus"
-      }
-  } ]
-}
