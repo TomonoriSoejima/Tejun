@@ -94,3 +94,17 @@ GET hello/_search
     ]
   }
 }
+
+
+# this does work.
+
+GET hello/_search
+{
+  "script_fields": {
+    "fname": {
+      "script": {
+        "source": "doc['data.keyword'].value.replace('\\\\','\\\\\\\\\\\\\\\\')"
+      }
+    }
+  }
+}
