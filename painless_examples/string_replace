@@ -9,6 +9,9 @@ GET hello2/_search
   }
 }
 
+
+# works
+
 GET hello/_search
 {
   "script_fields": {
@@ -49,7 +52,7 @@ GET hello/_search
 }
 
 
-
+# does not work
 
 GET hello/_search
 {
