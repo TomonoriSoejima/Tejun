@@ -1,0 +1,10 @@
+GET hello2/_search
+{
+  "script_fields": {
+    "fname": {
+      "script": {
+        "source": "doc['data.keyword'].value.replace('a','b');"
+      }
+    }
+  }
+}
