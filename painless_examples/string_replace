@@ -113,3 +113,34 @@ GET hello/_search
     }
   }
 }
+
+
+
+{
+  "took" : 2,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 1,
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "hello",
+        "_type" : "doc",
+        "_id" : "1",
+        "_score" : 1.0,
+        "fields" : {
+          "fname" : [
+            """[“C:\\\\Windows\\\\system32\\\\wbem\\\\WmiApSrv.exe”]"""
+          ]
+        }
+      }
+    ]
+  }
+}
+
