@@ -9,6 +9,11 @@ GET hello2/_search
   }
 }
 
+POST hello/doc/1
+{
+  "data" : "[“C:\\Windows\\system32\\wbem\\WmiApSrv.exe”]"
+}
+
 
 # works
 
