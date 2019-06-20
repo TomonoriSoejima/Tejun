@@ -1,1 +1,35 @@
-a
+POST _watcher/watch/_execute
+{
+  "watch": {
+    "trigger": {
+      "schedule": {
+        "interval": "5m"
+      }
+    },
+    "input": {
+      "http": {
+        "request": {
+          "host": "localhost",
+          "port": 9200,
+          "path": "_nodes/stats/os?format=json"
+        }
+      }
+    },
+    "condition": {
+      "script": {
+        "source": """
+      def color = ctx.payload.data.0.status;
+      
+      return color != "green";
+"""
+      }
+    },
+    "actions": {
+      "log": {
+        "logging": {
+          "text": "cluster is {{ctx.payload.data.0.status}}"
+        }
+      }
+    }
+  }
+}
