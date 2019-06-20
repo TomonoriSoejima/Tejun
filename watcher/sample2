@@ -36,8 +36,7 @@ POST _watcher/watch/_execute
           "script": {
             "source": """
             def latest = ctx.payload.hits.hits[0]._source.data;
-            def escaped = latest.replace('\\','\\\\');
-            return ['escaped' : escaped ];
+            return ['escaped' : latest.replace('\\','\\\\') ];
             """,
             "lang": "painless"
           }
