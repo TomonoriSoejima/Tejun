@@ -17,11 +17,12 @@ POST _watcher/watch/_execute
     },
     "condition": {
       "script": {
-        "source": """
-      def color = ctx.payload.data.0.status;
-      
-      return color != "green";
-"""
+        "source": 
+        """
+          def color = ctx.payload.data.0.status;
+          
+          return color != "green";
+        """
       }
     },
     "actions": {
