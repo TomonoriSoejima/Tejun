@@ -1,0 +1,52 @@
+DELETE hello
+POST hello/doc/1
+{
+  "data" : "[“C:\\Windows\\system32\\wbem\\WmiApSrv.exe”]"
+}
+
+GET hello/_search
+
+POST _watcher/watch/_execute
+{
+  "watch": {
+    "trigger": {
+      "schedule": {
+        "interval": "5m"
+      }
+    },
+    "input": {
+      "search": {
+        "request": {
+          "indices": "hello",
+          "body": {
+            "size": 10,
+            "query": {
+              "match_all": {}
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+        "always": {}
+    },
+    "actions": {
+      "mail_api": {
+        "transform": {
+          "script": {
+            "source": """
+            def latest = ctx.payload.hits.hits[0]._source.data;
+            def escaped = latest.replace('\\','\\\\\\');
+            return ['escaped' : escaped ];
+            """,
+            "lang": "painless"
+          }
+        },
+        "logging": {
+          "level": "info",
+          "text": "ctx=>{{ctx.payload.escaped}}"
+        }
+      }
+    }
+  }
+}
