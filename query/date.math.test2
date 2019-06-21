@@ -1,0 +1,28 @@
+GET .monitoring-es-6-2019.06.20/_search
+{
+  "size": 0,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        },
+        {
+          "range": {
+            "timestamp": {
+              "gte": "now-5m",
+              "lt": "now"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "agg1": {
+      "avg": {
+        "field": "node_stats.process.cpu.percent"
+      }
+    }
+  }
+}
