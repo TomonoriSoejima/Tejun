@@ -1,0 +1,282 @@
+request
+
+POST _watcher/watch/_execute
+{
+  "watch": {
+    "trigger": {
+      "schedule": {
+        "interval": "5m"
+      }
+    },
+    "input": {
+      "search": {
+        "request": {
+          "indices": "hotel",
+          "body": {
+            "size": 0,
+            "query": {
+              "match_all": {}
+            },
+            "aggs": {
+              "bucket1": {
+                "terms": {
+                  "field": "country.keyword"
+                },
+                "aggs": {
+                  "bucket2": {
+                    "sum": {
+                      "field": "price"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+       "script": 
+       """
+          def condition1 = ctx.payload.aggregations.bucket1.buckets.0.doc_count;
+          def condition2 = ctx.payload.aggregations.bucket1.buckets.0.bucket2.value;
+          
+          
+          return condition1 > 1 || condition2 > 1;
+          """
+    },
+    "actions": {
+      "log": {
+        "logging": {
+          "level": "info",
+          "text": """
+              condition1 => {{ctx.payload.aggregations.bucket1.buckets.0.doc_count}}
+          
+              condition2 => {{ctx.payload.aggregations.bucket1.buckets.0.bucket2.value}}
+          """
+        }
+      }
+    }
+  }
+}
+
+
+
+response 
+
+
+{
+  "_id" : "_inlined__431a7295-da39-4200-8e4a-c46ff30cc899-2019-06-21T04:11:44.793Z",
+  "watch_record" : {
+    "watch_id" : "_inlined_",
+    "node" : "vYmAUQ0CQE2dvYW0BnuUEA",
+    "state" : "executed",
+    "status" : {
+      "state" : {
+        "active" : true,
+        "timestamp" : "2019-06-21T04:11:44.793Z"
+      },
+      "last_checked" : "2019-06-21T04:11:44.793Z",
+      "last_met_condition" : "2019-06-21T04:11:44.793Z",
+      "actions" : {
+        "log" : {
+          "ack" : {
+            "timestamp" : "2019-06-21T04:11:44.793Z",
+            "state" : "ackable"
+          },
+          "last_execution" : {
+            "timestamp" : "2019-06-21T04:11:44.793Z",
+            "successful" : true
+          },
+          "last_successful_execution" : {
+            "timestamp" : "2019-06-21T04:11:44.793Z",
+            "successful" : true
+          }
+        }
+      },
+      "execution_state" : "executed",
+      "version" : -1
+    },
+    "trigger_event" : {
+      "type" : "manual",
+      "triggered_time" : "2019-06-21T04:11:44.793Z",
+      "manual" : {
+        "schedule" : {
+          "scheduled_time" : "2019-06-21T04:11:44.793Z"
+        }
+      }
+    },
+    "input" : {
+      "search" : {
+        "request" : {
+          "search_type" : "query_then_fetch",
+          "indices" : [
+            "hotel"
+          ],
+          "rest_total_hits_as_int" : true,
+          "body" : {
+            "size" : 0,
+            "query" : {
+              "match_all" : { }
+            },
+            "aggs" : {
+              "bucket1" : {
+                "terms" : {
+                  "field" : "country.keyword"
+                },
+                "aggs" : {
+                  "bucket2" : {
+                    "sum" : {
+                      "field" : "price"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "condition" : {
+      "script" : {
+        "source" : """
+          def condition1 = ctx.payload.aggregations.bucket1.buckets.0.doc_count;
+          def condition2 = ctx.payload.aggregations.bucket1.buckets.0.bucket2.value;
+          
+          
+          return condition1 > 1 || condition2 > 1;
+""",
+        "lang" : "painless"
+      }
+    },
+    "result" : {
+      "execution_time" : "2019-06-21T04:11:44.793Z",
+      "execution_duration" : 10,
+      "input" : {
+        "type" : "search",
+        "status" : "success",
+        "payload" : {
+          "_shards" : {
+            "total" : 1,
+            "failed" : 0,
+            "successful" : 1,
+            "skipped" : 0
+          },
+          "hits" : {
+            "hits" : [ ],
+            "total" : 200,
+            "max_score" : null
+          },
+          "took" : 1,
+          "timed_out" : false,
+          "aggregations" : {
+            "bucket1" : {
+              "doc_count_error_upper_bound" : 0,
+              "sum_other_doc_count" : 0,
+              "buckets" : [
+                {
+                  "doc_count" : 34,
+                  "bucket2" : {
+                    "value" : 922315.0
+                  },
+                  "key" : "BRAZIL"
+                },
+                {
+                  "doc_count" : 34,
+                  "bucket2" : {
+                    "value" : 757569.0
+                  },
+                  "key" : "FRANCE"
+                },
+                {
+                  "doc_count" : 31,
+                  "bucket2" : {
+                    "value" : 586809.0
+                  },
+                  "key" : "JAPAN"
+                },
+                {
+                  "doc_count" : 30,
+                  "bucket2" : {
+                    "value" : 646170.0
+                  },
+                  "key" : "HAWAII"
+                },
+                {
+                  "doc_count" : 29,
+                  "bucket2" : {
+                    "value" : 785694.0
+                  },
+                  "key" : "INDIA"
+                },
+                {
+                  "doc_count" : 25,
+                  "bucket2" : {
+                    "value" : 573802.0
+                  },
+                  "key" : "CANADA"
+                },
+                {
+                  "doc_count" : 17,
+                  "bucket2" : {
+                    "value" : 457638.0
+                  },
+                  "key" : "CHILI"
+                }
+              ]
+            }
+          }
+        },
+        "search" : {
+          "request" : {
+            "search_type" : "query_then_fetch",
+            "indices" : [
+              "hotel"
+            ],
+            "rest_total_hits_as_int" : true,
+            "body" : {
+              "size" : 0,
+              "query" : {
+                "match_all" : { }
+              },
+              "aggs" : {
+                "bucket1" : {
+                  "terms" : {
+                    "field" : "country.keyword"
+                  },
+                  "aggs" : {
+                    "bucket2" : {
+                      "sum" : {
+                        "field" : "price"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "condition" : {
+        "type" : "script",
+        "status" : "success",
+        "met" : true
+      },
+      "actions" : [
+        {
+          "id" : "log",
+          "type" : "logging",
+          "status" : "success",
+          "logging" : {
+            "logged_text" : """
+              condition1 => 34
+          
+              condition2 => 922315.0
+"""
+          }
+        }
+      ]
+    },
+    "messages" : [ ]
+  }
+}
