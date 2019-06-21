@@ -23,14 +23,21 @@ POST _watcher/watch/_execute
           def cpu_node2 = ctx.payload.nodes['TfBZg2EsTs-9uSJhG-Bhcg'].os.cpu.percent;
           def cpu_node3 = ctx.payload.nodes['Paj39SxiSPCz8SKS42kbcA'].os.cpu.percent;
         
-          return cpu_node1 > 44 || cpu_node2 > 88 || cpu_node3 > 99 ;
+          return cpu_node1 >1 || cpu_node2 > 1 || cpu_node3 > 1 ;
         """
       }
     },
     "actions": {
       "log": {
         "logging": {
-          "text": "cluster is {{ctx.payload.nodes.vYmAUQ0CQE2dvYW0BnuUEA.os.cpu.percent}}"
+          "text": """
+          cpu_node1 : {{ctx.payload.nodes.vYmAUQ0CQE2dvYW0BnuUEA.os.cpu.percent}}
+            {{\n}}
+          cpu_node2 : {{ctx.payload.nodes.TfBZg2EsTs-9uSJhG-Bhcg.os.cpu.percent}}
+            {{\n}}
+          cpu_node3 : {{ctx.payload.nodes.Paj39SxiSPCz8SKS42kbcA.os.cpu.percent}}
+    
+          """
         }
       }
     }
