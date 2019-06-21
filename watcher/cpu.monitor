@@ -15,28 +15,59 @@ POST _watcher/watch/_execute
         }
       }
     },
+    "metadata": {
+      "cpu_usage": 1,
+      "node1" : "vYmAUQ0CQE2dvYW0BnuUEA",
+      "node2" : "TfBZg2EsTs-9uSJhG-Bhcg",
+      "node3" : "Paj39SxiSPCz8SKS42kbcA"
+    },
     "condition": {
       "script": {
-        "source": 
-        """
-          def cpu_node1 = ctx.payload.nodes['vYmAUQ0CQE2dvYW0BnuUEA'].os.cpu.percent;
-          def cpu_node2 = ctx.payload.nodes['TfBZg2EsTs-9uSJhG-Bhcg'].os.cpu.percent;
-          def cpu_node3 = ctx.payload.nodes['Paj39SxiSPCz8SKS42kbcA'].os.cpu.percent;
+        "source": """
+          def cpu_node1 = ctx.payload.nodes[ctx.metadata.node1].os.cpu.percent;
+          def cpu_node2 = ctx.payload.nodes[ctx.metadata.node2].os.cpu.percent;
+          def cpu_node3 = ctx.payload.nodes[ctx.metadata.node3].os.cpu.percent;
         
-          return cpu_node1 >1 || cpu_node2 > 1 || cpu_node3 > 1 ;
+          return cpu_node1 > ctx.metadata.cpu_usage || cpu_node2 > ctx.metadata.cpu_usage || cpu_node3 > ctx.metadata.cpu_usage;
         """
       }
     },
     "actions": {
       "log": {
+        "transform": {
+          "script": {
+            "source": """
+              def cpu_high_nodes = new ArrayList();
+              def separator = ' : ';
+              def cpu_node1 = ctx.payload.nodes[ctx.metadata.node1].os.cpu.percent;
+              def cpu_node2 = ctx.payload.nodes[ctx.metadata.node2].os.cpu.percent;
+              def cpu_node3 = ctx.payload.nodes[ctx.metadata.node3].os.cpu.percent;
+        
+              if (cpu_node1 > ctx.metadata.cpu_usage) {
+                cpu_high_nodes.add((String) ctx.metadata.node1 + separator + ctx.payload.nodes[ctx.metadata.node1].os.cpu.percent);
+              }
+              
+              if (cpu_node2 > ctx.metadata.cpu_usage) {
+                cpu_high_nodes.add((String) ctx.metadata.node2 + separator + ctx.payload.nodes[ctx.metadata.node2].os.cpu.percent);
+              }
+              
+              if (cpu_node3 > ctx.metadata.cpu_usage) {
+                cpu_high_nodes.add((String) ctx.metadata.node3 + separator + ctx.payload.nodes[ctx.metadata.node3].os.cpu.percent);
+              }
+              
+              return ['cpu_high_nodes' : cpu_high_nodes ];
+            """,
+            "lang": "painless"
+          }
+        },
         "logging": {
           "text": """
-          cpu_node1 : {{ctx.payload.nodes.vYmAUQ0CQE2dvYW0BnuUEA.os.cpu.percent}}
-            {{\n}}
-          cpu_node2 : {{ctx.payload.nodes.TfBZg2EsTs-9uSJhG-Bhcg.os.cpu.percent}}
-            {{\n}}
-          cpu_node3 : {{ctx.payload.nodes.Paj39SxiSPCz8SKS42kbcA.os.cpu.percent}}
-    
+            cpu high usage alert
+            
+            host : cpu usage
+            {{#ctx.payload.cpu_high_nodes}}
+            {{.}} percent
+            {{/ctx.payload.cpu_high_nodes}}
           """
         }
       }
