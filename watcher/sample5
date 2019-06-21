@@ -40,8 +40,7 @@ POST _watcher/watch/_execute
        """
           def condition1 = ctx.payload.aggregations.bucket1.buckets.0.doc_count;
           def condition2 = ctx.payload.aggregations.bucket1.buckets.0.bucket2.value;
-          
-          
+              
           return condition1 > 1 || condition2 > 1;
           """
     },
