@@ -1,0 +1,65 @@
+POST _watcher/watch/_execute
+{
+  "watch": {
+    "trigger": {
+      "schedule": {
+        "interval": "5m"
+      }
+    },
+    "input": {
+      "search": {
+        "request": {
+          "indices": "hotel",
+          "body": {
+            "size": 1,
+            "query": {
+              "match_all": {}
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "always": {}
+    },
+    "transform": {
+      "script": {
+        "id": "demo_script"
+      }
+    },
+    "actions": {
+      "log": {
+        "logging": {
+          "text": "executed at {{ctx.payload.result}}"
+        }
+      },
+      "index_payload": {
+        "index": {
+          "index": "testtest",
+          "doc_id": "my-id"
+          
+        }
+      }
+    }
+  }
+}
+
+DELETE testtest
+
+POST _scripts/demo_script
+{
+  "script": {
+  "lang": "painless",
+  "source": 
+
+    """
+      Map result = new HashMap();
+      def city = ctx.payload.hits.hits.0._source.city;
+      def action_time = new SimpleDateFormat('yyyy-MM-dd HH:mm:ss').format(new Date());
+      result.put("city", city);
+      result.put("action_time",action_time);
+
+      return ['result' : result ];
+    """
+  }
+}
