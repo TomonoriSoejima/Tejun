@@ -1,0 +1,60 @@
+POST _xpack/watcher/watch/_execute
+{
+  "watch": {
+    "trigger": {
+      "schedule": {
+        "interval": "5m"
+      }
+    },
+    "input": {
+      "search": {
+        "request": {
+          "indices": "hotel",
+          "body": {
+            "size": 1,
+            "query": {
+              "match_all": {}
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "always": {}
+    },
+    "transform": {
+      "script": {
+        "id": "demo_script"
+      }
+    },
+    "actions": {
+      "log": {
+        "logging": {
+          "text": "executed at {{ctx.payload._doc}}"
+        }
+      },
+      "index_payload": {
+        "condition": {
+          "always": {}
+        },
+        "transform": {
+          "script": {
+            "lang": "painless",
+            "source": 
+            """
+            Map docs = new HashMap(); 
+            docs.put("city", "nara"); 
+            return ['_doc' : docs]; 
+            """
+          }
+        },
+        "index": {
+          "index": "new_index",
+          "doc_type": "_doc"
+        }
+      }
+    }
+  }
+}
+
+GET new_index/_search
