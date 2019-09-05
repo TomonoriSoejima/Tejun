@@ -58,3 +58,41 @@ POST _xpack/watcher/watch/_execute
 }
 
 GET new_index/_search
+
+sample output
+
+{
+  "took" : 0,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 2,
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "new_index",
+        "_type" : "_doc",
+        "_id" : "asVpAG0BcTXNJt-WBEem",
+        "_score" : 1.0,
+        "_source" : {
+          "city" : "nara"
+        }
+      },
+      {
+        "_index" : "new_index",
+        "_type" : "_doc",
+        "_id" : "CsVoAG0BcTXNJt-Wh0e7",
+        "_score" : 1.0,
+        "_source" : {
+          "city" : "nara"
+        }
+      }
+    ]
+  }
+}
+
