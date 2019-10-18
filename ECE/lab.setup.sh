@@ -23,4 +23,8 @@ sudo service docker restart
 
 
 # post setup
+
+https://www.elastic.co/guide/en/cloud-enterprise/2.3/ece-manage-certificates.html#ece-tls-generate
+
+# to make Concatenated file
 https://www.digicert.com/ssl-support/pem-ssl-creation.htm
