@@ -19,3 +19,8 @@ sudo service docker restart
 
 # finally this should work!
  bash <(curl -fsSL https://download.elastic.co/cloud/elastic-cloud-enterprise.sh) install
+
+
+
+# post setup
+https://www.digicert.com/ssl-support/pem-ssl-creation.htm
