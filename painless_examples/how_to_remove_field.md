@@ -45,7 +45,7 @@ done
 ```
 
 
-# Output from the shell
+### Output from the shell
 <details>
   <summary>$ sh do.this.sh</summary>
   
