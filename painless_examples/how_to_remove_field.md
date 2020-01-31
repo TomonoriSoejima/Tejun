@@ -142,4 +142,4 @@ POST /my_index/_update_by_query
 }
 
   ```
-}
+
