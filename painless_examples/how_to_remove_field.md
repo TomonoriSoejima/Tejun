@@ -129,6 +129,8 @@ POST my_index/_update_by_query
 }
 ```
 
+## After all, this one liner did it.
+
 ```
 POST /my_index/_update_by_query
 {
