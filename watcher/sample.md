@@ -1,6 +1,6 @@
 
 
-## These samples are based on the data https://github.com/TomonoriSoejima/Tejun/blob/master/watcher/data.zip
+### These samples are based on the data https://github.com/TomonoriSoejima/Tejun/blob/master/watcher/data.zip
 
 ```
 sample5
@@ -20,7 +20,7 @@ action sample
 csv/bulk.json
 ```
 
-## The sample data itself is generated using this tool
+### The sample data itself is generated using this tool
 
 https://github.com/TomonoriSoejima/myspark
 
