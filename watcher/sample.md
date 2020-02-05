@@ -1,6 +1,6 @@
 
 
-### These samples are based on the data https://github.com/TomonoriSoejima/Tejun/blob/master/watcher/data.zip
+### These samples are based on the [data](https://github.com/TomonoriSoejima/Tejun/blob/master/watcher/data.zip)
 
 ```
 sample5
@@ -20,12 +20,11 @@ action sample
 csv/bulk.json
 ```
 
-### The sample data itself is generated using this tool
+### The sample data is generated using this [tool](https://github.com/TomonoriSoejima/myspark)
 
-https://github.com/TomonoriSoejima/myspark
-
-If you download this sample data file, you can load into your local elasticsearch as below.
+If you download this sample data, you can load into your local elasticsearch as below.
 
 ```
-curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @/Users/surfer/Downloads/data.json
+unzip data.json
+curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @data.json
 ```
