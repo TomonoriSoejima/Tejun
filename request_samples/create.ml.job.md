@@ -71,3 +71,7 @@ PUT _ml/datafeeds/datafeed-helloml
 POST _ml/anomaly_detectors/helloml/_open
 POST _ml/datafeeds/datafeed-helloml/_start
 ```
+
+`curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @user-activity.json`
+
+you can downlod [user-activity.json]()
