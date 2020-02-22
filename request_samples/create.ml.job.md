@@ -2,6 +2,7 @@
 
 
 1. create index
+
 `curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @user-activity.json`
 
 2. create index pattern
