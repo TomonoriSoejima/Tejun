@@ -5,6 +5,8 @@
 
 `curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @user-activity.json`
 
+[user-activity.json](https://github.com/TomonoriSoejima/Tejun/blob/master/request_samples/user-activity.json)
+
 2. create index pattern
 
 ```
