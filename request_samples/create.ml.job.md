@@ -67,4 +67,7 @@ PUT _ml/datafeeds/datafeed-helloml
     }
   }
 }
+
+POST _ml/anomaly_detectors/helloml/_open
+POST _ml/datafeeds/datafeed-helloml/_start
 ```
