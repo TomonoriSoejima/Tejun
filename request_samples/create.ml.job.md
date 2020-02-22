@@ -1,4 +1,28 @@
-## You need to create job and datafeed to play with anomaly detection.
+## you need to fee data first.
+
+
+1. create index
+`curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @user-activity.json`
+
+2. create index pattern
+
+```
+curl --location --request POST 'http://localhost:5601/api/saved_objects/index-pattern/user' \
+--header 'kbn-xsrf: True' \
+--header 'Content-Type: application/json;charset=UTF-8' \
+--header 'Authorization: Basic ZWxhc3RpYzpEU09hclFsMlRkdlllQk5vdlN1dA==' \
+--data-raw '{
+"attributes": {
+ "title": "user*",
+ "timeFieldName": "@timestamp"
+ }
+}'
+```
+3. create job
+4. create datafeed
+5. open the job
+6. start the datafeed
+
 
 ```
 PUT _ml/anomaly_detectors/helloml
@@ -72,6 +96,3 @@ POST _ml/anomaly_detectors/helloml/_open
 POST _ml/datafeeds/datafeed-helloml/_start
 ```
 
-`curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @user-activity.json`
-
-you can downlod [user-activity.json](https://github.com/TomonoriSoejima/Tejun/blob/master/request_samples/user-activity.json)
