@@ -1,6 +1,3 @@
-## you need to fee data first.
-
-
 1. create index
 
 `curl -H 'Content-Type: application/x-ndjson' -XPOST 'localhost:9200/_bulk?pretty' --data-binary @user-activity.json`
