@@ -7,12 +7,12 @@
 2. create index pattern
 
 ```
-curl --location --request POST 'http://localhost:5601/api/saved_objects/index-pattern/hotel' \
+curl --location --request POST 'http://localhost:5601/api/saved_objects/index-pattern/user' \
 --header 'kbn-xsrf: True' \
 --header 'Content-Type: application/json;charset=UTF-8' \
 --data-raw '{
 "attributes": {
- "title": "hotel*",
+ "title": "user*",
  "timeFieldName": "created"
  }
 }'
