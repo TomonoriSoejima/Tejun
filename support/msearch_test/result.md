@@ -3,6 +3,7 @@
 It will execute `_msearch` request 12 times with gradul increase of embeded requests within from 1 to 12.
 You can see that `max_concurrent_searche` parameter is used.
 ```
+# cat complex.sh
 
 COUNTER=0
 saved_to="complex.json"
