@@ -1,4 +1,4 @@
-
+```
 
 COUNTER=0
 saved_to="complex.json"
@@ -19,8 +19,34 @@ done
 
 rm $saved_to
 
+```
+```
 
-
-
+[nami:msearch_test]$ sh complex.sh
+1 requests
+21,7,6,6
+2 requests
+29,7,7,7,7
+3 requests
+39,8,6,7,8,8
+4 requests
+43,6,6,7,7,8,6
+5 requests
+46,7,7,6,6,6,6,6
+6 requests
+54,6,6,6,6,6,6,8,6
+7 requests
+58,7,6,6,6,6,5,6,6,7
+8 requests
+62,6,6,6,6,6,5,6,5,5,5
+9 requests
+74,7,6,7,6,6,6,6,6,6,6,8
+10 requests
+81,6,6,5,5,6,6,7,6,7,7,8,7
+11 requests
+92,6,7,6,9,8,7,7,7,6,6,8,6,5
+12 requests
+92,7,5,7,7,7,6,6,5,6,5,6,6,6,5
+[nami:msearch_test]$ 
 
 ```
