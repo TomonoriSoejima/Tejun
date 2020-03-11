@@ -1,7 +1,7 @@
 ## msearch runner script
 
 It will execute `_msearch` request 12 times with gradul increase of embeded requests within from 1 to 12.
-You can see that `max_concurrent_searche` parameter is used.
+You can see that `max_concurrent_searches` parameter is used.
 ```
 # cat complex.sh
 
