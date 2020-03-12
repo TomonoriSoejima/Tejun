@@ -1,0 +1,241 @@
+{
+	"info": {
+		"_postman_id": "86c6bc98-e50e-4b16-81ab-caf5cd952833",
+		"name": "ML",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "delete index pattern",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "kbn-xsrf",
+						"value": "True",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{server}}:5601/api/saved_objects/index-pattern/{{pattern_id}}",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "5601",
+					"path": [
+						"api",
+						"saved_objects",
+						"index-pattern",
+						"{{pattern_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create index pattern",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "DSOarQl2TdvYeBNovSut",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "elastic",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "kbn-xsrf",
+						"value": "True"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"attributes\": {\n \"title\": \"helloml*\",\n \"timeFieldName\": \"created\"\n }\n}"
+				},
+				"url": {
+					"raw": "http://{{server}}:5601/api/saved_objects/index-pattern/{{pattern_id}}",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "5601",
+					"path": [
+						"api",
+						"saved_objects",
+						"index-pattern",
+						"{{pattern_id}}"
+					]
+				},
+				"description": "kibana api test"
+			},
+			"response": []
+		},
+		{
+			"name": "create job",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"description\": \"\",\n\t\"analysis_config\": {\n\t\t\"bucket_span\": \"15m\",\n\t\t\"detectors\": [\n\t\t\t{\n\t\t\t\t\"function\": \"mean\",\n\t\t\t\t\"field_name\": \"bytesSent\"\n\t\t\t}\n\t\t],\n\t\t\"influencers\": [],\n\t\t\"summary_count_field_name\": \"doc_count\"\n\t},\n\t\"data_description\": {\n\t\t\"time_field\": \"@timestamp\",\n\t\t\"time_format\": \"epoch_ms\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://{{server}}:9200/_ml/anomaly_detectors/helloml",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "9200",
+					"path": [
+						"_ml",
+						"anomaly_detectors",
+						"helloml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create datafeed",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"indices\": [\n    \"user*\"\n  ],\n  \"query\": {\n    \"bool\": {\n      \"must\": [\n        {\n          \"match_all\": {}\n        }\n      ]\n    }\n  },\n  \"scroll_size\": 1000,\n  \"chunking_config\": {\n    \"mode\": \"manual\",\n    \"time_span\": \"90000000ms\"\n  },\n  \"delayed_data_check_config\": {\n    \"enabled\": true\n  },\n  \"job_id\": \"helloml\",\n  \"datafeed_id\": \"datafeed-helloml\",\n  \"aggregations\": {\n    \"buckets\": {\n      \"date_histogram\": {\n        \"field\": \"@timestamp\",\n        \"fixed_interval\": \"90000ms\"\n      },\n      \"aggregations\": {\n        \"bytesSent\": {\n          \"avg\": {\n            \"field\": \"bytesSent\"\n          }\n        },\n        \"@timestamp\": {\n          \"max\": {\n            \"field\": \"@timestamp\"\n          }\n        }\n      }\n    }\n  }\n}"
+				},
+				"url": {
+					"raw": "http://{{server}}:9200/_ml/datafeeds/datafeed-{{job_name}}",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "9200",
+					"path": [
+						"_ml",
+						"datafeeds",
+						"datafeed-{{job_name}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "open job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{server}}:9200/_ml/anomaly_detectors/{{job_name}}/_open",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "9200",
+					"path": [
+						"_ml",
+						"anomaly_detectors",
+						"{{job_name}}",
+						"_open"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "start job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{server}}:9200/_ml/datafeeds/datafeed-{{job_name}}/_start",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"port": "9200",
+					"path": [
+						"_ml",
+						"datafeeds",
+						"datafeed-{{job_name}}",
+						"_start"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "8336fa52-6112-437c-bb8f-70c1cbc6ff16",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "db6a7e22-f252-4bdb-851c-6f8fb7eb02c9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9e156d93-041f-46ae-b07a-ce5c2ad51b6a",
+			"key": "server",
+			"value": "localhost",
+			"type": "string"
+		},
+		{
+			"id": "7ef6318b-2394-4e4d-a53c-997188bdcce2",
+			"key": "index",
+			"value": "helloml",
+			"type": "string"
+		},
+		{
+			"id": "6d17794a-6180-44e7-9457-1b728b5e78e1",
+			"key": "pattern_id",
+			"value": "helloml",
+			"type": "string"
+		},
+		{
+			"id": "4fc70cf3-898b-4898-a724-854377643544",
+			"key": "job_name",
+			"value": "helloml",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
