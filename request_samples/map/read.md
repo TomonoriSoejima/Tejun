@@ -230,7 +230,7 @@ http GET https://randomuser.me/api/?results=500 | jq -c '.results[] | { index: {
 http localhost:9200/_bulk < $output
 ```
 
-3. import map configuration
+3. import the attachd map configuration
 
 `http -f POST localhost:5601/api/saved_objects/_import kbn-xsrf:true file@export.ndjson`
 
