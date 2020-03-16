@@ -234,4 +234,4 @@ http localhost:9200/_bulk < $output
 
 `http -f POST localhost:5601/api/saved_objects/_import kbn-xsrf:true file@export.ndjson`
 
-
+4. Map object is now created
