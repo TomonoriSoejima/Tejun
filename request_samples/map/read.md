@@ -336,4 +336,5 @@ PUT people
 output="data.json"
 http GET https://randomuser.me/api/?results=500 | jq -c '.results[] | { index: {_index:"people", _id:.login.uuid }},  .location += {geo: (.location.coordinates.latitude + "," +  .location.coordinates.longitude)} | del (.location.coordinates)' > $output
 http localhost:9200/_bulk < $output
+curl -X POST "localhost:5601/api/saved_objects/_import" -H "kbn-xsrf: true" --form file=@export.ndjson
 ```
