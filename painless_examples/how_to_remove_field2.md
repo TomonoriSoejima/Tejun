@@ -65,3 +65,7 @@ POST test/_update_by_query?conflicts=proceed
    "script" : "ctx._source.remove(\"field2\")"
 }
 ```
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-exists-query.html
+https://www.elastic.co/guide/en/elasticsearch/reference/current/dynamic.html
+https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-update-by-query.html
