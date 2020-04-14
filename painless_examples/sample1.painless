@@ -7,7 +7,7 @@ GET hotel/_search
         "cheap_or_not" : {
             "script" : {
                 "lang": "painless",
-                "inline": "doc['daily_rate'].value > 100 ? 'cheap' : 'expensive'"
+                "inline": "doc['price'].value > 100 ? 'cheap' : 'expensive'"
             }
         } ,
             "test2" : {
