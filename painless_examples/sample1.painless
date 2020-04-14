@@ -1,19 +1,17 @@
 GET hotel/_search
 {
-    "query" : {
-        "match_all": {}
+  "query": {
+    "match_all": {}
+  },
+  "script_fields": {
+    "cheap_or_not": {
+      "script": {
+        "lang": "painless",
+        "inline": "doc['price'].value > 100 ? 'cheap' : 'expensive'"
+      }
     },
-    "script_fields" : {
-        "cheap_or_not" : {
-            "script" : {
-                "lang": "painless",
-                "inline": "doc['price'].value > 100 ? 'cheap' : 'expensive'"
-            }
-        } ,
-            "test2" : {
-                "script" : "params['_source']['busy_month']"
-            }
-        }
-       
+    "test2": {
+      "script": "params['_source']['busy_month']"
     }
+  }
 }
