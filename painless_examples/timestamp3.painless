@@ -1,0 +1,16 @@
+GET filebeat-2020.04.07/_search?size=1
+{
+  "_source": [
+    "@timestamp"
+  ],
+  "script_fields": {
+    "firstname": {
+      "script": {
+        "source": """
+def kore = LocalDateTime.ofInstant(Instant.ofEpochMilli(doc['@timestamp'].date.getMillis()), ZoneId.of("Asia/Tokyo")).toString();
+return kore;
+        """
+      }
+    }
+  }
+}
