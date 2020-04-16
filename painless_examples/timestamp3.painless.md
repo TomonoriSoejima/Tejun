@@ -4,7 +4,7 @@
     "@timestamp"
   ],
   "script_fields": {
-    "firstname": {
+    "changed_time": {
       "script": {
         "source": """
           def  datetime = doc['@timestamp'].value;
