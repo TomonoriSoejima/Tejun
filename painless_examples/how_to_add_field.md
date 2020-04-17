@@ -49,7 +49,7 @@ PUT _template/template_1
       "enabled": true
     },
     "properties": {
-      "field2": {
+      "field1": {
         "type": "keyword"
       }
     }
@@ -106,7 +106,7 @@ PUT _template/template_1
       "enabled": true
     },
     "properties": {
-      "field1": {
+      "field2": {
         "type": "keyword"
       }
     }
