@@ -223,6 +223,8 @@
 
 2. send data
 
+you want to install https://httpie.org/ first.
+
 
 ```
 output="data.json"
