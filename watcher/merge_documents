@@ -1,0 +1,59 @@
+POST index1/_doc/1
+{
+  "data" : "index1_data",
+  "status" : "error"
+}
+
+POST index2/_doc/1
+{
+  "data" : "index2_data",
+    "status" : "error"
+}
+
+POST index3/_doc/1
+{
+  "data" : "index3_data",
+    "status" : "error"
+}
+
+
+PUT _watcher/watch/make_new_index
+{
+  "trigger": {
+    "schedule": {
+      "interval": "5m"
+    }
+  },
+  "input": {
+    "search": {
+      "request": {
+        "indices": "index*",
+        "body": {
+          "query": {
+            "match": {
+              "status": "error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "condition": {
+    "compare": {
+      "ctx.payload.hits.total": {
+        "gt": 0
+      }
+    }
+  },
+  "actions": {
+    "index_payload": {
+      "index": {
+        "index": "testtest",
+        "doc_id": "my-id"
+      }
+    }
+  }
+}
+
+POST _watcher/watch/make_new_index/_execute
+GET testtest/_search
