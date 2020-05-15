@@ -222,6 +222,7 @@
 
 
 2. send data
+3. create index pattern 
 
 you want to install https://httpie.org/ first.
 
@@ -229,13 +230,31 @@ https://httpie.org/docs#installation lists how to install on your platform.
 
 
 ```
-output="data.json"
-http PUT localhost:9200/people < mapping.json 
-http GET https://randomuser.me/api/?results=500 | jq -c '.results[] | { index: {_index:"people", _id:.login.uuid }},  .location += {geo: (.location.coordinates.latitude + "," +  .location.coordinates.longitude)} | del (.location.coordinates, .picture, .info, .login)' > $output
+output="100.json"
+
+# delete old index
+http delete localhost:9200/people
+# create mapping
+http put localhost:9200/people < mapping.json 
+
+http get https://randomuser.me/api/?results=300 | jq -c '.results[] | { index: {_index:"people", _id:.login.uuid }},  .location += {geo: (.location.coordinates.latitude + "," +  .location.coordinates.longitude)} | del (.location.coordinates, .picture, .info, .login)' > $output
 http localhost:9200/_bulk < $output
+
+# create index pattern
+
+printf '{
+"attributes": {
+ "title": "people*",
+ "timeFieldName": "registered.date"
+ }
+}'| http  --follow --timeout 3600 post localhost:5601/api/saved_objects/index-pattern/people \
+ kbn-xsrf:'True' \
+ Content-Type:'application/json;charset=UTF-8' \
+ Authorization:'Basic ZWxhc3RpYzpEU09hclFsMlRkdlllQk5vdlN1dA==' \
+ Content-Type:'text/plain'
 ```
 
-3. create index pattern 
+
 
 4. import the attachd map configuration
 
