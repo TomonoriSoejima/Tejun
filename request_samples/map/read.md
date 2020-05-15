@@ -230,6 +230,7 @@ https://httpie.org/docs#installation lists how to install on your platform.
 
 ```
 output="data.json"
+http PUT  localhost:9200/people < mapping.json 
 http GET https://randomuser.me/api/?results=500 | jq -c '.results[] | { index: {_index:"people", _id:.login.uuid }},  .location += {geo: (.location.coordinates.latitude + "," +  .location.coordinates.longitude)} | del (.location.coordinates, .picture, .info, .login)' > $output
 http localhost:9200/_bulk < $output
 ```
