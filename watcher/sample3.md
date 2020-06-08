@@ -1,11 +1,11 @@
-PUT foo/bar/1
+PUT foo/_doc/1
 {
   "name": {
     "first": "Kobe",
     "last": "Bryant"
   }
 } 
-PUT foo/bar/2
+PUT foo/_doc/2
 {
   "name": {
     "first": "Stephen",
@@ -13,13 +13,15 @@ PUT foo/bar/2
   }
 } 
 
-PUT foo/bar/3
+PUT foo/_doc/3
 {
   "name": {
     "first": "Dirk",
     "last": "Nowitzki"
   }
 } 
+
+DELETE foo
 
 PUT /_watcher/watch/mustache-test
 {
@@ -52,4 +54,12 @@ PUT /_watcher/watch/mustache-test
   }
 } 
 
+
+
 POST _xpack/watcher/watch/mustache-test/_execute
+
+GET /_watcher/watch/mustache-test
+
+
+
+```
