@@ -1,3 +1,4 @@
+```
 PUT foo/_doc/1
 {
   "name": {
