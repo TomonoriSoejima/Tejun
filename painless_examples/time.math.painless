@@ -1,4 +1,4 @@
-PUT test/a/1
+PUT test/_doc/1
 {
   "created" : "2018-04-06T13:20:53.000Z"
 }
