@@ -37,7 +37,6 @@ PUT /_watcher/watch/status-test2
   }
 } 
 
-
-POST _xpack/watcher/watch/status-test2/_execute
+POST _watcher/watch/status-test2/_execute
 
 GET _watcher/watch/status-test2
