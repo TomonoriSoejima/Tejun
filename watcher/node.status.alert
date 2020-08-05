@@ -1,8 +1,8 @@
-PUT /_xpack/watcher/watch/status-test2
+PUT /_watcher/watch/status-test2
 {
   "trigger": {
     "schedule": {
-      "interval": "1h"
+      "interval": "1m"
     }
   },
   "input": {
@@ -39,3 +39,5 @@ PUT /_xpack/watcher/watch/status-test2
 
 
 POST _xpack/watcher/watch/status-test2/_execute
+
+GET _watcher/watch/status-test2
