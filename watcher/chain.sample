@@ -1,17 +1,17 @@
-PUT country/t/1
+PUT country/_doc/1
 {
   "state" : "tokyo",
   "country" : "japan"
 }
 
-PUT country/t/2
+PUT country/_doc/2
 {
   "state" : "chiba",
   "country" : "japan"
 }
 
 
-PUT city/t/1
+PUT city/_doc/1
 {
   "state" : "tokyo",
   "city" : "choufu"
