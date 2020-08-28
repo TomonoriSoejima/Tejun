@@ -19,7 +19,7 @@ PUT city/t/1
 
 
 
-PUT _xpack/watcher/watch/mywatch
+PUT _watcher/watch/mywatch
 {
   "trigger": {
     "schedule": {
@@ -89,4 +89,6 @@ PUT _xpack/watcher/watch/mywatch
   }
 }
 
-POST _xpack/watcher/watch/mywatch/_execute
+
+
+POST _watcher/watch/mywatch/_execute
