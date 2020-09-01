@@ -1,4 +1,4 @@
-PUT /_watcher/watch/status-test2
+PUT /_watcher/watch/status-check
 {
   "trigger": {
     "schedule": {
@@ -37,6 +37,6 @@ PUT /_watcher/watch/status-test2
   }
 } 
 
-POST _watcher/watch/status-test2/_execute
+POST _watcher/watch/status-check/_execute
 
-GET _watcher/watch/status-test2
+GET _watcher/watch/status-check
