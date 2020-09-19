@@ -42,3 +42,39 @@ POST /_ingest/pipeline/_simulate?verbose
   ]
 }
 ```
+
+- response
+
+```
+{
+  "docs" : [
+    {
+      "processor_results" : [
+        {
+          "doc" : {
+            "_index" : "index",
+            "_type" : "_doc",
+            "_id" : "id",
+            "_source" : {
+              "name" : [
+                {
+                  "last" : "Tiger",
+                  "first" : "John"
+                },
+                {
+                  "last" : "Shark",
+                  "first" : "Mike"
+                }
+              ]
+            },
+            "_ingest" : {
+              "pipeline" : "_simulate_pipeline",
+              "timestamp" : "2020-09-19T06:36:31.10554Z"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
