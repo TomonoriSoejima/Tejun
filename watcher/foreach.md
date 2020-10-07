@@ -139,7 +139,7 @@ PUT _watcher/watch/_execute
           List result_set = new ArrayList();
          
           for (int i = 0; i < ctx.payload.test_a.aggregations.tenants.buckets.size(); ++i) {
-            Map document = new HashMap();
+              Map document = new HashMap();
               def tenantId =  ctx.payload.test_a.aggregations.tenants.buckets[i].key;
               
               // check if key is found in test_b index
