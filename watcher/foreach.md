@@ -1,3 +1,21 @@
+- sample data
+```
+POST test_a/_bulk
+{"index": {"_id": "1"}}
+{"tenantId": "001", "eventId": "111", "memo": "test1","@timestamp": "yyyy-MM-dd'T'HH:mm:ss.SSS+09:00"}
+{"index": {"_id": "2"}}
+{"tenantId": "002", "eventId": "111", "memo": "test2","@timestamp": "yyyy-MM-dd'T'HH:mm:ss.SSS+09:00"}
+{"index": {"_id": "3"}}
+{"tenantId": "001", "eventId": "111", "memo": "test3","@timestamp": "yyyy-MM-dd'T'HH:mm:ss.SSS+09:00"}
+
+POST test_b/_bulk
+{"index": {"_id": "1"}}
+{"tenantId": "001", "address": "aaa@test.com"}
+{"index": {"_id": "2"}}
+{"tenantId": "002", "address": "bbb@test.com"}
+```
+
+
 ```
 PUT _watcher/watch/_execute
 {
@@ -87,7 +105,7 @@ PUT _watcher/watch/_execute
                   ],
                   "rest_total_hits_as_int": true,
                   "body": {
-                    "size": 3,
+                    "size": 50,
                     "query": {
                       "match_all": {}
                     }
