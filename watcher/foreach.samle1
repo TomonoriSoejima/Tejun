@@ -1,0 +1,42 @@
+PUT _watcher/watch/_execute
+{
+  "watch": {
+    "trigger": {
+      "schedule": {
+        "interval": "5m"
+      }
+    },
+    "input": {
+      "search": {
+        "request": {
+          "indices": "test_a",
+          "body": {
+            "query": {
+              "match_all": {}
+            },
+            "aggs": {
+              "agg1": {
+                "terms": {
+                  "field": "memo.keyword",
+                  "size": 10
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "always": {}
+    },
+    "actions": {
+      "log_hits": {
+        "foreach": "ctx.payload.aggregations.agg1.buckets",
+        "max_iterations": 500,
+        "logging": {
+          "text": "Found id {{ctx.payload.key}}"
+        }
+      }
+    }
+  }
+}
