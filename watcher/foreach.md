@@ -65,6 +65,7 @@ PUT _watcher/watch/_execute
                                   "size": 100,
                                   "_source": [
                                     "eventId",
+                                    "tenantId",
                                     "memo"
                                   ]
                                 }
@@ -93,7 +94,6 @@ PUT _watcher/watch/_execute
                 }
               }
             }
-
           },
           {
             "test_b": {
@@ -105,16 +105,14 @@ PUT _watcher/watch/_execute
                   ],
                   "rest_total_hits_as_int": true,
                   "body": {
-                    "size": 50,
+                    "size": 3,
                     "query": {
                       "match_all": {}
                     }
-              
                   }
                 }
               }
             }
-          
           }
         ]
       }
@@ -122,20 +120,60 @@ PUT _watcher/watch/_execute
     "condition": {
       "always": {}
     },
+    "transform": {
+      "script": {
+        "source": """
+          List test_b_set = new ArrayList();
+         
+          for (int i = 0; i < ctx.payload.test_b.hits.hits.size(); ++i) {
+            Map document = new HashMap();
+            def address = ctx.payload.test_b.hits.hits[i]._source.address;
+            def tenantId = ctx.payload.test_b.hits.hits[i]._source.tenantId;
+            document.put("address", address);
+            document.put("tenantId", tenantId);
+
+            test_b_set.add(document);
+          }
+          
+          
+          List result_set = new ArrayList();
+         
+          for (int i = 0; i < ctx.payload.test_a.aggregations.tenants.buckets.size(); ++i) {
+            Map document = new HashMap();
+              def tenantId =  ctx.payload.test_a.aggregations.tenants.buckets[i].key;
+              
+              // check if key is found in test_b index
+              for (HashMap hashmap : test_b_set) {
+                if (hashmap.tenantId == tenantId) {
+                  
+                  document.put("address", hashmap.address);
+                }
+              }
+              
+              // handling memo
+              def memo_count = ctx.payload.test_a.aggregations.tenants.buckets[i].events.data.hits.hits.size();
+              List memos = new ArrayList();
+              for (int j = 0; j < memo_count; ++j) {
+                   memos.add(ctx.payload.test_a.aggregations.tenants.buckets[i].events.data.hits.hits[j]._source.memo);
+              }
+           
+              document.put("memo", memos);
+              result_set.add(document);
+          }       
+
+        
+        return ['data_merged' : result_set];
+        """
+      }
+    },
     "actions": {
       "log_hits": {
-        "foreach": "ctx.payload.test_a.aggregations.tenants.buckets",
+        "foreach": "ctx.payload.data_merged",
         "max_iterations": 500,
         "logging": {
           "text": """
-           tenantId : "{{ctx.payload.key}}"
-           memo : {{#ctx.payload.events.data.hits.hits}}
-           {{_source.memo}}
-           {{/ctx.payload.events.data.hits.hits}}
-
-      
+           {{ctx.payload}}
           """
-   
         }
       }
     }
