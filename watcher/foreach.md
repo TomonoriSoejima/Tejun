@@ -183,7 +183,7 @@ PUT _watcher/watch/_execute
 
 
 
-- conditions with script
+- condition with script
 
 ```
 PUT _watcher/watch/_execute
