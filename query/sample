@@ -1,0 +1,59 @@
+GET test_a/_search
+{
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "{{ctx.trigger.scheduled_time}}||-2m"
+            }
+          }
+        },
+        {
+          "term": {
+            "eventId": "111"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "tenants": {
+      "terms": {
+        "field": "tenantId.keyword",
+        "size": 10
+      },
+      "aggs": {
+        "events": {
+          "aggs": {
+            "data": {
+              "top_hits": {
+                "size": 100,
+                "_source": [
+                  "tenantId",
+                  "memo"
+                ]
+              }
+            }
+          }
+        },
+        "tenants": {
+          "filter": {
+            "exists": {
+              "field": "address"
+            }
+          },
+          "aggs": {
+            "data": {
+              "top_hits": {
+                "size": 10,
+                "_source": "address"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
