@@ -4,13 +4,6 @@ GET test_a/_search
     "bool": {
       "filter": [
         {
-          "range": {
-            "@timestamp": {
-              "gte": "{{ctx.trigger.scheduled_time}}||-2m"
-            }
-          }
-        },
-        {
           "term": {
             "eventId": "111"
           }
@@ -26,16 +19,12 @@ GET test_a/_search
       },
       "aggs": {
         "events": {
-          "aggs": {
-            "data": {
-              "top_hits": {
-                "size": 100,
-                "_source": [
-                  "tenantId",
-                  "memo"
-                ]
-              }
-            }
+          "top_hits": {
+            "size": 100,
+            "_source": [
+              "tenantId",
+              "memo"
+            ]
           }
         },
         "tenants": {
