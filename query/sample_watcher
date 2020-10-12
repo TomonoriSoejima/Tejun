@@ -1,0 +1,184 @@
+POST _watcher/watch/_execute
+{
+  "watch": {
+    "trigger": {
+      "schedule": {
+        "interval": "2m"
+      }
+    },
+    "input": {
+      "chain": {
+        "inputs": [
+          {
+            "test_a": {
+              "search": {
+                "request": {
+                  "search_type": "query_then_fetch",
+                  "indices": [
+                    "test_a"
+                  ],
+                  "rest_total_hits_as_int": true,
+                  "body": {
+                    "size": 0,
+                    "query": {
+                      "bool": {
+                        "filter": [
+                          {
+                            "range": {
+                              "@timestamp": {
+                                "gte": "{{ctx.trigger.scheduled_time}}||-2m"
+                              }
+                            }
+                          },
+                          {
+                            "term": {
+                              "eventId": "111"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    "aggs": {
+                      "tenants": {
+                        "terms": {
+                          "field": "tenantId.keyword",
+                          "size": 10
+                        },
+                        "aggs": {
+                          "events": {
+
+                                "top_hits": {
+                                  "size": 100,
+                                  "_source": [
+                                    "tenantId",
+                                    "memo"
+                                  ]
+                                }
+                              
+                            
+                          },
+                          "tenants": {
+                            "filter": {
+                              "exists": {
+                                "field": "address"
+                              }
+                            },
+                            "aggs": {
+                              "data": {
+                                "top_hits": {
+                                  "size": 10,
+                                  "_source": "address"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "test_b": {
+              "search": {
+                "request": {
+                  "search_type": "query_then_fetch",
+                  "indices": [
+                    "test_b"
+                  ],
+                  "rest_total_hits_as_int": true,
+                  "body": {
+                    "size": 3,
+                    "query": {
+                      "match_all": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "condition": {
+      "script": {
+        "source": """
+              
+ return ctx.payload.test_a.hits.total > 0 && ctx.payload.test_b.hits.total > 0;
+
+        """
+     ,
+        "lang": "painless"
+      }
+    },
+    "actions": {
+      "log_hits": {
+        "foreach": "ctx.payload.data_merged",
+        "max_iterations": 500,
+        "webhook": {
+          "scheme": "https",
+          "host": "XXXX",
+          "port": 111,
+          "method": "post",
+          "path": "XXX",
+          "params": {},
+          "headers": {
+            "X-Api-Key": "XXX",
+            "Content-Type": "application/json"
+          },
+          "body": """{
+            "to_address": "{{ctx.payload.address}}",
+            "subject": "テスト",
+            "body": "{{ctx.payload.memo}}" 
+        }"""
+        }
+      }
+    },
+    "transform": {
+      "script": {
+        "source": """
+      
+          List mail_set = new ArrayList();
+         
+          for (int i = 0; i < ctx.payload.test_b.hits.hits.size(); ++i) {
+            Map document = new HashMap();
+            def address = ctx.payload.test_b.hits.hits[i]._source.address;
+            def tenantId = ctx.payload.test_b.hits.hits[i]._source.tenantId;
+            document.put("address", address);
+            document.put("tenantId", tenantId);
+ 
+            mail_set.add(document);
+          }
+          
+          List result_set = new ArrayList();
+         
+          for (int i = 0; i < ctx.payload.test_a.aggregations.tenants.buckets.size(); ++i) {
+            for (int j = 0; j < ctx.payload.test_a.aggregations.tenants.buckets[i].events.hits.hits.size(); ++j){
+                
+              Map document = new HashMap();
+              def tenantId =  ctx.payload.test_a.aggregations.tenants.buckets[i].key;
+              
+              // check if key is found in mail index
+              for (HashMap hashmap : mail_set) {
+                if (hashmap.tenantId == tenantId) {
+                  
+                  document.put("address", hashmap.address);
+                }
+              }
+              
+              if (document.containsKey("address")){
+                def memo =  ctx.payload.test_a.aggregations.tenants.buckets[i].events.hits.hits[j]._source.memo;
+                document.put("memo", memo);
+                result_set.add(document);
+              }
+          } 
+        }
+        return ['data_merged' : result_set];
+        """,
+        "lang": "painless"
+      }
+    }
+  }
+}
