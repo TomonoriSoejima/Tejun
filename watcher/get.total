@@ -6,13 +6,17 @@ POST _scripts/demo_script
   "source": 
 
     """
+      Map all_result = new HashMap();
+      def total = ctx.payload.hits.total;
       Map result = new HashMap();
       def city = ctx.payload.hits.hits.0._source.city;
       def action_time = new SimpleDateFormat('yyyy-MM-dd HH:mm:ss').format(new Date());
       result.put("city", city);
       result.put("action_time",action_time);
+      all_result.put("result", result);
+      all_result.put("total", total);
 
-      return ['result' : result ];
+      return ['result' : all_result ];
     """
   }
 }
@@ -49,8 +53,15 @@ POST _watcher/watch/_execute
     "actions": {
       "log": {
         "logging": {
-          "text": "executed at {{ctx.payload.result}}"
+                    "text": """
+          
+          executed at {{ctx.payload.result}}
+          total : {{ctx.payload.result.total}}
+          
+          """
         }
+        
+        
       },
       "index_payload": {
         "index": {
