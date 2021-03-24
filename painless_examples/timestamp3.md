@@ -5,7 +5,7 @@ GET hotel/_search?size=1
     "created"
   ],
   "script_fields": {
-    "changed_time": {
+    "hour": {
       "script": {
         "source": """
       
