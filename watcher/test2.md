@@ -9,9 +9,7 @@ POST _watcher/watch/_execute
     },
     "input": {
       "simple": {
-        "aggregations": {
-          "failed_urls": {
-             "aggregations" : {
+  "aggregations" : {
     "severity" : {
       "doc_count_error_upper_bound" : 0,
       "sum_other_doc_count" : 0,
@@ -100,23 +98,20 @@ POST _watcher/watch/_execute
         }
       ]
     }
-             }
-          }
         }
       }
     },
     "actions": {
       "log_hits": {
         "logging": {
-          "text": 
-          """
-           {{#ctx.payload.aggregations.failed_urls.buckets}} 
-             Monitor.id - {{key}}
+          "text": """
+           {{#ctx.payload.aggregations.severity.buckets}} 
+          
              host -
-             {{#failed_in_hostname.buckets}}
+             {{#device.buckets}}
               {{key}}
-             {{/failed_in_hostname.buckets}}
-           {{/ctx.payload.aggregations.failed_urls.buckets}}"
+             {{/device.buckets}}
+           {{/ctx.payload.aggregations.severity.buckets}}"
           """
         }
       }
