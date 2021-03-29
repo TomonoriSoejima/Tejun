@@ -6,6 +6,7 @@ POST _watcher/watch/_execute
         "interval": "10h"
       }
     },
+     "metadata" : {      "some_limit" : 10000   },
     "input": {
       "simple": {
         "aggregations": {
@@ -103,14 +104,14 @@ POST _watcher/watch/_execute
       "transform": {
     "script": {
       "source": """
+      
+       def all_list = ctx.payload.aggregations.severity.buckets.stream()
+        .collect(Collectors.toList()).stream().collect(Collectors.toList())
+        .stream().collect(Collectors.toList());
         
-        def all_list = ctx.payload.aggregations.severity.buckets.stream()
-  .map(b -> {
-    b.device.buckets.stream()
-    .collect(Collectors.toList())
-      })
-      .flatMap(Collection::stream)
-      .collect(Collectors.toList());
+   
+        
+
         return ['all_list' : all_list];
 """
     }
@@ -119,9 +120,22 @@ POST _watcher/watch/_execute
       "log_hits": {
         "logging": {
           "text": """
-                        {{#ctx.payload.all_list}} 
-        {{.}}
-          {{/ctx.payload.all_list}} 
+        
+        
+        {{ctx.metadata.some_limit}}-
+      
+         {{#ctx.payload.all_list}} 
+        {
+         key : {{key}}
+         doc_count :  {{doc_count}}
+       
+         {{#device.buckets}}
+         device {{key}} : doc_count {{doc_count}}
+         {{/device.buckets}}
+        }
+         {{/ctx.payload.all_list}} 
+
+     
           """
         }
       }
