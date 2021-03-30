@@ -129,7 +129,7 @@ POST _watcher/watch/_execute
           "text": """
         {{ctx.metadata.some_limit}}-
          {{#ctx.payload.all_list}} 
-         the key they want {{index}}
+          {{index}}
          {{#value}} 
         {
          key : {{key}}
