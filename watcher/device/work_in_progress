@@ -6,7 +6,9 @@ POST _watcher/watch/_execute
         "interval": "10h"
       }
     },
-     "metadata" : {      "some_limit" : 10000   },
+    "metadata": {
+      "some_limit": 10000
+    },
     "input": {
       "simple": {
         "aggregations": {
@@ -101,41 +103,43 @@ POST _watcher/watch/_execute
         }
       }
     },
-      "transform": {
-    "script": {
-      "source": """
-      
-       def all_list = ctx.payload.aggregations.severity.buckets.stream()
-        .collect(Collectors.toList()).stream().collect(Collectors.toList())
-        .stream().collect(Collectors.toList());
-        
-   
-        
-
-        return ['all_list' : all_list];
+    "transform": {
+      "script": {
+        "source": """
+      int parse(Map data, String key) {
+        if (data.containsKey(key)) {
+          return data.get(key);
+        }
+        return 0;
+      }
+      HashMap compt  = new HashMap();
+      def all_list = [];
+        ctx.payload.aggregations.severity.buckets.stream().forEach(r -> {
+            def addOne = parse(compt, 'compt') ;
+            all_list.add(['value':r, 'index': addOne]);
+            compt.put('compt', addOne+1);
+        });
+        return ['all_list':all_list];
 """
-    }
-      },
+      }
+    },
     "actions": {
       "log_hits": {
         "logging": {
           "text": """
-        
-        
         {{ctx.metadata.some_limit}}-
-      
          {{#ctx.payload.all_list}} 
+         the key they want {{index}}
+         {{#value}} 
         {
          key : {{key}}
          doc_count :  {{doc_count}}
-       
          {{#device.buckets}}
          device {{key}} : doc_count {{doc_count}}
          {{/device.buckets}}
         }
+         {{/value}} 
          {{/ctx.payload.all_list}} 
-
-     
           """
         }
       }
