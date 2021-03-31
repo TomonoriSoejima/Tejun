@@ -1,3 +1,10 @@
+## This sample uses sample data from Kibana
+
+https://www.elastic.co/guide/en/kibana/7.11/get-started.html#gs-get-data-into-kibana
+
+![image](https://user-images.githubusercontent.com/25199092/113078921-03bfd380-920f-11eb-94bd-35e035c22725.png)
+
+
 ```
 POST _watcher/watch/_execute
 {
@@ -58,7 +65,7 @@ POST _watcher/watch/_execute
 
         def result = count_200 * 100 / total_count;
          
-        return result > ctx.metadata.threshold;
+        return result < ctx.metadata.threshold;
        
         """
     },
