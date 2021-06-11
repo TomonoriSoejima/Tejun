@@ -1,4 +1,6 @@
 ```
+DELETE foo
+
 PUT foo/_doc/1
 {
   "name": {
@@ -22,7 +24,6 @@ PUT foo/_doc/3
   }
 } 
 
-DELETE foo
 
 PUT /_watcher/watch/mustache-test
 {
