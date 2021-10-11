@@ -1,0 +1,15 @@
+```
+GET rnd/_search
+{
+ "sort": {
+    "_script": {
+      "type": "number",
+      "order": "asc",
+      "script": {
+        "lang": "painless",
+        "inline": "Integer.parseInt(doc['message.keyword'].value);"
+      }
+    }
+  }
+}
+```
