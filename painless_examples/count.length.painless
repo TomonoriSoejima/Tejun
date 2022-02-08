@@ -24,3 +24,27 @@ GET kore/_search
     }
   }
 }
+
+
+
+### On contrast
+
+```
+GET kore/_search?size=0
+{
+  "script_fields": {
+    "copy_id": {
+      "script": {
+        "source":"Integer.parseInt(doc['_id'].value)"
+      }
+    }
+  },
+  "aggs": {
+    "max": {
+      "max": {
+        "field": "copy_id.keyword"
+      }
+    }
+  }
+}
+```
