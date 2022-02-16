@@ -12,3 +12,9 @@ mkdir -p ~/development; cd ~/development
 git clone https://github.com/elastic/terraform-provider-ec
 cd terraform-provider-ec
 sudo make install
+
+
+
+git version
+go version
+terraform version
