@@ -1,4 +1,5 @@
 
+```
 sudo yum install -y go
 sudo yum install -y make
 sudo yum install -y git
@@ -18,3 +19,4 @@ sudo make install
 git version
 go version
 terraform version
+```
