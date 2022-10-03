@@ -1,4 +1,5 @@
-POST _xpack/watcher/watch/_execute
+```
+POST _watcher/watch/_execute
 {
   "watch": {
     "trigger": {
@@ -51,3 +52,4 @@ POST _scripts/demo_script
     """
   }
 }
+```
