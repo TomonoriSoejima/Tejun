@@ -71,3 +71,17 @@ POST /_watcher/watch/snapshot-check/_execute
  """
           }
 ```
+
+
+
+watcher doc
+https://www.elastic.co/guide/en/elasticsearch/reference/current/input-http.html
+
+mail action doc 
+https://www.elastic.co/guide/en/elasticsearch/reference/7.17/actions-email.html
+
+snapshot doc 
+https://www.elastic.co/guide/en/elasticsearch/reference/master/cat-snapshots.html
+https://www.elastic.co/guide/en/elasticsearch/reference/current/cat.html#sort
+
+
