@@ -6,11 +6,6 @@ POST test_a/_bulk
 {"index": {"_id": "3"}}
 {"tenantId": "001", "eventId": "111", "memo": "test3","@timestamp": "yyyy-MM-dd'T'HH:mm:ss.SSS+09:00"}
 
-POST test_b/_bulk
-{"index": {"_id": "1"}}
-{"tenantId": "001", "address": "aaa@test.com"}
-{"index": {"_id": "2"}}
-{"tenantId": "002", "address": "bbb@test.com"}
 
 PUT _watcher/watch/_execute
 {
