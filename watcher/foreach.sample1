@@ -49,3 +49,76 @@ PUT _watcher/watch/_execute
     }
   }
 }
+
+
+```
+POST myindex/_doc/
+{
+  "users": [
+    {
+      "name": "John",
+      "email": "john@example.com"
+    },
+    {
+      "name": "Jane",
+      "email": "jane@example.com"
+    },
+    {
+      "name": "Bob",
+      "email": "bob@example.com"
+    }
+  ]
+}
+
+
+PUT _watcher/watch/_execute
+{
+  "watch": {
+    "trigger": {
+      "schedule": {
+        "interval": "1m"
+      }
+    },
+    "input": {
+      "search": {
+        "request": {
+          "indices": [
+            "myindex"
+          ],
+          "body": {
+            "query": {
+              "match_all": {
+               
+              }
+            }
+          }
+        }
+      }
+    },
+    "condition": {
+      "compare": {
+        "ctx.payload.hits.total": {
+          "gt": 0
+        }
+      }
+    },
+    "transform": {
+      "script": {
+        "source": "return [ 'users': ctx.payload.hits.hits[0]._source.users ];"
+      }
+    },
+    "actions": {
+      "log_hits": {
+        "foreach": "ctx.payload.users",
+        "max_iterations": 100,
+      
+          "logging": {
+            "text": "{{ctx.payload}}",
+            "level": "info"
+          }
+        
+      }
+    }
+  }
+}
+```
