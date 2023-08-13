@@ -64,3 +64,23 @@ PUT _watcher/watch/mywatch
 
 POST _watcher/watch/mywatch/_execute
 ```
+
+
+Summary:
+
+This code is creating a Watcher which performs an Elasticsearch query and logs the results. The goal of the Watcher is to monitor the "sales" index and execute the query every 5 minutes. 
+
+The first two POST requests add documents to the "sales" index with different purchase dates.
+
+The PUT request creates the Watcher named "mywatch". It defines the trigger as a schedule that runs every 5 minutes. The input specifies the search request, targeting the "sales" index and retrieving 10 documents using a match_all query. The condition is set to "always", meaning the actions will always be executed. The transform section contains a script that calculates the total number of hits and creates a new list of purchase dates with additional information. The actions section defines a logging action that logs the purchase dates.
+
+The final POST request executes the Watcher.
+
+Hyperlinks to relevant documentation:
+
+- Elasticsearch Document API: [https://www.elastic.co/guide/en/elasticsearch/reference/current/docs.html]
+- Elasticsearch Watcher API: [https://www.elastic.co/guide/en/elasticsearch/reference/current/watcher-api.html]
+- Elasticsearch Query DSL: [https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html]
+- Elasticsearch Scripting: [https://www.elastic.co/guide/en/elasticsearch/painless/current/index.html]
+- Elasticsearch Watcher Logging Action: [https://www.elastic.co/guide/en/elasticsearch/reference/current/actions-logging.html]
+
