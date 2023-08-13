@@ -1,3 +1,4 @@
+```
 PUT country/_doc/1
 {
   "state" : "tokyo",
@@ -88,6 +89,7 @@ PUT _watcher/watch/mywatch
     }
   }
 }
+```
 
 
 
