@@ -1,6 +1,3 @@
-make a summary for this code and add hyperlinks to relevant documentation too.
----
-
 ```
 POST _watcher/watch/_execute
 {
