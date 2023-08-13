@@ -1,3 +1,4 @@
+```
 PUT sales/1/1
 {
   "purchase_date": "2018-08-05T15:43:13.000Z"
@@ -62,3 +63,4 @@ PUT _xpack/watcher/watch/hhh
 }
 
 POST _xpack/watcher/watch/hhh/_execute
+```
