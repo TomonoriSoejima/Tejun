@@ -119,3 +119,16 @@ POST _watcher/watch/_execute
   }
 }
 ```
+
+This code is a request to execute a watcher in Elasticsearch. A watcher is a feature in Elasticsearch that allows users to monitor their data and perform actions based on certain conditions. 
+
+The watcher in this code is triggered by a schedule that runs every 10 hours. The input for the watcher includes aggregations of severity levels and devices. The severity levels are represented by keys (3, 5, 4) and the corresponding devices are stored in buckets along with their document counts. 
+
+The actions in this watcher include logging the hits. The logged hits display the host and the devices associated with each severity level. The code uses a mustache template to format the log message.
+
+For more information on watchers in Elasticsearch, see the [official Elasticsearch documentation on Watcher](https://www.elastic.co/guide/en/elastic-stack-overview/7.15/condition-watch.html).
+
+For more information on aggregations in Elasticsearch, see the [official Elasticsearch documentation on Aggregations](https://www.elastic.co/guide/en/elasticsearch/reference/7.15/search-aggregations.html).
+
+For more information on mustache templates in Elasticsearch, see the [official Elasticsearch documentation on Mustache Templates](https://www.elastic.co/guide/en/elasticsearch/reference/7.15/search-template.html#_mustache_template_syntax).
+
