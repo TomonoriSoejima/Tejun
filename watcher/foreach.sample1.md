@@ -127,3 +127,26 @@ PUT _watcher/watch/_execute
   }
 }
 ```
+
+
+
+1. **Bulk Indexing Data**
+    
+    * The `POST test_a/_bulk` request is used to bulk index data into Elasticsearch.
+    * Three documents are being indexed into the `test_a` index with specific `_id` values and associated data.
+    * Each document contains a `tenantId`, `eventId`, `memo`, and a `@timestamp` field.
+    
+    [Read more about Elasticsearch Bulk API](https://www.elastic.co/guide/en/elasticsearch/reference/current/docs-bulk.html)
+    
+2. **Elasticsearch Watcher Execution**
+    
+    * The `PUT _watcher/watch/_execute` request is used to execute a watch without saving it.
+    * The watch triggers every 5 minutes.
+    * As an input, it searches the `test_a` index and matches all documents. It also aggregates the results based on the `memo.keyword` field, aiming to return the top 10 terms.
+    * The condition set for this watch is `always`, which means the subsequent action is always executed when the watch is triggered.
+    * The action logs the ids of the found documents, iterating over the aggregated buckets (up to 500 iterations).
+    
+    [Read more about Elasticsearch Watcher](https://www.elastic.co/guide/en/elasticsearch/reference/current/watcher-api-execute-watch.html)
+    
+
+This code is primarily about indexing some test documents into Elasticsearch and then setting up a watcher to periodically search, aggregate, and log certain data from those documents.
