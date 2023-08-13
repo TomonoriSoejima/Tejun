@@ -1,5 +1,5 @@
 ```
-PUT /_watcher/watch/status-check
+PUT /_watcher/watch/checkip
 {
   "trigger": {
     "schedule": {
@@ -28,5 +28,5 @@ PUT /_watcher/watch/status-check
   }
 } 
 
-POST /_watcher/watch/status-check/_execute
+POST /_watcher/watch/checkip/_execute
 ```
