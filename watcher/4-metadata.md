@@ -1,4 +1,5 @@
-PUT _xpack/watcher/watch/mywatch
+```
+PUT _watcher/watch/mywatch
 {
   "metadata" : { 
     "color" : "nara"
@@ -35,4 +36,5 @@ PUT _xpack/watcher/watch/mywatch
 }
 
 
-POST _xpack/watcher/watch/mywatch/_execute
+POST _watcher/watch/mywatch/_execute
+```
