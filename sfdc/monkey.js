@@ -12,6 +12,7 @@
 
     let hasRunFindShardNotes = false;
     let popup_number = 0;
+
     //  Function to simulate a click on the "Show More" button
     function clickShowMoreButton() {
         const showMoreButtons = document.querySelectorAll('div.cxshowmorefeeditemscontainer.showmorefeeditemscontainer a');
@@ -62,6 +63,8 @@
         // Find all elements with the class '.cxfeeditem.feeditem'
         const cxFeedItems = document.querySelectorAll('.cxfeeditem.feeditem');
 
+
+
         if (cxFeedItems.length > 0) {
             for (let n = 0; n < cxFeedItems.length; n++) {
                 // Check if the innerText of the current item contains "Automation Support"
@@ -86,14 +89,20 @@
             }
         }
 
+        // var case_number = document.querySelector('.tabText').textContent;
+        // var case_number = document.getElementsByClassName('tabText')[0].textContent;
+        var case_number = document.getElementById('cas2_ileinner').textContent;
+        var case_title = document.getElementById('cas14_ileinner').textContent;
+
+
         if (contentsArray.length > 0) {
             // Open a new popup window
             const popup = window.open('', '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
 
             // Write the contents of the array into the popup window, separated by horizontal lines
 
-            popup.document.write('<html><head><title>Popup ' + popup_number + ' </title></head><body>');
-
+            popup.document.write('<html><head><title>' + case_number + ' </title></head><body>');
+            popup.document.write('<h1>' + case_title + '</h1>');
             popup.document.write(contentsArray.map(content => '<pre>' + content + '</pre><hr>').join(''));
             popup.document.write('</body></html>');
 
