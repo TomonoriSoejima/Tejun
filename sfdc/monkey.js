@@ -11,6 +11,7 @@
     'use strict';
 
     let hasRunFindShardNotes = false;
+    let popup_number = 0;
     //  Function to simulate a click on the "Show More" button
     function clickShowMoreButton() {
         const showMoreButtons = document.querySelectorAll('div.cxshowmorefeeditemscontainer.showmorefeeditemscontainer a');
@@ -43,13 +44,12 @@
             }
         }
 
-
+        console.log('do you see me?');
         if (!hasRunFindShardNotes) {
+            console.log('do you see me again?');
             findShardNotes();
             // Set the flag to true after running findShardNotes
-
-            // todo 01467651, I need findShardNotes to run multiple times for an unknown reason.
-            //hasRunFindShardNotes = true;
+           // hasRunFindShardNotes = true;
         }
     }
 
@@ -91,22 +91,20 @@
             const popup = window.open('', '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
 
             // Write the contents of the array into the popup window, separated by horizontal lines
-            popup.document.write('<html><head><title>Popup</title></head><body>');
+
+            popup.document.write('<html><head><title>Popup ' + popup_number + ' </title></head><body>');
+
             popup.document.write(contentsArray.map(content => '<pre>' + content + '</pre><hr>').join(''));
             popup.document.write('</body></html>');
 
             // Close the popup window's document stream
             popup.document.close();
+            popup_number++;
         }
     }
-
-    // Call the function to test it
-    findShardNotes();
-
-
 
 
 
     // Check for new "Show More" buttons and execute actions if found
-    const intervalId = setInterval(executeActions, 2000);
+    const intervalId = setInterval(executeActions, 5000);
 })();
