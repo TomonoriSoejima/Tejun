@@ -55,26 +55,52 @@
 
 
     function findShardNotes() {
+
+        let contentsArray = [];
+        // Find all elements with the class '.cxfeeditem.feeditem'
         const cxFeedItems = document.querySelectorAll('.cxfeeditem.feeditem');
 
         if (cxFeedItems.length > 0) {
             for (let n = 0; n < cxFeedItems.length; n++) {
                 // Check if the innerText of the current item contains "Automation Support"
-                if (cxFeedItems[n].innerText.includes("Automation Support")) {
+                if (cxFeedItems[n].innerText.includes("Handover")) {
                     // Log the innerText of the current item to the console
                     console.log("Matching item: " + cxFeedItems[n].innerText);
 
-                    // Find the child element with the class 'feeditemtext cxfeeditemtext'
-                    let feedItemTextElement = cxFeedItems[n].querySelector('.feeditemtext.cxfeeditemtext');
-
-                    // Check if the element is found and log its innerText to the console
+                    // Find and log the text of element with the class 'feeditemtext cxfeeditemtext'
+                    const feedItemTextElement = cxFeedItems[n].querySelector('.feeditemtext.cxfeeditemtext');
                     if (feedItemTextElement) {
                         console.log("Feed Item Text: " + feedItemTextElement.innerText);
+                        contentsArray.push(feedItemTextElement.innerText);
+                    }
+
+                    // Find and log the text of element with the class 'feeditemtimestamp'
+                    const timeStampElement = cxFeedItems[n].querySelector('.feeditemtimestamp');
+                    if (timeStampElement) {
+                        console.log("Timestamp: " + timeStampElement.innerText);
+                        contentsArray.push(timeStampElement.innerText);
                     }
                 }
             }
         }
+
+        if (contentsArray.length > 0) {
+            // Open a new popup window
+            const popup = window.open('', '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+
+            // Write the contents of the array into the popup window, separated by horizontal lines
+            popup.document.write('<html><head><title>Popup</title></head><body>');
+            popup.document.write(contentsArray.map(content => '<pre>' + content + '</pre><hr>').join(''));
+            popup.document.write('</body></html>');
+
+            // Close the popup window's document stream
+            popup.document.close();
+        }
     }
+
+    // Call the function to test it
+    findShardNotes();
+
 
 
 
