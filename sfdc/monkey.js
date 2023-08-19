@@ -97,7 +97,7 @@
 
         if (contentsArray.length > 0) {
             // Open a new popup window
-            const popup = window.open('', '_blank', 'width=600,height=400,scrollbars=yes,resizable=yes');
+            const popup = window.open('', case_number, 'width=600,height=400,scrollbars=yes,resizable=yes');
 
             // Write the contents of the array into the popup window, separated by horizontal lines
 
