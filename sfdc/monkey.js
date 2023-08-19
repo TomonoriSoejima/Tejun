@@ -47,7 +47,9 @@
         if (!hasRunFindShardNotes) {
             findShardNotes();
             // Set the flag to true after running findShardNotes
-            hasRunFindShardNotes = true;
+
+            // todo 01467651, I need findShardNotes to run multiple times for an unknown reason.
+            //hasRunFindShardNotes = true;
         }
     }
 
