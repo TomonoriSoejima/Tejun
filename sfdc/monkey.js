@@ -131,15 +131,9 @@
         }
         const fileName = fileNameMatch[1];
 
-        // Extract the timestamp from the text
-        const timestampMatch = text.match(/\d{4}\/\d{2}\/\d{2} at \d{2}:\d{2}/);
-        if (!timestampMatch) {
-            throw new Error("Timestamp not found in the text");
-        }
-        const timestamp = timestampMatch[0];
 
         // Generate the curl command
-        const curlCommand = `curl -L -H 'Authorization: ${token}' -o '${fileName}' ${url} # uploaded: ${timestamp}`;
+        const curlCommand = `curl -L -H 'Authorization: ${token}' -o '${fileName}' ${url}'`;
         return curlCommand;
     }
 
@@ -157,11 +151,16 @@
         if (cxFeedItems.length > 0) {
             for (let n = 0; n < cxFeedItems.length; n++) {
                 // Check if the innerText of the current item contains "Automation Support"
-                if (cxFeedItems[n].innerText.includes("Upload for Elastic Cloud")) {
+                if (cxFeedItems[n].innerText.includes("Upload for")) {
                     // Log the innerText of the current item to the console
-                    console.log("Matching item: " + cxFeedItems[n].innerText);
+                    console.log("findDownloadLinks item: " + cxFeedItems[n].innerText);
                     contentsArray.push(generateCurlCommand(cxFeedItems[n].innerText));
 
+                    const timeStampElement = cxFeedItems[n].querySelector('.feeditemtimestamp');
+                    if (timeStampElement) {
+                        console.log("Timestamp: " + timeStampElement.innerText);
+                        contentsArray.push(timeStampElement.innerText);
+                    }
 
                 }
             }
@@ -180,7 +179,7 @@
             // Write the contents of the array into the popup window, separated by horizontal lines
 
             popup.document.write('<html><head><title>' + case_number + '</title></head><body>');
-            popup.document.write('<h1>' + '#' + case_title + '</h1>');
+            popup.document.write('<h1>'+'#' + case_title + '</h1>');
             popup.document.write(contentsArray.map(content => '<pre>' + content + '</pre><hr>').join(''));
             popup.document.write('</body></html>');
 
