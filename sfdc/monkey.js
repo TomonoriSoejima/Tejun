@@ -133,7 +133,7 @@
 
 
         // Generate the curl command
-        const curlCommand = `curl -L -H 'Authorization: ${token}' -o '${fileName}' ${url}'`;
+        const curlCommand = `curl -L -H 'Authorization: ${token}' -o '${fileName}' '${url}'`;
         return curlCommand;
     }
 
