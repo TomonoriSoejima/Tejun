@@ -16,6 +16,9 @@ PUT _watcher/watch/my_reindex_watch
         "port": 9243,
         "method": "POST",
         "path": "/_reindex",
+        "params" : {
+          "wait_for_completion" : "false" 
+        },
         "headers": {
           "Content-Type": "application/json"
         },
