@@ -49,3 +49,8 @@ PUT _watcher/watch/_execute
   }
 }
 ```
+
+
+
+
+This script defines an Elasticsearch Watcher configuration that executes a scheduled task every 5 minutes. The task uses a static input of IP address data, including addresses, country codes, and abuse confidence scores. When triggered, the condition is always met ("always": {}), leading to the execution of the index_payload action. This action iterates over the array of IP data ("foreach": "ctx.payload.data") and indexes each item into my-index-000001. Since the doc_id is not specified, Elasticsearch will automatically generate a unique ID for each indexed document.
