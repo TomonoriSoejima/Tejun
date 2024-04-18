@@ -32,7 +32,8 @@ PUT /_watcher/watch/simple_test
 }
 
 
-POST _xpack/watcher/watch/simple_test/_execute
+POST _watcher/watch/simple_test/_execute
+
 ```
 
 This code creates a watcher that runs daily at noon. The watcher is triggered by a schedule and then performs an action. 
@@ -43,7 +44,7 @@ The input for the watcher is defined using the "simple" option. It provides valu
 
 The actions section defines the action to be performed by the watcher. In this case, it logs a message with the received alert, the source hosts, source ports, and the importance value. 
 
-To execute the watcher immediately, a POST request is made to `_xpack/watcher/watch/simple_test/_execute`.
+To execute the watcher immediately, a POST request is made to `_watcher/watch/simple_test/_execute`.
 
 For more information on the syntax and options used in this code, you can refer to the following documentation:
 
