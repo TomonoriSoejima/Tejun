@@ -237,7 +237,7 @@ http delete localhost:9200/people
 # create mapping
 http put localhost:9200/people < mapping.json 
 
-http get https://randomuser.me/api/?results=300 | jq -c '.results[] | { index: {_index:"people", _id:.login.uuid }},  .location += {geo: (.location.coordinates.latitude + "," +  .location.coordinates.longitude)} | del (.location.coordinates, .picture, .info, .login)' > $output
+http get https://randomuser.me/api?results=300 | jq -c '.results[] | { index: {_index:"people", _id:.login.uuid }},  .location += {geo: (.location.coordinates.latitude + "," +  .location.coordinates.longitude)} | del (.location.coordinates, .picture, .info, .login)' > $output
 http localhost:9200/_bulk < $output
 
 # create index pattern
