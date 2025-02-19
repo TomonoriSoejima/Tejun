@@ -58,7 +58,7 @@ PUT /_watcher/watch/mustache-test
 
 
 
-POST _xpack/watcher/watch/mustache-test/_execute
+POST _watcher/watch/mustache-test/_execute
 
 GET /_watcher/watch/mustache-test
 
