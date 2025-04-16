@@ -19,7 +19,6 @@ PUT city/_doc/1
 }
 
 
-
 PUT _watcher/watch/mywatch
 {
   "trigger": {
@@ -34,22 +33,20 @@ PUT _watcher/watch/mywatch
           "first": {
             "search": {
               "request": {
-                "indices": [
-                  "country"
-                  ],
-                  "body": {
-                    "query": {
-                      "bool": {
-                        "must": [
-                          {
-                            "query_string": {
-                              "query": "japan"
-                            }
+                "indices": ["country"],
+                "body": {
+                  "query": {
+                    "bool": {
+                      "must": [
+                        {
+                          "query_string": {
+                            "query": "japan"
                           }
-                          ]
-                      }
+                        }
+                      ]
                     }
                   }
+                }
               }
             }
           }
@@ -58,22 +55,19 @@ PUT _watcher/watch/mywatch
           "second": {
             "search": {
               "request": {
-                "indices": [
-                  "city"
-                  ],
-                  "body": {
-                    "query": {
-                      "match": {
-                        "state": "{{ctx.payload.first.hits.hits.1._source.state}}"
-                        
-                      }
+                "indices": ["city"],
+                "body": {
+                  "query": {
+                    "match": {
+                      "state": "{{ctx.payload.first.hits.hits.0._source.state}}"
                     }
                   }
+                }
               }
             }
           }
         }
-        ]
+      ]
     }
   },
   "condition": {
@@ -88,9 +82,11 @@ PUT _watcher/watch/mywatch
           {{#ctx.payload.first.hits.hits}}country={{_source.state}} \n{{/ctx.payload.first.hits.hits}}\n
           {{#ctx.payload.second.hits.hits}}city={{_source.city}}  \n{{/ctx.payload.second.hits.hits}}
           """
+      }
     }
   }
 }
+
 
 POST _watcher/watch/mywatch/_execute
 ```
