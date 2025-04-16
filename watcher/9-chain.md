@@ -84,8 +84,10 @@ PUT _watcher/watch/mywatch
   "actions": {
     "log": {
       "logging": {
-        "text": "{{#ctx.payload.first.hits.hits}}contry={{_source.state}} \n{{/ctx.payload.first.hits.hits}} {{#ctx.payload.second.hits.hits}}city={{_source.city}} \n{{/ctx.payload.second.hits.hits}}"
-      }
+        "text": """
+          {{#ctx.payload.first.hits.hits}}country={{_source.state}} \n{{/ctx.payload.first.hits.hits}}\n
+          {{#ctx.payload.second.hits.hits}}city={{_source.city}}  \n{{/ctx.payload.second.hits.hits}}
+          """
     }
   }
 }
